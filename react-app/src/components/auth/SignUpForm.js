@@ -1,19 +1,28 @@
 import React, { useState } from "react";
-import { Redirect } from 'react-router-dom';
-import { signUp } from '../../store/auth';
+import { Redirect } from "react-router-dom";
+import { signUp } from "../../store/session";
+import { useDispatch } from "react-redux";
 
-const SignUpForm = ({authenticated, setAuthenticated}) => {
+const SignUpForm = ({ authenticated, setAuthenticated }) => {
+  const dispatch = useDispatch();
   const [username, setUsername] = useState("");
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
+  const [errors, setErrors] = useState([]);
 
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const user = await signUp(username, email, password);
+      const user = await dispatch(
+        signUp(username, first_name, last_name, email, password)
+      );
       if (!user.errors) {
         setAuthenticated(true);
+      } else {
+        setErrors(user.errors);
       }
     }
   };
@@ -34,6 +43,14 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
     setRepeatPassword(e.target.value);
   };
 
+  const updateFirstName = (e) => {
+    setFirstName(e.target.value);
+  };
+
+  const updateLastName = (e) => {
+    setLastName(e.target.value);
+  };
+
   if (authenticated) {
     return <Redirect to="/" />;
   }
@@ -41,12 +58,35 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   return (
     <form onSubmit={onSignUp}>
       <div>
+        {errors.map((error) => (
+          <div key={error}>{error}</div>
+        ))}
+      </div>
+      <div>
         <label>User Name</label>
         <input
           type="text"
           name="username"
           onChange={updateUsername}
           value={username}
+        ></input>
+      </div>
+      <div>
+        <input
+          type="text"
+          name="firstName"
+          onChange={updateFirstName}
+          value={first_name}
+          placeholder="First Name"
+        ></input>
+      </div>
+      <div>
+        <input
+          type="text"
+          name="lastName"
+          onChange={updateLastName}
+          value={last_name}
+          placeholder="Last Name"
         ></input>
       </div>
       <div>
