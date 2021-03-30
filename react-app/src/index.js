@@ -14,9 +14,19 @@ if (process.env.NODE_ENV !== "production") {
   // window.sessionActions = sessionActions;
 }
 
+function Root() {
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  );
+}
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Root />
   </React.StrictMode>,
   document.getElementById("root")
 );
