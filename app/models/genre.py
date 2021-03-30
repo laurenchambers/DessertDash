@@ -1,4 +1,5 @@
 from .db import db
+from app.models import restaurants_genres
 
 class Genre(db.Model):
     __tablename__ = 'genres'

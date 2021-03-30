@@ -1,4 +1,5 @@
 from .db import db
+from app.models import restaurants_genres
 
 class Restaurant(db.Model):
     __tablename__ = 'restaurants'
@@ -35,5 +36,5 @@ class Restaurant(db.Model):
             "price": self.price,
             "rating": self.rating,
             "logo_src": self.logo_src
-            "genres": [genre.to_dict() for genre in self.genres]
+            # "genres": [genre.to_dict() for genre in self.genres]
         }
