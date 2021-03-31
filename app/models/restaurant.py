@@ -35,6 +35,7 @@ class Restaurant(db.Model):
             "hours": self.hours,
             "price": self.price,
             "rating": self.rating,
-            "logo_src": self.logo_src
-            # "genres": [genre.to_dict() for genre in self.genres]
+            "logo_src": self.logo_src,
+            "genres": [genre.to_dict() for genre in self.genres],
+            "items": [item.to_dict() for item in self.items],
         }

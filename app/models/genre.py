@@ -6,11 +6,13 @@ class Genre(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
+    img_src = db.Column(db.String, nullable=False)
 
     restaurants = db.relationship("Restaurant", secondary=restaurants_genres, back_populates="genres")
 
     def to_dict(self):
         return {
             "id": self.id,
-            "name": self.name
+            "name": self.name,
+            "img_src": self.img_src
         }

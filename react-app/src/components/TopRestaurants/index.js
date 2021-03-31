@@ -1,9 +1,7 @@
 import React from "react";
-import "./Restaurant.css";
-
 //will want to destructure items on line 4 as well to key into photos
-const Restaurant = ({ restaurant }) => {
-  if (restaurant) {
+const TopRestaurants = ({ restaurant }) => {
+  if (restaurant.rating > 4.8) {
     return (
       <div>
         <div>
@@ -28,4 +26,4 @@ const Restaurant = ({ restaurant }) => {
   }
 };
 
-export default Restaurant;
+export default TopRestaurants;
