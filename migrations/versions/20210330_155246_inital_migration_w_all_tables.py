@@ -1,7 +1,7 @@
 """inital migration w all tables
 
 Revision ID: 62bf04f6c92b
-Revises: 
+Revises:
 Create Date: 2021-03-30 15:52:46.717875
 
 """
@@ -21,6 +21,7 @@ def upgrade():
     op.create_table('genres',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(), nullable=False),
+    sa.Column('img_src', sa.String(), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('restaurants',
