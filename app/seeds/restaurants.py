@@ -2,16 +2,16 @@ from app.models import db, Restaurant, Genre
 
 
 def seed_restaurants():
-    genre1 = Genre(name="Cakes")
-    genre2 = Genre(name="Cupcakes")
-    genre3 = Genre(name="Pies")
-    genre4 = Genre(name="Chocolate")
-    genre5 = Genre(name="Candy")
-    genre6 = Genre(name="Ice Cream")
-    genre7 = Genre(name="Donuts")
-    genre8 = Genre(name="Pastries")
-    genre10 = Genre(name="Vegan")
-    genre11 = Genre(name="Cookies")
+    genre1 = Genre(name="Cakes", img_src="https://icons-for-free.com/iconfiles/png/512/flat+version+svg+slice+of+cake-1319964486387545161.png")
+    genre2 = Genre(name="Cupcakes", img_src="https://img.icons8.com/plasticine/2x/cupcake.png")
+    genre3 = Genre(name="Pies", img_src="https://iconarchive.com/download/i99743/sonya/swarm/Pie.ico")
+    genre4 = Genre(name="Chocolate", img_src="https://icons-for-free.com/iconfiles/png/512/Chocolate-1320568040315110190.png")
+    genre5 = Genre(name="Candy", img_src="https://icons-for-free.com/iconfiles/png/512/flat+version+svg+candy-1319964483174784523.png")
+    genre6 = Genre(name="Ice Cream", img_src="https://icons-for-free.com/iconfiles/png/512/flat+version+svg+ice+cream-1319964483943937255.png")
+    genre7 = Genre(name="Donuts", img_src="https://freepngimg.com/download/grocery/55063-3-pink-donut-photos-download-hd-png.png")
+    genre8 = Genre(name="Pastries", img_src="https://iconarchive.com/download/i107463/google/noto-emoji-food-drink/32372-croissant.ico")
+    genre10 = Genre(name="Vegan", img_src="https://img.icons8.com/plasticine/2x/vegan-symbol.png")
+    genre11 = Genre(name="Cookies", img_src="https://icons-for-free.com/iconfiles/png/512/cookie-1319971784454690183.png")
 
     restaurant1 = Restaurant(name="Nothing Bundt Cakes",
                             description="Bakery chain with bundt cakes ranging from bite-sized to tiered, plus platters, candles & cards.",

@@ -11,7 +11,7 @@ def seed_genres():
     # genre6 = Genre(name="Ice Cream")
     # genre7 = Genre(name="Donuts")
     # genre8 = Genre(name="Pastries")
-    genre9 = Genre(name="Gelato")
+    genre9 = Genre(name="Gelato", img_src="https://icons-for-free.com/iconfiles/png/512/linecolor+version+svg+ice+cream-1319964494028526965.png")
     # genre10 = Genre(name="Vegan")
     # genre11 = Genre(name="Cookies")
 
