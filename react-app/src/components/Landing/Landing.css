@@ -1,0 +1,29 @@
+.landing-page-container {
+  display: flex;
+  /* width: 960px; */
+  flex-direction: row;
+  margin: 0px 16px 64px;
+  padding: 0px;
+}
+
+.landing-genres-container {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.landing-genres-header {
+  margin-left: 25px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.landing-restaurants-container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0px 12px;
+}
+
+.genres-name {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin-left: 25px;
+}
