@@ -1,7 +1,18 @@
-from app.models import db, Restaurant
+from app.models import db, Restaurant, Genre
 
 
 def seed_restaurants():
+    genre1 = Genre(name="Cakes")
+    genre2 = Genre(name="Cupcakes")
+    genre3 = Genre(name="Pies")
+    genre4 = Genre(name="Chocolate")
+    genre5 = Genre(name="Candy")
+    genre6 = Genre(name="Ice Cream")
+    genre7 = Genre(name="Donuts")
+    genre8 = Genre(name="Pastries")
+    genre10 = Genre(name="Vegan")
+    genre11 = Genre(name="Cookies")
+
     restaurant1 = Restaurant(name="Nothing Bundt Cakes",
                             description="Bakery chain with bundt cakes ranging from bite-sized to tiered, plus platters, candles & cards.",
                             address=" 2785 Bee Cave Rd",
@@ -471,6 +482,101 @@ def seed_restaurants():
                         rating=4.7,
                         )
 
+## append cake
+    genre1.restaurants.append(restaurant1)
+    genre1.restaurants.append(restaurant3)
+    genre1.restaurants.append(restaurant5)
+    genre1.restaurants.append(restaurant6)
+    genre1.restaurants.append(restaurant7)
+    genre1.restaurants.append(restaurant8)
+    genre1.restaurants.append(restaurant11)
+    genre1.restaurants.append(restaurant14)
+    genre1.restaurants.append(restaurant33)
+##append cupcake
+    genre2.restaurants.append(restaurant3)
+    genre2.restaurants.append(restaurant6)
+    genre2.restaurants.append(restaurant8)
+    genre2.restaurants.append(restaurant11)
+    genre2.restaurants.append(restaurant2)
+    genre2.restaurants.append(restaurant4)
+    genre2.restaurants.append(restaurant9)
+    genre2.restaurants.append(restaurant10)
+# append pie
+    genre3.restaurants.append(restaurant3)
+    genre3.restaurants.append(restaurant14)
+    genre3.restaurants.append(restaurant12)
+    genre3.restaurants.append(restaurant15)
+#append chocolate
+    genre4.restaurants.append(restaurant17)
+    genre4.restaurants.append(restaurant21)
+    genre4.restaurants.append(restaurant22)
+    genre4.restaurants.append(restaurant23)
+    genre4.restaurants.append(restaurant20)
+#append candy
+    genre5.restaurants.append(restaurant21)
+    genre5.restaurants.append(restaurant23)
+    genre5.restaurants.append(restaurant22)
+# append ice cream
+    genre6.restaurants.append(restaurant25)
+    genre6.restaurants.append(restaurant26)
+    genre6.restaurants.append(restaurant27)
+    genre6.restaurants.append(restaurant28)
+    genre6.restaurants.append(restaurant29)
+    genre6.restaurants.append(restaurant34)
+    genre6.restaurants.append(restaurant35)
+    genre6.restaurants.append(restaurant37)
+    genre6.restaurants.append(restaurant38)
+    genre6.restaurants.append(restaurant39)
+# append Doughnuts
+    genre7.restaurants.append(restaurant30)
+    genre7.restaurants.append(restaurant32)
+    genre7.restaurants.append(restaurant11)
+#append Pastries
+    genre8.restaurants.append(restaurant5)
+    genre8.restaurants.append(restaurant6)
+    genre8.restaurants.append(restaurant8)
+    genre8.restaurants.append(restaurant14)
+    genre8.restaurants.append(restaurant33)
+    genre8.restaurants.append(restaurant2)
+    genre8.restaurants.append(restaurant4)
+    genre8.restaurants.append(restaurant15)
+    genre8.restaurants.append(restaurant17)
+# append vegan
+    genre10.restaurants.append(restaurant8)
+    genre10.restaurants.append(restaurant11)
+    genre10.restaurants.append(restaurant4)
+    genre10.restaurants.append(restaurant28)
+    genre10.restaurants.append(restaurant29)
+    genre10.restaurants.append(restaurant34)
+    genre10.restaurants.append(restaurant30)
+    genre10.restaurants.append(restaurant32)
+#append cookies
+    genre11.restaurants.append(restaurant3)
+    genre11.restaurants.append(restaurant5)
+    genre11.restaurants.append(restaurant8)
+    genre11.restaurants.append(restaurant11)
+    genre11.restaurants.append(restaurant14)
+    genre11.restaurants.append(restaurant2)
+    genre11.restaurants.append(restaurant4)
+    genre11.restaurants.append(restaurant15)
+    genre11.restaurants.append(restaurant35)
+    genre11.restaurants.append(restaurant37)
+    genre11.restaurants.append(restaurant38)
+    genre11.restaurants.append(restaurant39)
+
+## add genres
+    db.session.add(genre1)
+    db.session.add(genre2)
+    db.session.add(genre3)
+    db.session.add(genre4)
+    db.session.add(genre5)
+    db.session.add(genre6)
+    db.session.add(genre7)
+    db.session.add(genre8)
+    db.session.add(genre10)
+    db.session.add(genre11)
+
+## add restaurants
     db.session.add(restaurant1)
     db.session.add(restaurant2)
     db.session.add(restaurant3)
