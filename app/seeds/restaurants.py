@@ -14,7 +14,6 @@ def seed_restaurants():
                             price="$$",
                             rating=4.8,
                             )
-
     restaurant2 = Restaurant(name="Paper Route Bakery",
                         description="Small batch artisanal bakery homegrown here in Austin! Homemade delicacies, organic & local ingredients.",
                         address="1835 W Alambama St",
@@ -472,8 +471,45 @@ def seed_restaurants():
                         rating=4.7,
                         )
 
-
     db.session.add(restaurant1)
+    db.session.add(restaurant2)
+    db.session.add(restaurant3)
+    db.session.add(restaurant4)
+    db.session.add(restaurant5)
+    db.session.add(restaurant6)
+    db.session.add(restaurant7)
+    db.session.add(restaurant8)
+    db.session.add(restaurant9)
+    db.session.add(restaurant10)
+    db.session.add(restaurant11)
+    db.session.add(restaurant12)
+    db.session.add(restaurant13)
+    db.session.add(restaurant14)
+    db.session.add(restaurant15)
+    db.session.add(restaurant16)
+    db.session.add(restaurant17)
+    db.session.add(restaurant18)
+    db.session.add(restaurant19)
+    db.session.add(restaurant20)
+    db.session.add(restaurant21)
+    db.session.add(restaurant22)
+    db.session.add(restaurant23)
+    db.session.add(restaurant24)
+    db.session.add(restaurant25)
+    db.session.add(restaurant26)
+    db.session.add(restaurant27)
+    db.session.add(restaurant28)
+    db.session.add(restaurant29)
+    db.session.add(restaurant30)
+    db.session.add(restaurant31)
+    db.session.add(restaurant32)
+    db.session.add(restaurant33)
+    db.session.add(restaurant34)
+    db.session.add(restaurant35)
+    db.session.add(restaurant36)
+    db.session.add(restaurant37)
+    db.session.add(restaurant38)
+    db.session.add(restaurant39)
 
     db.session.commit()
 

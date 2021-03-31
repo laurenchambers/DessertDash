@@ -5,11 +5,11 @@ class Item(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
-    name = db.Column(db.String(50))
-    description = db.Column(db.String, nullable=False)
+    name = db.Column(db.Text)
+    description = db.Column(db.Text, nullable=False)
     price = db.Column(db.Integer, nullable=False)
     quantity = db.Column(db.Integer)
-    image_src = db.Column(db.String)
+    image_src = db.Column(db.Text)
 
     cart = db.relationship("Cart", back_populates="items")
     restaurant = db.relationship("Restaurant", back_populates="items")
