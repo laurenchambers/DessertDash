@@ -5,7 +5,7 @@ class Item(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
-    name = db.Column(db.String(50), nullable=False)
+    name = db.Column(db.String(50))
     description = db.Column(db.String, nullable=False)
     price = db.Column(db.Integer, nullable=False)
     quantity = db.Column(db.Integer)

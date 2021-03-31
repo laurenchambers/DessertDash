@@ -2,7 +2,6 @@ from app.models import db, Restaurant
 
 
 def seed_restaurants():
-
     restaurant1 = Restaurant(name="Nothing Bundt Cakes",
                             description="Bakery chain with bundt cakes ranging from bite-sized to tiered, plus platters, candles & cards.",
                             address=" 2785 Bee Cave Rd",
@@ -16,7 +15,7 @@ def seed_restaurants():
                             rating=4.8,
                             )
 
-    restaurant2 = Restaurant(name="Paper Route Baker",
+    restaurant2 = Restaurant(name="Paper Route Bakery",
                         description="Small batch artisanal bakery homegrown here in Austin! Homemade delicacies, organic & local ingredients.",
                         address="1835 W Alambama St",
                         city="Austin",
@@ -124,7 +123,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.1,
                         )
-    restaurant10 = Restaurant(name="Zucchini Kill Bakery",
+    restaurant11 = Restaurant(name="Zucchini Kill Bakery",
                         description="Punk rock, female-led bakery serving vegan sweet & savory goods that are also soy & gluten-free.",
                         address="701 E 53rd S",
                         city="Austin",
@@ -136,7 +135,7 @@ def seed_restaurants():
                         price="$$",
                         rating=4.8,
                         )
-    restaurant11 = Restaurant(name="Tiny Pies",
+    restaurant12 = Restaurant(name="Tiny Pies",
                         description="Handmade by Scratch Daily Using Traditional Baking Methods and Natural Ingredients. Made fresh Daily!",
                         address="2032 S Lamar Blvd",
                         city="Austin",
@@ -148,7 +147,7 @@ def seed_restaurants():
                         price="$$",
                         rating=4.5,
                         )
-    restaurant12 = Restaurant(name="Quack's 43rd Street Bakery",
+    restaurant13 = Restaurant(name="Quack's 43rd Street Bakery",
                         description="Quack’s line of bakery products grew out of a need to provide freshly baked goods for our customers. All the baked items sold here are made here from scratch. We use high quality, natural ingredients. We do not use frozen dough or mixes. Our bakery products contain no preservatives, high fructose corn syrups or additives. We provide service to many wholesale accounts that elect to serve their customers better quality baked goods in lieu of more commonly available, less expensive commercial products",
                         address="411 E 43rd St",
                         city="Austin",
@@ -160,7 +159,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.6,
                         )
-    restaurant13 = Restaurant(name="The Cake and Spoon",
+    restaurant14 = Restaurant(name="The Cake and Spoon",
                         description="The Cake and Spoon is a wholesale and special order bakery concentrating on English, American, and European desserts and pastries.",
                         address="3008 Gonzales St",
                         city="Austin",
@@ -172,7 +171,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.6,
                         )
-    restaurant14 = Restaurant(name="Upper Crust Bakery",
+    restaurant15 = Restaurant(name="Upper Crust Bakery",
                         description="Well-known bakery with a cozy ambiance selling made-from-scratch pastries, bread & lunch fare.",
                         address="4508 Burnet Rd",
                         city="Austin",
@@ -184,7 +183,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.6,
                         )
-    restaurant15 = Restaurant(name="Big Top",
+    restaurant16 = Restaurant(name="Big Top",
                         description="Colorful, circus-themed sweets store featuring old-school confections & a soda fountain.",
                         address="1706 S Congress Ave",
                         city="Austin",
@@ -196,7 +195,7 @@ def seed_restaurants():
                         price="$$",
                         rating=4.6,
                         )
-    restaurant16 = Restaurant(name="Edis Chocolates",
+    restaurant17 = Restaurant(name="Edis Chocolates",
                         description="Locally owned shop creating specialty chocolates, cakes, cookies, pastries & other confections.",
                         address="3808 Spicewood Springs Rd",
                         city="Austin",
@@ -208,7 +207,7 @@ def seed_restaurants():
                         price="$$",
                         rating=4.8,
                         )
-    restaurant17 = Restaurant(name="Delysia Chocolatier",
+    restaurant18 = Restaurant(name="Delysia Chocolatier",
                         description="Our chocolates are handcrafted in Austin, Texas at our Culinary Center & Chocolate Boutique. Many include unique, local ingredients that are not available anywhere else. Relish in our passion for creating the finest quality and most unique chocolates available.",
                         address="2000 Windy Terrace",
                         city="Austin",
@@ -220,7 +219,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.7,
                         )
-    restaurant17 = Restaurant(name="Yummi Joy",
+    restaurant19 = Restaurant(name="Yummi Joy",
                         description="Craft sodas, mix-and-match candy, & coffee, plus vegan ice cream in playful, cartoon-ish surrounds.",
                         address="409 W 2nd St",
                         city="Austin",
@@ -232,7 +231,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.6,
                         )
-    restaurant17 = Restaurant(name="Madhu Chocolate",
+    restaurant20 = Restaurant(name="Madhu Chocolate",
                         description="Austin made small batch chocolate bars with an emphasis on unique Indian flavors.",
                         address="6814 Northeast Dr",
                         city="Austin",
@@ -244,7 +243,7 @@ def seed_restaurants():
                         price="$",
                         rating=5.0,
                         )
-    restaurant17 = Restaurant(name="Lammes Candies",
+    restaurant21 = Restaurant(name="Lammes Candies",
                         description="Austin's hometown candy store and home of the world-famous Texas Chewie® Pecan Praline. ",
                         address="2927 W Anderson Ln",
                         city="Austin",
@@ -256,7 +255,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.6,
                         )
-    restaurant18 = Restaurant(name="IT'SUGAR",
+    restaurant22 = Restaurant(name="IT'SUGAR",
                         description="IT'SUGAR is a trendy candy store specializing in innovative sweets, fun novelty gifts, and giant candy.",
                         address="11621 Rock Rose Ave",
                         city="Austin",
@@ -268,7 +267,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.2,
                         )
-    restaurant19 = Restaurant(name="See's Candies",
+    restaurant23 = Restaurant(name="See's Candies",
                         description="Candies & chocolates are sold by the piece or box at this old-school chain, in business since 1921.",
                         address="10710 Research Blvd",
                         city="Austin",
@@ -280,7 +279,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.9,
                         )
-    restaurant19 = Restaurant(name="Amy's Ice Creams",
+    restaurant24 = Restaurant(name="Amy's Ice Creams",
                         description="Local chain serving inventive ice creams, milkshakes, ices & frozen yogurts with clever fixings.",
                         address="1301 S Congress Ave",
                         city="Austin",
@@ -292,7 +291,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.5,
                         )
-    restaurant19 = Restaurant(name="Jeni's Splendid Ice Creams",
+    restaurant25 = Restaurant(name="Jeni's Splendid Ice Creams",
                         description="Chain scooping creative flavors of ice cream & frozen yogurt made from local ingredients.",
                         address="1208 S Congress Ave",
                         city="Austin",
@@ -304,7 +303,7 @@ def seed_restaurants():
                         price="$$",
                         rating=4.6,
                         )
-    restaurant20 = Restaurant(name="Dolce Neve Gelato",
+    restaurant26 = Restaurant(name="Dolce Neve Gelato",
                         description="Busy gelato shop whipping up various inventive flavors of ice cream in a pint-sized setting.",
                         address="1713 S 1st St",
                         city="Austin",
@@ -316,7 +315,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.7,
                         )
-    restaurant20 = Restaurant(name="Lick Honest Ice Creams",
+    restaurant27 = Restaurant(name="Lick Honest Ice Creams",
                         description="This hip ice creamery churns out offbeat flavors made from local, natural & sustainable ingredients.",
                         address="1100 S Lamar Blvd",
                         city="Austin",
@@ -328,7 +327,7 @@ def seed_restaurants():
                         price="$$",
                         rating=4.6,
                         )
-    restaurant21 = Restaurant(name="NadaMoo! Scoop Shop",
+    restaurant28 = Restaurant(name="NadaMoo! Scoop Shop",
                         description="Festive counter-serve featuring homemade, dairy-free ice cream in traditional & seasonal flavors.",
                         address="1701 S Lamar Blvd",
                         city="Austin",
@@ -340,7 +339,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.6,
                         )
-    restaurant22 = Restaurant(name="Sweet Ritual",
+    restaurant29 = Restaurant(name="Sweet Ritual",
                         description="Colorful ice cream parlor serving gluten-free & vegan scoops in cups, cones, shakes & sundaes.",
                         address="4631 Airport Blvd",
                         city="Austin",
@@ -352,7 +351,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.7,
                         )
-    restaurant23 = Restaurant(name="Voodoo Doughnut",
+    restaurant30 = Restaurant(name="Voodoo Doughnut",
                         description="This counter-serve bakeshop serves creative donuts in colorful, quirky environs.",
                         address="212 E 6th St",
                         city="Austin",
@@ -364,7 +363,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.4,
                         )
-    restaurant24 = Restaurant(name="Little Lucy's",
+    restaurant31 = Restaurant(name="Little Lucy's",
                         description="Colorful, late-night food truck making mini-donuts with creative flavors, toppings & dipping sauces.",
                         address="75 1/2 Rainey St",
                         city="Austin",
@@ -376,7 +375,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.4,
                         )
-    restaurant25 = Restaurant(name="Gourdough's Big. Fat. Donuts.",
+    restaurant32 = Restaurant(name="Gourdough's Big. Fat. Donuts.",
                         description="Gourdough's Big. Fat. Donuts. is housed in a vintage Airstream Trailer located on South Lamar and doles out the most delectable and crazy donut concoctions your mind and taste buds will allow.",
                         address="1503 S 1st St",
                         city="Austin",
@@ -388,7 +387,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.7,
                         )
-    restaurant26 = Restaurant(name="Julie Myrtille Bakery",
+    restaurant33 = Restaurant(name="Julie Myrtille Bakery",
                         description="Authentic French bakery and fine pastry in Austin founded by French pastry chef Julie Myrtille. Bake the world a better place.",
                         address="1023 Springdale Rd",
                         city="Austin",
@@ -400,7 +399,7 @@ def seed_restaurants():
                         price="$$",
                         rating=4.7,
                         )
-    restaurant27 = Restaurant(name="Milky Way Shakes",
+    restaurant34 = Restaurant(name="Milky Way Shakes",
                         description="Milky Way Shakes, a vegan milkshake trailer located in Austin, TX.",
                         address="2324 E Cesar Chavez St",
                         city="Austin",
@@ -412,7 +411,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.9,
                         )
-    restaurant28 = Restaurant(name="Tiff's Treats",
+    restaurant35 = Restaurant(name="Tiff's Treats",
                         description="Fresh-baked cookies for pre-order & pickup, or delivery, with a limited selection for walk-ins.",
                         address="1700 E Oltorf St",
                         city="Austin",
@@ -424,7 +423,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.0,
                         )
-    restaurant29 = Restaurant(name="Tinys Milk & Cookies",
+    restaurant36 = Restaurant(name="Tinys Milk & Cookies",
                         description="Milk & Cookies is a walk up coffee shop serving homemade ice cream, pastries, and of course, our cookie.",
                         address="1515 W 35th St",
                         city="Austin",
@@ -436,7 +435,7 @@ def seed_restaurants():
                         price="$",
                         rating=4.7,
                         )
-    restaurant30 = Restaurant(name="Insomnia Cookies",
+    restaurant37 = Restaurant(name="Insomnia Cookies",
                         description="Bakery chain known for late-night deliveries, with some locations selling ice cream.",
                         address="2323 San Antonio St",
                         city="Austin",
@@ -448,7 +447,7 @@ def seed_restaurants():
                         price="$$",
                         rating=3.7,
                         )
-    restaurant31 = Restaurant(name="Crumbl Cookies",
+    restaurant38 = Restaurant(name="Crumbl Cookies",
                         description="Each week, our menu rotates to give you 4 different specialty flavors to taste and enjoy. Don’t worry, our famous milk chocolate chip and chilled sugar cookie are always available.",
                         address="5207 Brodie Ln",
                         city="Austin",
@@ -460,7 +459,7 @@ def seed_restaurants():
                         price="$$",
                         rating=4.8,
                         )
-    restaurant32 = Restaurant(name="The Baked Bear",
+    restaurant39 = Restaurant(name="The Baked Bear",
                         description="Decadent build-your-own custom ice cream sandwiches with artisanal ice cream & house-made cookies.",
                         address="211 Walter Seaholm Dr",
                         city="Austin",
