@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap");
 
-.profile-img {
-  height: 27px;
-  width: 38px;
-  padding: 10px;
+.menu-bar-img {
+  height: 20px;
+  width: 20px;
+  padding-left: 10px;
+  padding-bottom: 35px;
 }
 
 .menubar-container {
@@ -63,12 +64,12 @@
 }
 
 .menubar-x {
-  height: 27px;
+  height: 20px;
   /* width: 27px; */
   cursor: pointer;
   padding-bottom: 10px;
-  padding-top: 20px;
-  padding-left: 10px;
+  padding-top: 22px;
+  padding-left: 15px;
 }
 
 .dropdown-item-first img {

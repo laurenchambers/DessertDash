@@ -32,7 +32,7 @@ function MeunBar({ setAuthenticated }) {
 
   return (
     <div className="menubar-container">
-      <img className="profile-img" src={menubar} alt="" onClick={openMenu} />
+      <img className="menu-bar-img" src={menubar} alt="" onClick={openMenu} />
       {showMenu && (
         <div className="menu">
           <div onClick={closeMenu}>

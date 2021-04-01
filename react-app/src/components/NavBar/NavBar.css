@@ -34,3 +34,22 @@
 .navbar-toggle-menu {
   height: 27px;
 }
+
+.navbar-address {
+  display: inline-flex;
+}
+
+.navbar-preset-address {
+  font-size: 15px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: bold;
+  color: red;
+}
+
+.navbar-to-address {
+  font-size: 14px;
+  font-family: "Maven Pro", sans-serif;
+  color: black;
+  padding-left: 4px;
+  padding-right: 4px;
+}

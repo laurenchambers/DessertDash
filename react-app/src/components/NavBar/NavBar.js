@@ -15,7 +15,11 @@ const NavBar = ({ setAuthenticated }) => {
               <MeunBar />
             </div>
           </div>
-          <div className="nav-bar-address">INSERT COMPONENT FOR ADDRESS</div>
+          <div className="navbar-address">
+            <div className="navbar-preset-address">ASAP </div>
+            <div className="navbar-to-address">to</div>
+            <div className="navbar-preset-address">1221 S Congress Ave</div>
+          </div>
           <div className="navbar-logo">
             <NavLink
               className="navbar-logo"
