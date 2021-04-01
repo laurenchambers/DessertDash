@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import PlacesAutocomplete from "react-places-autocomplete";
 import "./AddressSearch.css";
+import pinicon from "../site-images/pin-icon.jpeg";
+
 import PlacesComponent, {
   geocodeByAddress,
   getLatLng,
@@ -65,17 +67,18 @@ const AddressSearch = () => {
                 <div className="address-search-input-container">
                   <input
                     className="address-search-input"
-                    {...getInputProps({ placeholder: " Address" })}
+                    {...getInputProps({ pinicon, placeholder: " 🐾  Address" })}
                   />
                 </div>
-                <div>
+                <div className="address-search-results">
                   {loading ? <div>...loading</div> : null}
                   {suggestions.map((suggestion) => {
                     const style = {
                       backgroundColor: suggestion.active
                         ? "#D3D3D3"
                         : "#ffffff",
-                      padding: "100px",
+                      height: "40px",
+                      width: "320px",
                     };
                     return (
                       <div {...getSuggestionItemProps(suggestion, { style })}>

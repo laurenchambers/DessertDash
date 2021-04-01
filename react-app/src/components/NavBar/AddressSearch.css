@@ -9,7 +9,7 @@
 
 .address-search-box {
   margin-top: 10px;
-  margin-left: -15px;
+  margin-left: -10px;
   /* display: inline-block; */
   padding-top: 10px;
   position: absolute;
@@ -28,16 +28,30 @@
   padding-bottom: 5px;
 }
 .address-search-input {
-  color: pink;
+  color: black;
   width: 320px;
   height: 40px;
   box-shadow: (247 247 247) 0px 0px 0px 1px inset;
   background-color: rgb(247, 247, 247);
   font-family: "Maven Pro", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
   border-radius: 8px;
+  outline: none;
 }
 
 .address-search-input-container {
   padding-left: 20px;
   width: 150px;
+}
+
+.address-search-results {
+  height: 30px;
+  width: 320px;
+  margin-left: 25px;
+  color: black;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 13px;
+  font-weight: 100;
+  cursor: pointer;
 }
