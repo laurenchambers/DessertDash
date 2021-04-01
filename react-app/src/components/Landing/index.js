@@ -29,8 +29,8 @@ const Landing = ({ restaurant, genre }) => {
         <div className="genres-container"></div>
       </div>
       {genresArray?.map((genre) => (
-        <div className="genres-name">
-          <img className="genres-image" src={genre.img_src} />
+          <div className="genres-name">
+            <img className="genres-image" src={genre.img_src} />
           {genre.name}
         </div>
       ))}
