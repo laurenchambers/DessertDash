@@ -4,6 +4,7 @@ import LogoutButton from "../auth/LogoutButton";
 import "./NavBar.css";
 import dessertdash_logo from "../site-images/desssertdash-logo.jpg";
 import MeunBar from "./MenuBar";
+import AddressSearch from "./AddressSearch";
 
 const NavBar = ({ setAuthenticated }) => {
   return (
@@ -18,7 +19,9 @@ const NavBar = ({ setAuthenticated }) => {
           <div className="navbar-address">
             <div className="navbar-preset-address">ASAP </div>
             <div className="navbar-to-address">to</div>
-            <div className="navbar-preset-address">1221 S Congress Ave</div>
+            <div className="navbar-preset-address">
+              <AddressSearch />
+            </div>
           </div>
           <div className="navbar-logo">
             <NavLink
