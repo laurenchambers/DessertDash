@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap");
+
+.profile-img {
+  height: 27px;
+  width: 38px;
+}
+
+.menubar-container {
+  display: flex;
+}
+
+.menu {
+  /* margin-top: 45px; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  z-index: 100;
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  box-shadow: 0 1px 3px rgb(0 22 36 / 16%);
+}
+
+.dropdown-item-first {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  display: block;
+  border-bottom: 1px solid rgb(214, 214, 214);
+  height: 40px;
+  padding-left: 10px;
+  padding-top: 20px;
+  font-size: 20px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: bold;
+  color: black;
+}
+
+.dropdown-item {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  display: block;
+  border-bottom: 1px solid rgb(214, 214, 214);
+  height: 40px;
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 20px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: bold;
+  color: black;
+}
+
+.dropdown-item:hover {
+  color: red;
+}
+
+.dropdown-item-first:hover {
+  color: red;
+}
+
+.menubar-x {
+  height: 27px;
+  /* width: 27px; */
+  cursor: pointer;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.dropdown-item-first img {
+  height: 27px;
+  /* padding-top: 10px; */
+  padding-right: 30px;
+}
+.dropdown-item img {
+  height: 27px;
+  padding-right: 30px;
+}
