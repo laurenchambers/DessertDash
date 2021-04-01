@@ -4,6 +4,7 @@ import LogoutButton from "../auth/LogoutButton";
 import "./NavBar.css";
 import dessertdash_logo from "../site-images/desssertdash-logo.jpg";
 import MeunBar from "./MenuBar";
+import AddressSearch from "./AddressSearch";
 
 const NavBar = ({ setAuthenticated }) => {
   return (
@@ -15,7 +16,13 @@ const NavBar = ({ setAuthenticated }) => {
               <MeunBar />
             </div>
           </div>
-          <div className="nav-bar-address">INSERT COMPONENT FOR ADDRESS</div>
+          <div className="navbar-address">
+            <div className="navbar-preset-address">ASAP </div>
+            <div className="navbar-to-address">to</div>
+            <div className="navbar-preset-address">
+              <AddressSearch />
+            </div>
+          </div>
           <div className="navbar-logo">
             <NavLink
               className="navbar-logo"
