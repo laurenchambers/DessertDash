@@ -9,12 +9,12 @@ const LogoutButton = ({ setAuthenticated }) => {
 
   const onLogout = async (e) => {
     await logout();
-    setAuthenticated(false);
     dispatch(logout());
+    // setAuthenticated(false);
     return history.push("/");
   };
 
-  return <button onClick={onLogout}>Logout</button>;
+  return <button onClick={onLogout}>Sign Out</button>;
 };
 
 export default LogoutButton;

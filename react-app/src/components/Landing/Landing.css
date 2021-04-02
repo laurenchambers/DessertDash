@@ -137,7 +137,7 @@
 
 .landing-third-container {
   /* display: block; */
-  height: 600px;
+  height: 400px;
 }
 
 .landing-third-section-message {
@@ -145,11 +145,15 @@
   color: rgb(25, 25, 25);
   display: flex;
   align-items: center;
-  margin-top: 300px;
+  margin-top: 200px;
   font-size: 32px;
   font-weight: 700;
   line-height: 40px;
   margin-left: 400px;
+}
+
+.landing-third-section-header {
+  margin-top: -200px;
 }
 
 .third-secion-sub-message {
@@ -158,29 +162,35 @@
   color: rgb(25, 25, 25);
   display: flex;
   align-items: center;
-  margin-top: 150px;
+  margin-top: -50px;
   font-weight: 200;
   font-size: 20px;
   line-height: 25px;
-  margin-left: -170px;
+  margin-left: -173px;
 }
-
+.donut-image {
+  width: 740px;
+}
 /* # fourth section */
 
 .landing-fourth-container {
   height: 600px;
+  background: rgb(255, 240, 237);
+  display: flex;
 }
 
 .landing-fourth-section-message {
   font-family: "Maven Pro", sans-serif;
   color: rgb(25, 25, 25);
   display: flex;
-  align-items: center;
-  margin-top: 300px;
+  position: relative;
+  align-items: inline-flex;
+  margin-top: 220px;
+  padding-left: 30px;
   font-size: 32px;
   font-weight: 700;
   line-height: 40px;
-  margin-left: 400px;
+  /* margin-left: 400px; */
 }
 
 .fourth-section-sub-message {
@@ -189,9 +199,22 @@
   color: rgb(25, 25, 25);
   display: flex;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 30px;
   font-weight: 200;
   font-size: 20px;
   line-height: 25px;
-  margin-left: -330px;
+  /* position: relative; */
+  margin-left: -332px;
+}
+
+.brownie-image {
+  width: 700px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  margin-left: 300px;
+  display: flex;
+}
+
+.landing-fourth-section {
+  display: flex;
 }

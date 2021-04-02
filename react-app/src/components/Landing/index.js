@@ -65,25 +65,25 @@ const Landing = ({ restaurant, genre, authenticated }) => {
         <div className="landing-third-container">
           <div className="landing-lower-section">
             <div className="landing-third-section-message">
-              <div>It’s all here.</div>
+              <div className="landing-third-section-header">It’s all here.</div>
               <div className="third-secion-sub-message">
                 Discover local, on-demand dessert delivery from restaurants,
                 nearby grocery and convenience stores, and more... yum!
               </div>
-              <img src={donut} alt="" />
+              <img className="donut-image" src={donut} alt="" />
             </div>
           </div>
         </div>
         <div className="landing-fourth-container">
-          <div className="landing-lower-section">
+          <div className="landing-fourth-section">
+            <img className="brownie-image" src={brownie} alt="" />
             <div className="landing-fourth-section-message">
-              <div>Every Flavor Welcome</div>
-              <div className="fourth-section-sub-message">
-                From your neighborhood cupcake spot to the ice cream you crave,
-                choose from tons of local and national favorites to satisfy your
-                sweet tooth.
-              </div>
-              <img src="" alt="" />
+              Every Flavor Welcome
+            </div>
+            <div className="fourth-section-sub-message">
+              From your neighborhood cupcake spot to the ice cream you crave,
+              choose from tons of local and national favorites to satisfy your
+              sweet tooth.
             </div>
           </div>
         </div>
