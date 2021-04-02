@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap");
+
+.landing-page-container {
+  display: flex;
+  /* width: 960px; */
+  flex-direction: row;
+  margin: 0px 16px 64px;
+  padding: 0px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.landing-genres-container {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* display: flex;
+  flex-wrap: wrap; */
+}
+.landing-genres-header {
+  margin-left: 25px;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 40px;
+  padding-top: 30px;
+  font-weight: bold;
+  color: black;
+}
+
+.landing-genres-subheder {
+  margin-left: 29px;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 15px;
+  padding-top: 5px;
+  font-weight: bold;
+  color: black;
+}
+
+.landing-restaurants-container {
+  display: flex;
+  flex-direction: wrap;
+  overflow: hidden;
+  padding: 0px 12px;
+}
+
+.genres-name {
+  font-family: "Maven Pro", sans-serif;
+  margin-left: 25px;
+  align-items: wrap;
+  width: 80px;
+}
+
+.genres-image {
+  width: 55px;
+}
+
+.genres-container {
+  width: 400px;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-right: 200px;
+  margin-top: 40px;
+}
+
+.landing-each-restaurant {
+  display: flex;
+  justify-items: flex;
+}
+
+.each-genre-name {
+  font-family: "Maven Pro", sans-serif;
+  display: block;
+  justify-content: center;
+  font-size: 16px;
+}

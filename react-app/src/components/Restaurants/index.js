@@ -10,7 +10,7 @@ const ShowRestaurant = () => {
     (state) => state?.restaurants?.restaurants
   );
 
-  const itemsArray = useSelector((state) => state?.items?.allItems?.items);
+  // const itemsArray = useSelector((state) => state?.items?.allItems?.items);
 
   useEffect(() => {
     dispatch(allRestaurants());

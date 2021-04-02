@@ -6,10 +6,10 @@ import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import UsersList from "./components/UsersList";
-import User from "./components/User";
+// import User from "./components/User";
 import ShowRestaurant from "./components/Restaurants";
 import Landing from "./components/Landing";
+import HomePage from "./components/Home";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,7 +33,10 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar setAuthenticated={setAuthenticated} />
+      <NavBar
+        authenticated={authenticated}
+        setAuthenticated={setAuthenticated}
+      />
       <Switch>
         <Route path="/login" exact={true}>
           <LoginForm
@@ -47,26 +50,18 @@ function App() {
             setAuthenticated={setAuthenticated}
           />
         </Route>
-        <ProtectedRoute
-          path="/users"
-          exact={true}
-          authenticated={authenticated}
-        >
-          <UsersList />
-        </ProtectedRoute>
-        <ProtectedRoute
+        {/* <ProtectedRoute
           path="/users/:userId"
           exact={true}
           authenticated={authenticated}
         >
           <User />
-        </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
-          <h1>My Home Page</h1>
-          <ShowRestaurant />
-        </ProtectedRoute>
-        <ProtectedRoute path="/home" exact={true} authenticated={authenticated}>
+        </ProtectedRoute> */}
+        <Route path="/" exact={true} authenticated={authenticated}>
           <Landing />
+        </Route>
+        <ProtectedRoute path="/home" exact={true} authenticated={authenticated}>
+          <HomePage authenticated={authenticated} />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
