@@ -13,9 +13,7 @@ const Landing = ({ restaurant, genre }) => {
   //   });
   //   console.log("each genre", eachGenre);
   //   console.log("genres array", genresArray);
-  const restaurants = useSelector(
-    (state) => state?.restaurants?.allRestaurants?.restaurants
-  );
+  const restaurants = useSelector((state) => state?.restaurants?.restaurants);
 
   useEffect(() => {
     dispatch(getAllGenres());
@@ -26,13 +24,15 @@ const Landing = ({ restaurant, genre }) => {
     <div className="landing-page-container">
       <div className="landing-genres-container">
         <div className="landing-genres-header">Categories</div>
-        <div className="genres-container"></div>
-      {genresArray?.map((genre) => (
-        <div className="genres-name">
-            <img className="genres-image" src={genre.img_src} />
-          {genre.name}
+        <div className="landing-genres-subheder">49 STORES NEARBY</div>
+        <div className="genres-container">
+          {genresArray?.map((genre) => (
+            <div className="genres-name">
+              <img className="genres-image" src={genre.img_src} />
+              <span className="each-genre-name">{genre.name}</span>
+            </div>
+          ))}
         </div>
-      ))}
       </div>
       <div className="landing-restaurants-container">
         <div className="top-restaurants-container">
