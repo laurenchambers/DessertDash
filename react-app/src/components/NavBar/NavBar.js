@@ -5,6 +5,7 @@ import "./NavBar.css";
 import dessertdash_logo from "../site-images/desssertdash-logo.jpg";
 import MeunBar from "./MenuBar";
 import AddressSearch from "./AddressSearch";
+import SearchBar from "./SearchBar";
 
 const NavBar = ({ setAuthenticated }) => {
   return (
@@ -34,30 +35,10 @@ const NavBar = ({ setAuthenticated }) => {
               DESSERTDASH
             </NavLink>
           </div>
-          <div className="narbar-search-container">SEARCH BAR</div>
+          <div className="narbar-search-container">
+            <SearchBar />
+          </div>
           <div className="navbar-cart-container">CART</div>
-          {/* <ul>
-            <li>
-            </li>
-            <li>
-              <NavLink to="/login" exact={true} activeClassName="active">
-                Login
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/sign-up" exact={true} activeClassName="active">
-                Sign Up
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/users" exact={true} activeClassName="active">
-                Users
-              </NavLink>
-            </li>
-            <li>
-              <LogoutButton setAuthenticated={setAuthenticated} />
-            </li>
-          </ul> */}
         </nav>
       </div>
       {/* div below goes with navbar container */}

@@ -1,8 +1,8 @@
 const GET_RESTAURANTS = "/restaurants/getRestaurants";
 
-const getRestaurants = (restaurants) => ({
+const getRestaurants = (allRestaurants) => ({
   type: GET_RESTAURANTS,
-  payload: restaurants,
+  payload: allRestaurants,
 });
 
 export const allRestaurants = () => async (dispatch) => {
@@ -18,13 +18,13 @@ export const allRestaurants = () => async (dispatch) => {
   }
 };
 
-let initialState = {};
+let initialState = { restaurants: [] };
 const restaurantReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
     case GET_RESTAURANTS:
       newState = Object.assign({}, state);
-      newState.allRestaurants = action.payload;
+      newState = action.payload;
       return newState;
     default:
       return state;
