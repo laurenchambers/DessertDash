@@ -41,7 +41,6 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
 
   return (
     <div className="signin-form-container">
-      <NavBar />
       <form className="signin-form" onSubmit={onLogin}>
         <div className="signin-title">Sign In</div>
         <div className="signup_link_text">
@@ -83,6 +82,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
             Sign In
           </button>
           </div>
+          <div className='demo-button-space'></div>
           <button
             type="button"
             className="login-button"

@@ -55,6 +55,27 @@
   color: black;
 }
 
+.dropdown-item button {
+  /* position: relative; */
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  /* border-bottom: 1px solid rgb(214, 214, 214); */
+  height: 40px;
+  /* padding-left: 10px; */
+  /* padding-top: 10px; */
+  font-size: 20px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: bold;
+  color: black;
+  background-color: rgb(255, 255, 255);
+  margin-left: -4px;
+  justify-content: center;
+}
+
+.dropdown-item button:hover {
+  color: red;
+}
 .dropdown-item:hover {
   color: red;
 }

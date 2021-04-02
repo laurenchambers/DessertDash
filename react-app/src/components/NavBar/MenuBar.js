@@ -6,6 +6,7 @@ import homeicon from "../site-images/home-icon.png";
 import profileicon from "../site-images/profile-icon.jpeg";
 import carticon from "../site-images/cart-icon.jpeg";
 import "./MenuBar.css";
+import LogoutButton from "../auth/LogoutButton"
 
 function MeunBar({ setAuthenticated }) {
   const [showMenu, setShowMenu] = useState(false);
@@ -51,10 +52,10 @@ function MeunBar({ setAuthenticated }) {
             </NavLink>
           </div>
           <div onClick={closeMenu}>
-            <NavLink to="/logout" exact={true} className="dropdown-item">
+            <div className="dropdown-item">
               <img className="menubar-image" src={profileicon} alt="" />
-              Sign Out
-            </NavLink>
+            <LogoutButton className="dropdown-item" setAuthenticated={setAuthenticated} />
+            </div>
           </div>
           {/* <div className="logout-button-nav">
             <LogoutButton setAuthenticated={setAuthenticated} />

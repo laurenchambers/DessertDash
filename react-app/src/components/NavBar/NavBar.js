@@ -46,7 +46,20 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
       </div>
     );
   } else {
-    return <> </>;
+    return (
+      <div>
+        <div className="navbar-unath-container">
+          <nav className="navbar-navgation">
+            <img
+              className="navbar-unauth-image"
+              src={dessertdash_logo}
+              alt=""
+            />
+            DESSERTDASH
+          </nav>
+        </div>
+      </div>
+    );
   }
 };
 
