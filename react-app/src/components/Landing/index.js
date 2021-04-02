@@ -5,6 +5,8 @@ import { getAllGenres } from "../../store/genres";
 import { allRestaurants } from "../../store/restaurants";
 import "./Landing.css";
 import dessertdash_logo from "../site-images/desssertdash-logo.jpg";
+import brownie from "../site-images/brownie.jpg";
+import donut from "../site-images/donut.jpg";
 // import TopRestaurants from "../TopRestaurants";
 
 const Landing = ({ restaurant, genre, authenticated }) => {
@@ -68,7 +70,7 @@ const Landing = ({ restaurant, genre, authenticated }) => {
                 Discover local, on-demand dessert delivery from restaurants,
                 nearby grocery and convenience stores, and more... yum!
               </div>
-              <img src="" alt="" />
+              <img src={donut} alt="" />
             </div>
           </div>
         </div>
