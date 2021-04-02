@@ -1,4 +1,4 @@
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -33,11 +33,11 @@ const SearchBar = () => {
     dispatch(allRestaurants());
   }, [dispatch]);
 
-//   const showAllResults = () => {
-//     while (input) {
-//       return showResults;
-//     }
-//   };
+  //   const showAllResults = () => {
+  //     while (input) {
+  //       return showResults;
+  //     }
+  //   };
 
   return (
     <div className="entire-search-container">
@@ -52,9 +52,17 @@ const SearchBar = () => {
         />
       </div>
       {showResults && (
-        <div className="search-bar-results">
+        <div className="search-bar-original-results">
           {showResults.map((result) => (
-            <div className="search-bar-results"> {result.name}</div>
+            <div className="search-bar-results">
+              {" "}
+              <a
+                className="search-bar-name-results"
+                href={`/restaurants/${result.id}`}
+              >
+                {result.name}
+              </a>
+            </div>
           ))}
         </div>
       )}

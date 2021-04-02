@@ -50,9 +50,39 @@ input {
   font-size: 18px;
   font-weight: 100;
   cursor: pointer;
-  background-color: rgb(255, 255, 255);
-  border-bottom: 1px solid rgb(214, 214, 214);
   text-decoration: none;
-  position: relative;
   margin-right: -15px;
+  border-radius: 0 0 0 0;
+  padding: 8px;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  border: 0.5px solid rgb(118, 118, 118);
+}
+
+.search-bar-name-results {
+  text-decoration: none;
+  color: black;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+}
+
+.search-bar-original-results {
+  height: 25px;
+  width: 260px;
+  color: black;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: -15px;
+  border-radius: 0 0 0 0;
+  padding: 8px;
+  background-color: transparent;
+  align-items: center;
+  /* border: 0.5px solid rgb(118, 118, 118); */
 }

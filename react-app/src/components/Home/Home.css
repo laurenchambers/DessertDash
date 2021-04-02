@@ -35,13 +35,6 @@
   color: black;
 }
 
-.landing-restaurants-container {
-  display: flex;
-  flex-direction: wrap;
-  overflow: hidden;
-  padding: 0px 12px;
-}
-
 .genres-name {
   font-family: "Maven Pro", sans-serif;
   margin-left: 25px;
@@ -50,7 +43,7 @@
 }
 
 .genres-image {
-  width: 55px;
+  width: 60px;
 }
 
 .genres-container {
@@ -63,14 +56,70 @@
   margin-top: 40px;
 }
 
-.landing-each-restaurant {
-  display: flex;
-  justify-items: flex;
-}
-
 .each-genre-name {
   font-family: "Maven Pro", sans-serif;
   display: block;
   justify-content: center;
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+}
+
+.landing-restaurants-container {
+  margin: 0px 16px 64px;
+  overflow: hidden;
+  padding: 0px 12px;
+  width: 400px;
+  height: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 200px;
+  margin-top: 40px;
+}
+
+.landing-each-restaurant {
+  display: flex;
+  /* justify-items: center; */
+  width: 650px;
+  height: 250px;
+  cursor: pointer;
+  box-shadow: rgb(0 0 0 / 10%) 0px 2px 16px;
+  border-radius: 4px;
+}
+
+.landing-rest-image {
+  height: 190px;
+  width: 190px;
+  object-fit: cover;
+  /* position: absolute; */
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.each-restaurant-name {
+  display: inline-block;
+  margin-top: 210px;
+  width: 200px;
+  position: absolute;
+  margin-left: -405px;
+  font-family: "Maven Pro", sans-serif;
+  text-decoration: none;
+  color: rgb(25, 25, 25);
+  font-weight: 700;
+  line-height: 20px;
+  font-size: 16px;
+}
+
+.each-restaurant-rating {
+  display: inline-block;
+  margin-top: 230px;
+  width: 200px;
+  position: absolute;
+  margin-left: -405px;
+  font-family: "Maven Pro", sans-serif;
+  text-decoration: none;
+  color: rgb(25, 25, 25);
+  font-weight: 700;
+  line-height: 20px;
   font-size: 16px;
 }
