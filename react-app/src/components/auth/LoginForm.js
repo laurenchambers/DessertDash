@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import { login } from "../../store/session";
+import "./Login.css";
+import NavBar from "../NavBar/NavBar";
 
 const LoginForm = ({ authenticated, setAuthenticated }) => {
   const dispatch = useDispatch();
@@ -19,6 +21,12 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     }
   };
 
+  const signInDemoUser = async (e) => {
+    e.preventDefault();
+    await dispatch(login("demo@desserts.com", "password"));
+    setAuthenticated(true);
+  };
+
   const updateEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -28,38 +36,63 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   };
 
   if (authenticated) {
-    return <Redirect to="/" />;
+    return <Redirect to="/home" />;
   }
 
   return (
-    <form onSubmit={onLogin}>
-      <div>
-        {errors.map((error) => (
-          <div>{error}</div>
-        ))}
-      </div>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input
-          name="email"
-          type="text"
-          placeholder="Email"
-          value={email}
-          onChange={updateEmail}
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type="submit">Login</button>
-      </div>
-    </form>
+    <div className="signin-form-container">
+      <NavBar />
+      <form className="signin-form" onSubmit={onLogin}>
+        <div className="signin-title">Sign In</div>
+        <div className="signup_link_text">
+          New to DessertDash?
+          <Link to="/signup" className="signup_page_link">
+            Sign up
+          </Link>
+        </div>
+        <div>
+          {errors.map((error) => (
+            <div>{error}</div>
+          ))}
+        </div>
+        <div className="login-email-text">Email</div>
+        <div>
+          <label htmlFor="email"></label>
+          <input
+            name="email"
+            type="text"
+            placeholder=""
+            value={email}
+            onChange={updateEmail}
+            className="form-email-input"
+          />
+        </div>
+        <div className="login-email-text">Password</div>
+        <div>
+          <label htmlFor="password"></label>
+          <input
+            name="password"
+            type="password"
+            placeholder=""
+            value={password}
+            onChange={updatePassword}
+            className="form-email-input"
+          />
+          <div className='signin-button-space'>
+          <button className="login-button" type="submit">
+            Sign In
+          </button>
+          </div>
+          <button
+            type="button"
+            className="login-button"
+            onClick={signInDemoUser}
+          >
+            Sign In as Demo
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 
