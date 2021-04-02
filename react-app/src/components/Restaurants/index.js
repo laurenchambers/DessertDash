@@ -7,7 +7,7 @@ import Restaurant from "../Restaurant";
 const ShowRestaurant = () => {
   const dispatch = useDispatch();
   const restaurantArray = useSelector(
-    (state) => state?.restaurants?.allRestaurants?.restaurants
+    (state) => state?.restaurants?.restaurants
   );
 
   const itemsArray = useSelector((state) => state?.items?.allItems?.items);

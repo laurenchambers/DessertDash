@@ -3,14 +3,10 @@ import PlacesAutocomplete from "react-places-autocomplete";
 import "./AddressSearch.css";
 import pinicon from "../site-images/pin-icon.jpeg";
 
-import PlacesComponent, {
-  geocodeByAddress,
-  getLatLng,
-} from "react-places-autocomplete";
+import PlacesComponent, { geocodeByAddress } from "react-places-autocomplete";
 
 const AddressSearch = () => {
   const [address, setAddress] = useState("");
-  //   const [coordinates, setCoordinates] = useState({ lat: null, lng: null });
 
   const [showAddress, setShowAddress] = useState(false);
 
@@ -36,9 +32,7 @@ const AddressSearch = () => {
 
   const handleSelect = async (value) => {
     const results = await geocodeByAddress(value);
-    // const latlng = await getLatLng(results[0]);
     setAddress(value);
-    // setCoordinates(latlng);
   };
 
   return (

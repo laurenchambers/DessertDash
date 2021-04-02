@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap");
+
+.entire-search-container {
+    position: relative;
+    margin-top: 35px;
+    z-index: 1;
+  }
+
+
+.search-container {
+  background-color: rgb(247, 247, 247);
+  outline: none;
+  width: 250px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  /* margin-top: 20px; */
+  /* box-shadow: rgb(25 25 25) 0px 0px 0px 2px; */
+}
+
+.search-input {
+  background-color: rgb(247, 247, 247);
+  outline: none;
+  font-family: "Maven Pro", sans-serif;
+  width: 250px;
+  height: 40px;
+  border-radius: 20px;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  /* margin-left: 5px; */
+}
+
+input {
+  outline: none;
+}
+
+.search-container img {
+  height: 20px;
+  margin-top: 11px;
+  padding-left: 10px;
+}
+
+.search-bar-results {
+  height: 40px;
+  width: 320px;
+  color: black;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(214, 214, 214);
+  text-decoration: none;
+  position: relative;
+  /* padding-top: 48px; */
+}
+
