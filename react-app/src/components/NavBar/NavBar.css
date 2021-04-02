@@ -1,14 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap");
 
-.navbar-navgation {
-  /* position: sticky; */
+.navbar-container {
+  position: fixed;
   width: 100%;
-  height: 48px;
+  top: 0px;
+}
+
+.navbar-navgation {
+  height: 49px;
   top: 0px;
   left: 0px;
+  right: 0px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-around; */
   background-color: rgb(255, 255, 255);
   border-bottom: 1px solid rgb(214, 214, 214);
 }
@@ -24,6 +29,7 @@
   font-family: "Maven Pro", sans-serif;
   font-weight: bold;
   color: red;
+  padding-right: 250px;
 }
 
 .navbar-image {
@@ -33,10 +39,12 @@
 
 .navbar-toggle-menu {
   height: 27px;
+  padding-right: 50px;
 }
 
 .navbar-address {
   display: inline-flex;
+  padding-right: 450px;
 }
 
 .navbar-preset-address {
@@ -52,4 +60,8 @@
   color: black;
   padding-left: 4px;
   padding-right: 4px;
+}
+
+.narbar-search-container {
+  padding-right: 5px;
 }
