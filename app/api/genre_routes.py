@@ -9,3 +9,9 @@ genre_routes = Blueprint('genres', __name__)
 def genres():
     genres = Genre.query.all()
     return {"genres": [genre.to_dict() for genre in genres]}
+
+
+@genre_routes.route('/<int:id>/')
+def individualGenree(id):
+    genre = Genre.query.get(id)
+    return {"currentGenre": genre.to_all_dict()}

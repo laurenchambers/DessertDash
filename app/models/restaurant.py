@@ -39,3 +39,21 @@ class Restaurant(db.Model):
             "genres": [genre.to_dict() for genre in self.genres],
             "items": [item.to_dict() for item in self.items],
         }
+
+    def to_simple_dict(self):
+        return {
+                "id": self.id,
+                "name": self.name,
+                "description": self.description,
+                "address": self.address,
+                "city": self.city,
+                "state": self.state,
+                "zip_code": self.zip_code,
+                "latitude": self.latitude,
+                "longitude": self.longitude,
+                "hours": self.hours,
+                "price": self.price,
+                "rating": self.rating,
+                "logo_src": self.logo_src,
+                "items": [item.to_dict() for item in self.items],
+        }

@@ -9,3 +9,8 @@ restaurant_routes = Blueprint('restaurants', __name__)
 def restaurants():
     restaurants = Restaurant.query.all()
     return {"restaurants": [restaurant.to_dict() for restaurant in restaurants]}
+
+@restaurant_routes.route('/<int:id>/')
+def individualRestaurant(id):
+    restaurant = Restaurant.query.get(id)
+    return {"currentRestaurant" : restaurant.to_dict()}
