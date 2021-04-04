@@ -16,3 +16,10 @@ class Genre(db.Model):
             "name": self.name,
             "img_src": self.img_src
         }
+
+    def to_all_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "restaurants": [restaurant.to_simple_dict() for restaurant in self.restaurants],
+        }

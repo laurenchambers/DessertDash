@@ -10,6 +10,8 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import ShowRestaurant from "./components/Restaurants";
 import Landing from "./components/Landing";
 import HomePage from "./components/Home";
+import RestaurantDetail from "./components/IndividualRestaurant";
+import GenreDetail from "./components/IndividualGenre";
 
 function App() {
   const dispatch = useDispatch();
@@ -63,6 +65,16 @@ function App() {
         <ProtectedRoute path="/home" exact={true} authenticated={authenticated}>
           <HomePage authenticated={authenticated} />
         </ProtectedRoute>
+        <Route
+          path="/restaurants/:id"
+          exact={true}
+          authenticated={authenticated}
+        >
+          <RestaurantDetail />
+        </Route>
+        <Route path="/genres/:id" exact={true} authenticated={authenticated}>
+          <GenreDetail />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
