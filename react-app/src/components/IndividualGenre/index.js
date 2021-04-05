@@ -5,6 +5,7 @@ import { getOneGenre } from "../../store/genres";
 import "./IndividualGenre.css";
 import Genre from "../Genres";
 import GenrePage from "./GenrePage";
+import RestaurantTwoImages from "../Restaurant/";
 
 const GenreDetail = () => {
   const params = useParams();
@@ -12,7 +13,7 @@ const GenreDetail = () => {
   const genre = useSelector((state) => {
     return state?.genres?.currentGenre;
   });
-  const restaurant = useSelector((state) => {
+  const restaurantArray = useSelector((state) => {
     return state?.genres?.currentGenre?.restaurants;
   });
 
@@ -20,10 +21,30 @@ const GenreDetail = () => {
     dispatch(getOneGenre(params.id));
   }, [params]);
   return (
-    <div>
-      <h1>GENRE PAGE</h1>
-      replace this below with individual genre component
-      <GenrePage genre={genre} />
+    <div className="genre-page-container">
+      <div className="genre-twoboxes-container">
+        <div className="genre-box-left">
+          <GenrePage genre={genre} />
+        </div>
+        <div className="genre-side-container">
+          <div className="genre-side-images">
+            {restaurantArray?.map((restaurant) => (
+              <>
+                <img
+                  className="genre-image-one"
+                  src={restaurant?.items[1]?.image_src}
+                  alt=""
+                />
+                <img
+                  className="genre-image-two"
+                  src={restaurant?.items[2]?.image_src}
+                  alt=""
+                />
+              </>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
