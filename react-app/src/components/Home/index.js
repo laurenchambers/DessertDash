@@ -4,7 +4,7 @@ import { getAllGenres } from "../../store/genres";
 import { Link } from "react-router-dom";
 import { allRestaurants } from "../../store/restaurants";
 import "./Home.css";
-import TopRestaurants from "../TopRestaurants";
+// import TopRestaurants from "../TopRestaurants";
 import "./Home.css";
 
 const HomePage = ({ restaurant, genre }) => {
@@ -30,7 +30,7 @@ const HomePage = ({ restaurant, genre }) => {
           {genresArray?.map((genre) => (
             <div className="genres-name">
               <Link to={`/genres/${genre.id}`}>
-              <img className="genres-image" src={genre.img_src} />
+              <img className="genres-image" src={genre.img_src} alt=""/>
               </Link>
               <Link to={`/genres/${genre.id}`} className="each-genre-name">
                 {genre.name}
@@ -52,11 +52,13 @@ const HomePage = ({ restaurant, genre }) => {
                     onClick={`/restaurants/${restaurant.id}`}
                     className="landing-rest-image"
                     src={restaurant?.items[0]?.image_src}
+                    alt=""
                   />
                   <img
                     onClick={`/restaurants/${restaurant.id}`}
                     className="landing-rest-image"
                     src={restaurant?.items[1]?.image_src}
+                    alt=""
                   />
                 </Link>
                 <Link

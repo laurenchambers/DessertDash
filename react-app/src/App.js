@@ -7,7 +7,7 @@ import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 // import User from "./components/User";
-import ShowRestaurant from "./components/Restaurants";
+// import ShowRestaurant from "./components/Restaurants";
 import Landing from "./components/Landing";
 import HomePage from "./components/Home";
 import RestaurantDetail from "./components/IndividualRestaurant";
