@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap");
+
+.genre-page-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.genre-twoboxes-container {
+  display: flex;
+  justify-content: center;
+  margin: 0px auto;
+  width: 960px;
+  flex-direction: row;
+}
+
+.genre-box-left {
+  flex: 33 1 0%;
+  z-index: 1;
+  position: sticky;
+  top: 48px;
+  padding: 12px;
+}
+.genre-side-container {
+  display: block;
+  flex: 66 1 0%;
+  overflow: hidden;
+  padding: 0px 12px;
+}
+.genre-side-images {
+  display: flex;
+}
+.each-genre-container {
+  font-family: "Maven Pro", sans-serif;
+  margin: 0px auto;
+  max-width: 960px;
+}
+
+.genre-image-one {
+  /* flex: 1 1 auto; */
+  position: relative;
+  margin: 24px 16px 4px;
+  width: 279px;
+  height: 140px;
+  object-fit: cover;
+}
+
+.genre-image-two {
+  /* flex: 1 1 auto; */
+  position: relative;
+  margin: 24px 16px 4px;
+  width: 279px;
+  height: 140px;
+  object-fit: cover;
+}
