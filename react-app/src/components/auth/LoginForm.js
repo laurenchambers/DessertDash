@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import { login } from "../../store/session";
 import "./Login.css";
-import NavBar from "../NavBar/NavBar";
 
 const LoginForm = ({ authenticated, setAuthenticated }) => {
   const dispatch = useDispatch();

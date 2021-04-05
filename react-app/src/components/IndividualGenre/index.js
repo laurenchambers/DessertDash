@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getOneGenre } from "../../store/genres";
 import "./IndividualGenre.css";
-import Genre from "../Genres";
+// import Genre from "../Genres";
 import GenrePage from "./GenrePage";
-import RestaurantTwoImages from "../Restaurant/";
+// import RestaurantTwoImages from "../Restaurant/";
 
 const GenreDetail = () => {
   const params = useParams();
@@ -19,7 +19,7 @@ const GenreDetail = () => {
 
   useEffect(() => {
     dispatch(getOneGenre(params.id));
-  }, [params]);
+  }, [dispatch, params]);
   return (
     <div className="genre-page-container">
       <div className="genre-twoboxes-container">

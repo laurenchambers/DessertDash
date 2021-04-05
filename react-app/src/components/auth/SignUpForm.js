@@ -6,7 +6,6 @@ import NavBar from "../NavBar/NavBar";
 
 const SignUpForm = ({ authenticated, setAuthenticated }) => {
   const dispatch = useDispatch();
-  const [username, setUsername] = useState("");
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,7 +17,7 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
     e.preventDefault();
     if (password === repeatPassword) {
       const user = await dispatch(
-        signUp(username, first_name, last_name, email, password)
+        signUp(first_name, last_name, email, password)
       );
       if (!user.errors) {
         setAuthenticated(true);

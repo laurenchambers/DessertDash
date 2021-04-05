@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getRestaurant } from "../../store/restaurant-detail";
 import "./IndividualRestaurant.css";
-import Restaurant from "../Restaurant";
+
 
 const RestaurantDetail = () => {
   const params = useParams();
@@ -16,7 +16,7 @@ const RestaurantDetail = () => {
 
   useEffect(() => {
     dispatch(getRestaurant(params.id));
-  }, [dispatch]);
+  }, [params, dispatch]);
 
   return (
     <div className="store-info-container">
@@ -54,6 +54,7 @@ const RestaurantDetail = () => {
                 <img
                   className="restaurant-menu-item-img"
                   src={item.image_src}
+                  alt=""
                 />
               </span>
             </>

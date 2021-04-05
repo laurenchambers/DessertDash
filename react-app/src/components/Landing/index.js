@@ -1,23 +1,20 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Redirect, useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllGenres } from "../../store/genres";
-import { allRestaurants } from "../../store/restaurants";
+// import { useDispatch, useSelector } from "react-redux";
 import "./Landing.css";
 import dessertdash_logo from "../site-images/desssertdash-logo.jpg";
 import brownie from "../site-images/brownie.jpg";
 import donut from "../site-images/donut.jpg";
-// import TopRestaurants from "../TopRestaurants";
 
 const Landing = ({ restaurant, genre, authenticated }) => {
-  const dispatch = useDispatch();
-  const genresArray = useSelector((state) => state?.genres?.allGenres?.genres);
+  // const dispatch = useDispatch();
+  // const genresArray = useSelector((state) => state?.genres?.allGenres?.genres);
   //   let eachGenre = genresArray?.map((genre) => {
   //     return genre.name;
   //   });
   //   console.log("each genre", eachGenre);
   //   console.log("genres array", genresArray);
-  const restaurants = useSelector((state) => state?.restaurants?.restaurants);
+  // const restaurants = useSelector((state) => state?.restaurants?.restaurants);
   const history = useHistory();
   if (authenticated) {
     return <Redirect to="/home" />;
