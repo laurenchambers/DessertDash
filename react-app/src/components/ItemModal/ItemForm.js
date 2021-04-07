@@ -5,7 +5,7 @@ import { updateItem } from "../../store/items";
 import greyx from "../site-images/grey-x.png";
 import "./ItemForm.css";
 
-const ItemForm = ({ item, setShowModal }) => {
+const ItemForm = ({ item, setShowModal, id }) => {
   const user = useSelector((state) => state.session.user);
   //   const restaurant = useSelector((state) => state.restaurant.currentRestaurant);
 
@@ -27,36 +27,33 @@ const ItemForm = ({ item, setShowModal }) => {
     dispatch(updateItem(submission));
   };
 
-  return (
-    <div className="item-form-container">
-      <div className="item-form-title">
-        <p>{item.name}</p>
-        <div>
-          <img
-            className="form-close-img"
-            onClick={() => setShowModal(false)}
-            src={greyx}
-            alt=""
-          />
+  if (id === item.id) {
+    return (
+      <div className="item-form-container">
+        <div className="item-form-title">
+          <p>{item.name}</p>
+          <div onClick={() => setShowModal(false)}>
+            <img className="form-close-img" src={greyx} alt="" />
+          </div>
         </div>
-      </div>
-      <div className="item-form-description-container">
-        <div className="item-form-description-box">{item.description}</div>
-        <div className="item-form-picture-container">
-          <div className="item-form-picture">
-            <img className="item-form-picture" src={item.image_src} alt="" />
+        <div className="item-form-description-container">
+          <div className="item-form-description-box">{item.description}</div>
+          <div className="item-form-picture-container">
+            <div className="item-form-picture">
+              <img className="item-form-picture" src={item.image_src} alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="item-form-button-container">
+          <div className="item-form-button">
+            <button className="item-form-button" onClick={handleSubmit}>
+              Add to cart ${item.price}
+            </button>
           </div>
         </div>
       </div>
-      <div className="item-form-button-container">
-        <div className="item-form-button">
-          <button className="item-form-button" onClick={handleSubmit}>
-            Add to cart ${item.price}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default ItemForm;

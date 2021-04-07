@@ -44,19 +44,22 @@ const RestaurantDetail = () => {
         <div className="delivery-header-info">DEVLIERY INFO</div>
       </header>
       <div className="menu-container">
-        <div
-          onClick={() => setShowModal(true)}
-          className="restaurant-menu-items"
-        >
+        <div className="restaurant-menu-items">
           {restaurantItems?.map((item) => (
             <>
               <span>
-                <h1>{item.name}</h1>
+                <h1 onClick={() => setShowModal(true)}>{item.name}</h1>
                 <h2>{item.description}</h2>
                 <p>${item.price}</p>
+                {item.id === params.id}
                 {showModal && (
                   <Modal onClose={() => setShowModal(false)}>
-                    <ItemForm item={item} setShowModal={setShowModal} />
+                    <ItemForm
+                      key={item.id}
+                      id={item.id}
+                      item={item}
+                      setShowModal={setShowModal}
+                    />
                   </Modal>
                 )}
                 <img
