@@ -18,6 +18,19 @@ export const getAllItems = () => async (dispatch) => {
   }
 };
 
+export const updateItem = (cart) => async (dispatch) => {
+  const { user_id, item_id, quantity } = cart;
+  await fetch("/api/restaurants/add-item/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      user_id,
+      item_id,
+      quantity,
+    }),
+  });
+};
+
 let initialState = {};
 const itemsReducer = (state = initialState, action) => {
   let newState;

@@ -1,0 +1,33 @@
+.item-form-title {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  color: grey;
+  width: 570px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.form-close-img {
+  width: 20px;
+}
+
+.item-form-description-box {
+  width: 570px;
+}
+
+.item-form-picture {
+  width: 50px;
+  height: 50px;
+}
+
+.item-form-picture {
+  width: 200px;
+  height: 200px;
+}
+
+.item-form-button {
+  color: red;
+}

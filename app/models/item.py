@@ -8,7 +8,6 @@ class Item(db.Model):
     name = db.Column(db.Text)
     description = db.Column(db.Text, nullable=False)
     price = db.Column(db.Integer, nullable=False)
-    quantity = db.Column(db.Integer)
     image_src = db.Column(db.Text)
 
     cart = db.relationship("Cart", back_populates="items")
@@ -21,6 +20,15 @@ class Item(db.Model):
             "name": self.name,
             "description": self.description,
             "price": self.price,
-            "quantity": self.quantity,
             "image_src": self.image_src,
         }
+
+    # def to_simple_dict(self):
+    #     return {
+    #         "id": self.id,
+    #         "restaurant_id": self.restaurant_id,
+    #         "name": self.name,
+    #         "description": self.description,
+    #         "price": self.price,
+    #         "cart": self.cart,
+    #     }

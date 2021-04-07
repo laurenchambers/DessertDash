@@ -1,6 +1,7 @@
-from flask import Blueprint, jsonify
-# from flask_login import login_required
-from app.models import Restaurant
+from flask import Blueprint, jsonify, session, request
+from flask_login import login_required
+from app.models import db, Item, Cart, Restaurant
+from app.forms import ItemForm
 
 restaurant_routes = Blueprint('restaurants', __name__)
 
@@ -14,3 +15,19 @@ def restaurants():
 def individualRestaurant(id):
     restaurant = Restaurant.query.get(id)
     return {"currentRestaurant" : restaurant.to_dict()}
+
+
+@restaurant_routes.route('/add-item/', methods=["POST"])
+@login_required
+def add_item():
+    form = ItemForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        new_cart = Cart(user_id=form.user_id.data,
+                          item_id=form.item_id.data,
+                          quantity=form.quantity.data)
+        db.session.add(new_cart)
+        db.session.commit()
+        return new_cart.to_dict()
+    else:
+        return {"errors": "invalid submission"}

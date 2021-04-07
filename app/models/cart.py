@@ -6,6 +6,7 @@ class Cart(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     item_id = db.Column(db.Integer, db.ForeignKey("items.id"), nullable=False)
+    quantity = db.Column(db.Integer)
 
     user = db.relationship("User", back_populates="carts")
     items = db.relationship("Item", back_populates="cart")
@@ -14,6 +15,7 @@ class Cart(db.Model):
         return {
             "id": self.id,
             "user_id": self.user_id,
-            "item_id": self.item_id
+            "item_id": self.item_id,
+            "quantity": self.quantity
         }
 

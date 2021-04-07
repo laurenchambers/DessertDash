@@ -1,18 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { Modal } from "../context/Modal";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getRestaurant } from "../../store/restaurant-detail";
 import "./IndividualRestaurant.css";
-
+import ItemForm from "../ItemModal/ItemForm";
 
 const RestaurantDetail = () => {
   const params = useParams();
   const dispatch = useDispatch();
+  const [showModal, setShowModal] = useState(false);
   const eachRestaurant = useSelector(
     (state) => state?.restaurant?.currentRestaurant
   );
   const restaurantItems = eachRestaurant?.items;
-  console.log("eac", restaurantItems);
 
   useEffect(() => {
     dispatch(getRestaurant(params.id));
@@ -43,14 +44,21 @@ const RestaurantDetail = () => {
         <div className="delivery-header-info">DEVLIERY INFO</div>
       </header>
       <div className="menu-container">
-
-        <div className="restaurant-menu-items">
+        <div
+          onClick={() => setShowModal(true)}
+          className="restaurant-menu-items"
+        >
           {restaurantItems?.map((item) => (
             <>
               <span>
                 <h1>{item.name}</h1>
                 <h2>{item.description}</h2>
                 <p>${item.price}</p>
+                {showModal && (
+                  <Modal onClose={() => setShowModal(false)}>
+                    <ItemForm item={item} setShowModal={setShowModal} />
+                  </Modal>
+                )}
                 <img
                   className="restaurant-menu-item-img"
                   src={item.image_src}
