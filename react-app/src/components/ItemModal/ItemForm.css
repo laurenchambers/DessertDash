@@ -1,0 +1,28 @@
+.item-form-title {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(29, 29, 29);
+  color: white;
+  width: 570px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.sip-form-title-close {
+  width: 10px;
+}
+
+.item-form-description-box {
+  width: 100px;
+}
+
+.item-form-picture {
+  width: 50px;
+  height: 50px;
+}
+
+.sip-form-title-close img {
+  width: 50px;
+}
