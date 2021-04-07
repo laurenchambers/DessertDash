@@ -31,24 +31,28 @@ const ItemForm = ({ item, setShowModal }) => {
     <div className="item-form-container">
       <div className="item-form-title">
         <p>{item.name}</p>
-        <div
-          onClick={() => setShowModal(false)}
-          className="sip-form-title-close"
-        >
-          <img src={greyx} alt="" />
+        <div>
+          <img
+            className="form-close-img"
+            onClick={() => setShowModal(false)}
+            src={greyx}
+            alt=""
+          />
         </div>
       </div>
       <div className="item-form-description-container">
         <div className="item-form-description-box">{item.description}</div>
         <div className="item-form-picture-container">
           <div className="item-form-picture">
-            <img src={item.image_src} alt="" />
+            <img className="item-form-picture" src={item.image_src} alt="" />
           </div>
         </div>
       </div>
       <div className="item-form-button-container">
         <div className="item-form-button">
-          <button onClick={handleSubmit}>Add to cart ${item.price}</button>
+          <button className="item-form-button" onClick={handleSubmit}>
+            Add to cart ${item.price}
+          </button>
         </div>
       </div>
     </div>

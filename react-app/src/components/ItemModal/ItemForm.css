@@ -1,8 +1,8 @@
 .item-form-title {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(29, 29, 29);
-  color: white;
+  background-color: white;
+  color: grey;
   width: 570px;
   font-size: 18px;
   font-weight: 500;
@@ -10,12 +10,12 @@
   text-align: left;
 }
 
-.sip-form-title-close {
-  width: 10px;
+.form-close-img {
+  width: 20px;
 }
 
 .item-form-description-box {
-  width: 100px;
+  width: 570px;
 }
 
 .item-form-picture {
@@ -23,6 +23,11 @@
   height: 50px;
 }
 
-.sip-form-title-close img {
-  width: 50px;
+.item-form-picture {
+  width: 200px;
+  height: 200px;
+}
+
+.item-form-button {
+  color: red;
 }

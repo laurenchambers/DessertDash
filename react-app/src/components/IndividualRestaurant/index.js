@@ -9,7 +9,7 @@ import ItemForm from "../ItemModal/ItemForm";
 const RestaurantDetail = () => {
   const params = useParams();
   const dispatch = useDispatch();
-  const [showModal, setShowModal] = useState();
+  const [showModal, setShowModal] = useState(false);
   const eachRestaurant = useSelector(
     (state) => state?.restaurant?.currentRestaurant
   );
@@ -44,14 +44,16 @@ const RestaurantDetail = () => {
         <div className="delivery-header-info">DEVLIERY INFO</div>
       </header>
       <div className="menu-container">
-        <div className="restaurant-menu-items">
+        <div
+          onClick={() => setShowModal(true)}
+          className="restaurant-menu-items"
+        >
           {restaurantItems?.map((item) => (
             <>
               <span>
-                <h1 onClick={() => setShowModal(true)}>{item.name}</h1>
+                <h1>{item.name}</h1>
                 <h2>{item.description}</h2>
                 <p>${item.price}</p>
-                {/* <button onClick={() => setShowModal(true)}>CLICK</button> */}
                 {showModal && (
                   <Modal onClose={() => setShowModal(false)}>
                     <ItemForm item={item} setShowModal={setShowModal} />
