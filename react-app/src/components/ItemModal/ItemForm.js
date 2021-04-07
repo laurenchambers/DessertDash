@@ -27,33 +27,34 @@ const ItemForm = ({ item, setShowModal, id }) => {
     dispatch(updateItem(submission));
   };
 
-  if (id === item.id) {
-    return (
-      <div className="item-form-container">
-        <div className="item-form-title">
-          <p>{item.name}</p>
-          <div onClick={() => setShowModal(false)}>
-            <img className="form-close-img" src={greyx} alt="" />
-          </div>
+  return (
+    <div className="item-form-container">
+      <div className="item-form-title">
+        <p>{item.name}</p>
+        <div onClick={() => setShowModal(false)}>
+          <img className="form-close-img" src={greyx} alt="" />
         </div>
-        <div className="item-form-description-container">
-          <div className="item-form-description-box">{item.description}</div>
-          <div className="item-form-picture-container">
-            <div className="item-form-picture">
-              <img className="item-form-picture" src={item.image_src} alt="" />
-            </div>
-          </div>
-        </div>
-        <div className="item-form-button-container">
-          <div className="item-form-button">
-            <button className="item-form-button" onClick={handleSubmit}>
-              Add to cart ${item.price}
-            </button>
+      </div>
+      <div className="item-form-description-container">
+        <div className="item-form-description-box">{item.description}</div>
+        <div className="item-form-picture-container">
+          <div className="item-form-picture">
+            <img className="item-form-picture" src={item.image_src} alt="" />
           </div>
         </div>
       </div>
-    );
-  }
+      <div className="item-form-button-container">
+        <div className="item-form-button">
+          <button
+            className="item-form-button"
+            onClick={() => handleSubmit() && setShowModal(false)}
+          >
+            Add to cart ${item.price}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ItemForm;
