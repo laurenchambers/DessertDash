@@ -2,15 +2,26 @@
 
 .landing-page-container {
   display: flex;
-  /* width: 960px; */
   flex-direction: row;
   margin: 0px 16px 64px;
-  padding: 0px;
   justify-content: center;
   padding: 20px;
   background-color: rgb(247, 247, 247);
 }
-
+.footer-container {
+  background-color: rgb(247, 247, 247);
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+  margin: 0 16px 0px 16px;
+}
+svg {
+  height: 40px;
+  width: 40px;
+  padding-right: 20px;
+  fill: black;
+}
 .landing-genres-container {
   margin: 0;
   padding: 0;
@@ -74,7 +85,7 @@
   overflow: hidden;
   padding: 0px 12px 0 0;
   width: 650px;
-  height: 10000px;
+  height: auto;
   display: block;
   flex-wrap: wrap;
   /* margin-right: 200px; */
@@ -146,7 +157,7 @@
 }
 
 .landing-restaurants-list {
-  height: 5000px;
+  height: auto;
   display: block;
   width: 650px;
 }

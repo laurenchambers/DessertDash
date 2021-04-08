@@ -5,6 +5,7 @@ import "./Landing.css";
 import dessertdash_logo from "../site-images/desssertdash-logo.jpg";
 import brownie from "../site-images/brownie.jpg";
 import donut from "../site-images/donut.jpg";
+import Footer from '../Footer'
 
 const Landing = ({ restaurant, genre, authenticated }) => {
   // const dispatch = useDispatch();
@@ -85,7 +86,10 @@ const Landing = ({ restaurant, genre, authenticated }) => {
           </div>
         </div>
       </div>
-      INSERT A FOOTER
+      <div>{<br></br>}</div>
+      <div className="footer-container">
+        <Footer />
+      </div>
     </>
   );
 };
