@@ -105,17 +105,18 @@
   padding: 0px 16px 16px;
 }
 
+.restaurant-menu-item-img {
+  position: relative;
+  height: 142px;
+  width: 142px;
+  object-fit: cover;
+}
+
 .restaurant-menu-items {
   display: grid;
   grid-template-columns: repeat(2, calc(50% - 8px));
   gap: 16px;
 }
-.restaurant-menu-item-img {
-  position: relative;
-  height: 142px;
-  width: 142px;
-}
-
 .restaurant-menu-items span {
   /* display: block; */
   border: 1px solid rgb(231, 231, 231);
@@ -138,7 +139,55 @@
   cursor: pointer;
 }
 
-.restaurant-menu-items p {
-  display: inline-block;
-  /* width: 450px; */
+.restaurant-menu-items-container {
+  display: block;
+  padding-left: 15px;
+  padding-top: 15px;
+  width: 350px;
+}
+
+.restaurant-menu-items-name {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Maven Pro", sans-serif;
+  line-height: 22px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.restaurant-menu-items-description {
+  padding-top: 8px;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0ch;
+  color: rgb(118, 118, 118);
+  font-variant-ligatures: no-common-ligatures;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  max-height: 45px;
+}
+
+.restaurant-menu-items-price {
+  padding-top: 8px;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(73, 73, 73);
+  display: block;
 }

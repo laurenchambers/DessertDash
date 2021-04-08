@@ -47,7 +47,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
   } else {
     return (
       <div>
-        <div className="navbar-unath-container">
+        {/* <div className="navbar-unath-container">
           <nav className="navbar-navgation">
             <img
               className="navbar-unauth-image"
@@ -56,7 +56,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
             />
             DESSERTDASH
           </nav>
-        </div>
+        </div> */}
       </div>
     );
   }

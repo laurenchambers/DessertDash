@@ -52,9 +52,11 @@ const RestaurantDetail = () => {
             {restaurantItems?.map((item) => (
               <>
                 <span>
-                  <h1 onClick={() => setShowModal(item.id)}>{item.name}</h1>
-                  <h2>{item.description}</h2>
-                  <p>${item.price}</p>
+                  <div className="restaurant-menu-items-container">
+                    <div className="restaurant-menu-items-name" onClick={() => setShowModal(item.id)}>{item.name}</div>
+                    <div className="restaurant-menu-items-description">{item.description}</div>
+                    <div className="restaurant-menu-items-price">${item.price}.00</div>
+                  </div>
                   {item.id === showModal && (
                     <Modal onClose={() => setShowModal(null)}>
                       <ItemForm

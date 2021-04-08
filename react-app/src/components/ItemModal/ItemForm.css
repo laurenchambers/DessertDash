@@ -83,6 +83,7 @@
   padding: 0px;
   align-items: center;
   justify-content: center;
+  object-fit: cover;
 }
 
 .item-form-description-box {
@@ -94,6 +95,7 @@
   width: 250px;
   height: 250px;
   margin: 0px auto;
+  object-fit: cover;
 }
 
 /* button area stuff */
@@ -109,6 +111,7 @@
 .item-form-button-container {
   display: block;
   width: 100%;
+  padding-bottom: 15px;
 }
 
 .item-form-current-quantity {
