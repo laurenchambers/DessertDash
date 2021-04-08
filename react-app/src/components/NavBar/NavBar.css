@@ -4,6 +4,9 @@
   position: fixed;
   width: 100%;
   top: 0px;
+  display: flex;
+  z-index: 100;
+  background-color: rgb(255, 255, 255);
 }
 
 .navbar-navgation {
@@ -95,4 +98,9 @@
   font-family: "Maven Pro", sans-serif;
   font-weight: bold;
   color: red;
+}
+
+.navbar-cart-container {
+
+  margin-right: 50px;
 }

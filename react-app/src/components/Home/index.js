@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { allRestaurants } from "../../store/restaurants";
 import "./Home.css";
 import Footer from "../Footer";
+
 // import TopRestaurants from "../TopRestaurants";
 import "./Home.css";
 
@@ -67,12 +68,12 @@ const HomePage = ({ restaurant, genre }) => {
                     className="restaurant-info"
                     to={`/restaurants/${restaurant.id}`}
                   >
-                    <span className="each-restaurant-name">
+                    <div className="each-restaurant-name">
                       {restaurant.name}
-                    </span>
-                    <span className="each-restaurant-rating">
+                    </div>
+                    {/* <span className="each-restaurant-rating">
                       {restaurant.rating}
-                    </span>
+                    </span> */}
                   </Link>
                 </div>
               ))}

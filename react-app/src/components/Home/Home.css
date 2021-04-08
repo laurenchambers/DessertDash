@@ -2,6 +2,7 @@
 
 .landing-page-container {
   display: flex;
+  
   flex-direction: row;
   margin: 0px 16px 64px;
   justify-content: center;
@@ -98,7 +99,9 @@ svg {
 .restaurant-info {
   display: inline-block;
   position: relative;
-  padding: 10px;
+  padding: 0px;
+  padding-left: 20px;
+  text-decoration: none;
 }
 
 .landing-each-restaurant {
@@ -128,18 +131,21 @@ svg {
 }
 
 .each-restaurant-name {
-  /* display: inline-block; */
-  /* margin-top: 210px; */
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
   width: 200px;
   position: relative;
-  /* margin-left: -405px; */
   font-family: "Maven Pro", sans-serif;
   text-decoration: none;
-  color: rgb(25, 25, 25);
-  font-weight: 700;
-  line-height: 20px;
-  font-size: 16px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.each-restaurant-name a {
+  text-decoration: none;
 }
 
 .each-restaurant-rating {

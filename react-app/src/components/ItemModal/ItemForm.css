@@ -1,17 +1,89 @@
-.item-form-title {
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap");
+
+.item-form-container {
+  position: relative;
+  background: rgb(255, 255, 255);
+  box-shadow: rgb(0 0 0 / 20%) 0px 8px 24px;
+  min-height: 0px;
+  height: 600px;
+  max-width: 768px;
+  width: calc(100vw - 32px);
+  border-radius: 16px;
   display: flex;
-  justify-content: space-between;
-  background-color: white;
-  color: grey;
-  width: 570px;
-  font-size: 18px;
+  flex-direction: column;
+  overflow: hidden;
+  bottom: 0px;
+}
+
+.item-form-title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* padding: 8px; */
+  font-family: "Maven Pro", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.04ch;
+  color: rgb(25, 25, 25);
+  margin-top: 16px;
+  margin-left: 16px;
+  padding: 0px;
+  /* display: block; */
+}
+
+.item-form-price {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  font-family: "Maven Pro", sans-serif;
+  letter-spacing: 0ch;
+  color: rgb(25, 25, 25);
+  margin-left: 16px;
+  padding: 10px 0 0 0;
+  display: flex;
+}
+
+.item-form-description {
+  margin-top: 8px;
+  font-size: 16px;
+  font-family: "Maven Pro", sans-serif;
   font-weight: 500;
-  letter-spacing: 1px;
+  line-height: 22px;
+  letter-spacing: 0ch;
+  color: rgb(118, 118, 118);
   text-align: left;
+  margin-left: 16px;
+  padding: 0px;
+  display: block;
+}
+
+.item-form-x-button {
+  background: transparent;
+  outline: none;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
 }
 
 .form-close-img {
+  position: relative;
+  max-width: 100%;
+  margin: 0px;
+  display: inline-flex;
+  /* border-radius: 100%; */
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  height: 20px;
   width: 20px;
+  padding: 0px;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
 }
 
 .item-form-description-box {
@@ -19,15 +91,93 @@
 }
 
 .item-form-picture {
-  width: 50px;
-  height: 50px;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0px auto;
+  object-fit: cover;
 }
 
-.item-form-picture {
-  width: 200px;
-  height: 200px;
-}
+/* button area stuff */
 
 .item-form-button {
   color: red;
+  display: flex;
+  margin-top: 110px;
+  justify-content: flex-end;
+  margin-right: 30px;
+}
+
+.item-form-button-container {
+  display: block;
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+.item-form-current-quantity {
+  width: 64px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: rgb(247, 247, 247);
+  font-size: 16px;
+  font-family: "Maven Pro", sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+  color: rgb(25, 25, 25);
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 8px;
+  z-index: 1;
+  padding: 0;
+  border: none;
+}
+
+.form-minus {
+  width: 30px;
+  padding-right: 15px;
+}
+
+.form-plus {
+  width: 30px;
+  color: grey;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.form-add-minus-button {
+  background: transparent;
+  outline: none;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.item-form-button-add {
+  position: relative;
+  max-width: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  min-height: 40px;
+  width: 150px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1000px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  text-align: center;
+  background-color: rgb(235, 23, 0);
+  font-size: 16px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(255, 255, 255);
+  margin: 0px;
+  padding: 0px;
 }

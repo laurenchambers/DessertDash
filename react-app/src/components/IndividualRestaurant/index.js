@@ -10,7 +10,7 @@ import Footer from "../Footer";
 const RestaurantDetail = () => {
   const params = useParams();
   const dispatch = useDispatch();
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(null);
   const eachRestaurant = useSelector(
     (state) => state?.restaurant?.currentRestaurant
   );
@@ -52,11 +52,13 @@ const RestaurantDetail = () => {
             {restaurantItems?.map((item) => (
               <>
                 <span>
-                  <h1 onClick={() => setShowModal(true)}>{item.name}</h1>
-                  <h2>{item.description}</h2>
-                  <p>${item.price}</p>
-                  {showModal && (
-                    <Modal onClose={() => setShowModal(false)}>
+                  <div className="restaurant-menu-items-container">
+                    <div className="restaurant-menu-items-name" onClick={() => setShowModal(item.id)}>{item.name}</div>
+                    <div className="restaurant-menu-items-description">{item.description}</div>
+                    <div className="restaurant-menu-items-price">${item.price}.00</div>
+                  </div>
+                  {item.id === showModal && (
+                    <Modal onClose={() => setShowModal(null)}>
                       <ItemForm
                         key={item.id}
                         item={item}
