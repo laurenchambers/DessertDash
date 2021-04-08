@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router";
+// import { useHistory } from "react-router";
 import { updateItem } from "../../store/items";
 import greyx from "../site-images/grey-x.png";
 import "./ItemForm.css";
@@ -10,7 +10,7 @@ const ItemForm = ({ item, setShowModal, id }) => {
   //   const restaurant = useSelector((state) => state.restaurant.currentRestaurant);
 
   const dispatch = useDispatch();
-  const history = useHistory();
+  //   const history = useHistory();
   const [quantity, setQuantity] = useState(1);
 
   const addOne = () => {
@@ -33,8 +33,8 @@ const ItemForm = ({ item, setShowModal, id }) => {
     setQuantity(1);
   };
   useEffect(() => {
-    setQuantity();
-  }, [setQuantity]);
+    setQuantity(quantity);
+  }, [quantity]);
 
   const price = parseFloat(item.price) * parseFloat(quantity);
 
@@ -56,13 +56,15 @@ const ItemForm = ({ item, setShowModal, id }) => {
       </div>
       <div className="item-form-button-container">
         <div className="item-form-button">
-          <button onClick={subtractOne}>minus</button>
+          <button onClick={subtractOne} disabled={quantity === 1}>
+            minus
+          </button>
           <button onClick={addOne}>add</button>
           <button
             className="item-form-button"
             onClick={() => handleSubmit() && setShowModal(false)}
           >
-            {console.log("q", quantity)}
+            {/* {console.log("q", quantity)} */}
             Add to cart ${price}
           </button>
         </div>

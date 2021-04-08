@@ -7,7 +7,7 @@ class Item(db.Model):
     restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurants.id"), nullable=False)
     name = db.Column(db.Text)
     description = db.Column(db.Text, nullable=False)
-    price = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.Float, nullable=False)
     image_src = db.Column(db.Text)
 
     cart = db.relationship("Cart", back_populates="items")
