@@ -67,12 +67,12 @@ const HomePage = ({ restaurant, genre }) => {
                     className="restaurant-info"
                     to={`/restaurants/${restaurant.id}`}
                   >
-                    <span className="each-restaurant-name">
+                    <div className="each-restaurant-name">
                       {restaurant.name}
-                    </span>
-                    <span className="each-restaurant-rating">
+                    </div>
+                    {/* <span className="each-restaurant-rating">
                       {restaurant.rating}
-                    </span>
+                    </span> */}
                   </Link>
                 </div>
               ))}
