@@ -59,7 +59,6 @@ const RestaurantDetail = () => {
                     <Modal onClose={() => setShowModal(false)}>
                       <ItemForm
                         key={item.id}
-                        id={item.id}
                         item={item}
                         setShowModal={setShowModal}
                       />

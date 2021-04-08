@@ -75,7 +75,11 @@ const AddressSearch = () => {
                       width: "320px",
                     };
                     return (
-                      <div {...getSuggestionItemProps(suggestion, { style })}>
+                      <div
+                        onChange={setAddress}
+                        onSelect={handleSelect}
+                        {...getSuggestionItemProps(suggestion, { style })}
+                      >
                         {suggestion.description}
                       </div>
                     );
