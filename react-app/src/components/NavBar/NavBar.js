@@ -5,6 +5,7 @@ import dessertdash_logo from "../site-images/desssertdash-logo.jpg";
 import MeunBar from "./MenuBar";
 import AddressSearch from "./AddressSearch";
 import SearchBar from "./SearchBar";
+import Cart from "./CartMenu";
 
 const NavBar = ({ authenticated, setAuthenticated }) => {
   if (authenticated) {
@@ -38,7 +39,11 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
             <div className="narbar-search-container">
               <SearchBar />
             </div>
-            <div className="navbar-cart-container">CART</div>
+            <div>
+              <div className="navbar-cart-container">
+                <Cart />
+              </div>
+            </div>
           </nav>
         </div>
         {/* div below goes with navbar container */}

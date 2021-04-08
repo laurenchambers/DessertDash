@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { allRestaurants } from "../../store/restaurants";
 import "./Home.css";
 import Footer from "../Footer";
+
 // import TopRestaurants from "../TopRestaurants";
 import "./Home.css";
 

@@ -1,0 +1,10 @@
+.cart-container {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.cart-image {
+  height: 27px;
+  color: red;
+}
