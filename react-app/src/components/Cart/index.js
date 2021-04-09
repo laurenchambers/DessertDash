@@ -3,24 +3,25 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCarts } from "../../store/cart";
 
-const TheCart = () => {
+const TheCart = ({ items }) => {
   const dispatch = useDispatch();
 
-  const cart = useSelector((state) => state.carts.cart);
+  const cartsArray = useSelector((state) => state.carts.cart);
   const user = useSelector((state) => state.session.user);
 
   useEffect(() => {
     dispatch(getAllCarts());
   }, [dispatch]);
-  if (cart?.user_id === user.id) {
-    return (
-      <>
-        <div>{cart.item}</div>
-      </>
-    );
-  } else {
-    return <></>;
-  }
+
+  const cartUserId = cartsArray?.map((cart) => cart.user_id);
+
+  console.log("i", cartUserId);
+
+  return (
+    <>
+      <div>hi</div>
+    </>
+  );
 };
 
 export default TheCart;

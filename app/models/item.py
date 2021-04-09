@@ -23,12 +23,26 @@ class Item(db.Model):
             "image_src": self.image_src,
         }
 
+    def get_item(self):
+        return {
+            self.name,
+        }
+
+
     # def to_simple_dict(self):
+    #     items = []
+
+    #     for cart in self.cart:
+    #         items.append(cart.get_item())
+
+    #     if len(items) == 1:
+    #         totalItems = items[0]
+    #     else:
+    #         totalItems = items
+
     #     return {
     #         "id": self.id,
-    #         "restaurant_id": self.restaurant_id,
     #         "name": self.name,
-    #         "description": self.description,
     #         "price": self.price,
-    #         "cart": self.cart,
+    #         "items": totalItems
     #     }

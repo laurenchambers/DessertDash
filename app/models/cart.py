@@ -15,7 +15,8 @@ class Cart(db.Model):
         return {
             "id": self.id,
             "user_id": self.user_id,
-            "item_id": self.item_id,
-            "quantity": self.quantity
+            "quantity": self.quantity,
+            "items": self.items
         }
+
 
