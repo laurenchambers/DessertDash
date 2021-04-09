@@ -22,64 +22,77 @@ const RestaurantDetail = () => {
 
   return (
     <>
-      <div className="store-info-container">
-        <header>
-          <div className="store-header-container">
-            <div className="store-header-information">
-              <div className="store-header-name">{eachRestaurant?.name}</div>
-              <div className="store-header-dashpass"></div>
-              <div className="store-header-hours">{eachRestaurant?.hours}</div>
-              <div className="store-header-genres">
-                {eachRestaurant?.genres?.map((genre) => (
-                  <span>{genre.name}</span>
-                ))}
-              </div>
-              <div className="rating-price-container">
-                <div className="store-header-rating">
-                  {eachRestaurant?.rating} ⭐️
+      <>
+        <div className="store-info-container">
+          <header>
+            <div className="store-header-container">
+              <div className="store-header-information">
+                <div className="store-header-name">{eachRestaurant?.name}</div>
+                <div className="store-header-dashpass"></div>
+                <div className="store-header-hours">
+                  {eachRestaurant?.hours}
                 </div>
-                <div className="bullet-point-between">•</div>
-                <div className="store-header-price">
-                  {eachRestaurant?.price}
+                <div className="store-header-genres">
+                  {eachRestaurant?.genres?.map((genre) => (
+                    <span>{genre.name}</span>
+                  ))}
+                </div>
+                <div className="rating-price-container">
+                  <div className="store-header-rating">
+                    {eachRestaurant?.rating} ⭐️
+                  </div>
+                  <div className="bullet-point-between">•</div>
+                  <div className="store-header-price">
+                    {eachRestaurant?.price}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="delivery-header-info">DEVLIERY INFO</div>
-        </header>
-        <div className="menu-container">
-          <div className="restaurant-menu-items">
-            {restaurantItems?.map((item) => (
-              <>
-                <span>
-                  <div className="restaurant-menu-items-container">
-                    <div className="restaurant-menu-items-name" onClick={() => setShowModal(item.id)}>{item.name}</div>
-                    <div className="restaurant-menu-items-description">{item.description}</div>
-                    <div className="restaurant-menu-items-price">${item.price}.00</div>
-                  </div>
-                  {item.id === showModal && (
-                    <Modal onClose={() => setShowModal(null)}>
-                      <ItemForm
-                        key={item.id}
-                        item={item}
-                        setShowModal={setShowModal}
-                      />
-                    </Modal>
-                  )}
-                  <img
-                    className="restaurant-menu-item-img"
-                    src={item.image_src}
-                    alt=""
-                  />
-                </span>
-              </>
-            ))}
+            <div className="delivery-header-info">DEVLIERY INFO</div>
+          </header>
+          <div className="menu-container">
+            <div className="restaurant-menu-items">
+              {restaurantItems?.map((item) => (
+                <>
+                  <span>
+                    <div className="restaurant-menu-items-container">
+                      <div
+                        className="restaurant-menu-items-name"
+                        onClick={() => setShowModal(item.id)}
+                      >
+                        {item.name}
+                      </div>
+                      <div className="restaurant-menu-items-description">
+                        {item.description}
+                      </div>
+                      <div className="restaurant-menu-items-price">
+                        ${item.price}.00
+                      </div>
+                    </div>
+                    {item.id === showModal && (
+                      <Modal onClose={() => setShowModal(null)}>
+                        <ItemForm
+                          key={item.id}
+                          item={item}
+                          setShowModal={setShowModal}
+                        />
+                      </Modal>
+                    )}
+                    <img
+                      className="restaurant-menu-item-img"
+                      src={item.image_src}
+                      alt=""
+                    />
+                  </span>
+                </>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="footer-container">
-        <Footer />
-      </div>
+        <div className="footer-container">
+          <Footer />
+        </div>
+      </>
     </>
   );
 };

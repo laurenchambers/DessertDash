@@ -11,6 +11,7 @@ from .api.auth_routes import auth_routes
 from .api.restaurant_routes import restaurant_routes
 from .api.item_routes import item_routes
 from .api.genre_routes import genre_routes
+from .api.cart_routes import cart_routes
 
 from .seeds import seed_commands
 
@@ -37,6 +38,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(restaurant_routes, url_prefix='/api/restaurants')
 app.register_blueprint(item_routes, url_prefix='/api/items')
 app.register_blueprint(genre_routes, url_prefix='/api/genres')
+app.register_blueprint(cart_routes, url_prefix='/api/carts')
 db.init_app(app)
 Migrate(app, db)
 

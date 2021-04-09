@@ -1,10 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap");
 .cart-container {
-  display: flex;
-  align-items: center;
-  vertical-align: middle;
+  /* display: flex;
+  justify-content: flex-start;
+  position: fixed;
+  margin-top: 0px;
+  margin-left: 0px;
+  width: 100px;
+  height: 500px; */
+  width: 400px;
+  height: 100vh;
+  overflow: auto;
+  position: relative;
+  margin-right: 0px;
+  padding-top: 10px;
+  padding-left: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(0 0 0 / 20%) 0px 8px 24px;
+}
+
+.cart-your-order {
+  font-size: 16px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
 }
 
 .cart-image {
   height: 27px;
-  color: red;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+.cart-image-container {
+  position: absolute;
+  margin-top: 0px;
+}
+
+.cart {
+  /* display: block;
+  align-items: center;
+  position: fixed; */
+  width: 380px;
+  margin-right: 0px;
+  height: 100vh;
+  overflow: auto;
+  position: relative;
+  padding-top: 56px;
+  background-color: rgb(255, 255, 255);
+}
+
+.cart-current-items {
+  display: block;
+}
+
+.menubar-x-container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 100%;
+  background: rgb(255, 255, 255);
+}
+
+.menubar-x {
+  position: relative;
+  max-width: 100%;
+  margin: 0px;
+  display: fixed;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  height: 20px;
+  width: 20px;
+  padding: 0px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* items conatiner stuff */
+
+.cart-items-container {
+  /* display: flex; */
+  max-width: 350px;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 20px;
+  padding: 16px;
+}
+
+.cart-current-item-quantity {
+  flex-shrink: 0;
+  align-self: flex-start;
+  grid-area: 2 / 1 / auto / auto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  font-family: "Maven Pro", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+/* .current-item-quantity-cart span {
+  font-size: 18px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0ch;
+  color: rgb(118, 118, 118);
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} */
+
+.cart-current-item-name {
+  flex-grow: 1;
+  overflow: hidden;
+  flex-basis: 100%;
+  max-width: 75%;
+  grid-area: 2 / 2 / auto / auto;
+}
+.curent-item-name-cart {
+  font-size: 18px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 700;
+  line-height: 24px;
+  max-height: 48px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
+  max-width: 75%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cart-current-item-remove {
+  grid-area: 3 / 2 / auto / auto;
+}
+.remove-button {
+  padding-top: 4px;
+  position: relative;
+  max-width: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: inline-flex;
+  width: auto;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 1000px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  text-align: center;
+  background-color: transparent;
+  color: rgb(235, 23, 0);
+}
+.cart-current-item-price {
+  flex-shrink: 0;
+  align-self: flex-start;
+  grid-area: 2 / 3 / auto / auto;
+}
+
+.current-item-price {
+  font-size: 18px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(118, 118, 118);
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cart-checkout {
+  position: relative;
+  max-width: 75%;
+  margin: 0px;
+  padding: 0 10px 0 10px;
+  display: flex;
+  min-height: 40px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1000px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  background-color: rgb(235, 23, 0);
+  box-shadow: transparent 0px 0px 0px 1px inset;
+}
+
+.cart-checkout-button {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(255, 255, 255);
+  font-family: "Maven Pro", sans-serif;
+  background-color: rgb(235, 23, 0);
+  outline: 0;
+  border: 0;
+  cursor: pointer;
 }

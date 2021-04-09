@@ -21,7 +21,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
             <div className="navbar-address">
               <div className="navbar-preset-address">ASAP </div>
               <div className="navbar-to-address">to</div>
-              <div className="navbar-preset-address">
+              <div className="navbar-preset-address-2">
                 <AddressSearch />
               </div>
             </div>
@@ -39,12 +39,10 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
             <div className="narbar-search-container">
               <SearchBar />
             </div>
-            <div>
+          </nav>
               <div className="navbar-cart-container">
                 <Cart />
               </div>
-            </div>
-          </nav>
         </div>
         {/* div below goes with navbar container */}
       </div>
