@@ -6,13 +6,11 @@ import greyx from "../site-images/grey-x.png";
 import plus from "../site-images/plus.png";
 import minus from "../site-images/minus.png";
 import "./ItemForm.css";
+import { getAllCarts } from "../../store/cart";
 
-const ItemForm = ({ item, setShowModal, id }) => {
+const ItemForm = ({ item, setShowModal }) => {
   const user = useSelector((state) => state.session.user);
-  //   const restaurant = useSelector((state) => state.restaurant.currentRestaurant);
-
   const dispatch = useDispatch();
-  //   const history = useHistory();
   const [quantity, setQuantity] = useState(1);
 
   const addOne = () => {
@@ -31,12 +29,14 @@ const ItemForm = ({ item, setShowModal, id }) => {
     };
     console.log("submission", submission);
     dispatch(updateItem(submission));
+    dispatch(getAllCarts());
     setShowModal(false);
     setQuantity(1);
   };
   useEffect(() => {
     setQuantity(quantity);
-  }, [quantity]);
+    dispatch(getAllCarts());
+  }, [dispatch, quantity]);
 
   const price = parseFloat(item.price) * parseFloat(quantity);
 

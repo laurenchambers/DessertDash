@@ -23,11 +23,6 @@ class Item(db.Model):
             "image_src": self.image_src,
         }
 
-    def get_item(self):
-        return {
-            self.name,
-        }
-
 
     # def to_simple_dict(self):
     #     items = []

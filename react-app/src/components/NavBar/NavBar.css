@@ -32,7 +32,7 @@
   font-family: "Maven Pro", sans-serif;
   font-weight: bold;
   color: red;
-  padding-right: 250px;
+  padding-right: 200px;
 }
 
 .navbar-image {
@@ -47,7 +47,7 @@
 
 .navbar-address {
   display: inline-flex;
-  padding-right: 450px;
+  padding-right: 320px;
 }
 
 .navbar-preset-address {
@@ -55,6 +55,13 @@
   font-family: "Maven Pro", sans-serif;
   font-weight: bold;
   color: red;
+}
+.navbar-preset-address-2 {
+  font-size: 15px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: bold;
+  color: red;
+  width: 250px
 }
 
 .navbar-to-address {
@@ -66,7 +73,8 @@
 }
 
 .narbar-search-container {
-  padding-right: 5px;
+  padding-right: 10px;
+  padding-left: 50px;
 }
 
 /* unath */
@@ -101,6 +109,13 @@
 }
 
 .navbar-cart-container {
-
-  margin-right: 50px;
+  /* margin-right: 120px;
+  margin-top: 10px;
+  display: inline-flex;
+  height: 40px;
+  cursor: pointer; */
+  z-index: 1;
+    position: fixed;
+    top: 0px;
+    right: 0px;
 }

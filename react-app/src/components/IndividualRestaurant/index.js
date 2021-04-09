@@ -11,7 +11,6 @@ const RestaurantDetail = () => {
   const params = useParams();
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(null);
-  const [showCart, setShowCart] = useState(false);
   const eachRestaurant = useSelector(
     (state) => state?.restaurant?.currentRestaurant
   );
