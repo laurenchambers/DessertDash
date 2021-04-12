@@ -43,9 +43,9 @@ const Landing = ({ restaurant, genre, authenticated }) => {
             >
               Sign Up
             </div>
-            <div className="landing-logo">
+            {/* <div className="landing-logo">
               <img className="logo" src={dessertdash_logo} alt="" />
-            </div>
+            </div> */}
             <div className="landing-site-title">DESSERTDASH</div>
           </div>
 

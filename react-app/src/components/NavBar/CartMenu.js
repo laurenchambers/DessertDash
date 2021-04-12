@@ -31,7 +31,7 @@ function Cart({ cart, submission, authenticated }) {
     document.addEventListener("mouseEnter", closeCart);
 
     return () => document.removeEventListener("mouseEnter", closeCart);
-  }, [ dispatch, showCart]);
+  }, [dispatch, showCart]);
 
   return (
     <>
@@ -67,8 +67,8 @@ function Cart({ cart, submission, authenticated }) {
                   <div className="cart-current-item-remove">
                     <button
                       onClick={() => {
-   
-                        dispatch(removeFromCart(cart.id));
+                        dispatch(removeFromCart(cart.id)) &&
+                          dispatch(getAllCarts());
                       }}
                       className="remove-button"
                     >
