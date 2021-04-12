@@ -5,13 +5,20 @@ import { getAllCarts, removeFromCart } from "../../store/cart";
 import greyx from "../site-images/grey-x.png";
 import carticon from "../site-images/cart-icon.jpeg";
 import "./CartMenu.css";
-import TheCart from "../Cart";
 
 function Cart({ cart, submission, authenticated }) {
   const [showCart, setShowCart] = useState(false);
   const dispatch = useDispatch();
   const cartsArray = useSelector((state) => state.carts.cart);
 
+  // const totalPrice = cartsArray?.reduce(
+  //   (a, b) => a + (b["item_price"] || 0),
+  //   0
+  // );
+  // const totalQuanity = cartsArray?.reduce(
+  //   (a, b) => a + (b["quantity"] || 0),
+  //   0
+  // );
   const closeCart = () => {
     setShowCart(false);
   };
@@ -47,7 +54,9 @@ function Cart({ cart, submission, authenticated }) {
           <div className="cart-your-order">Your Order</div>
           <div onClick={closeCart}>
             <NavLink to="/checkout" exact={true} className="cart-checkout">
-              <button className="cart-checkout-button">Checkout</button>
+              <button className="cart-checkout-button">
+                Checkout
+              </button>
             </NavLink>
           </div>
           <div className="cart-current-items">
@@ -77,7 +86,7 @@ function Cart({ cart, submission, authenticated }) {
                   </div>
                   <div className="cart-current-item-price">
                     <span className="current-item-price">
-                      ${cart.item_price}.00
+                      ${(cart.item_price * cart.quantity).toFixed(2)}
                     </span>
                   </div>
                 </div>

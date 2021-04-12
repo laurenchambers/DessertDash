@@ -67,7 +67,7 @@ const RestaurantDetail = ({ cart }) => {
                         {item.description}
                       </div>
                       <div className="restaurant-menu-items-price">
-                        ${item.price}.00
+                        ${item.price.toFixed(2)}
                       </div>
                     </div>
                     {item.id === showModal && (
