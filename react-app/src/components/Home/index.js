@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllGenres } from "../../store/genres";
 import { Link } from "react-router-dom";
 import { allRestaurants } from "../../store/restaurants";
+// import { featuredRestaurants } from "../../store/restaurants";
 import "./Home.css";
 import Footer from "../Footer";
 
@@ -21,6 +22,7 @@ const HomePage = ({ restaurant, genre }) => {
   useEffect(() => {
     dispatch(getAllGenres());
     dispatch(allRestaurants());
+    // dispatch(featuredRestaurants());
   }, [dispatch]);
 
   return (
