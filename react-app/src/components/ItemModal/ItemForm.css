@@ -5,7 +5,7 @@
   background: rgb(255, 255, 255);
   box-shadow: rgb(0 0 0 / 20%) 0px 8px 24px;
   min-height: 0px;
-  height: 600px;
+  max-height: 10000px;
   max-width: 768px;
   width: calc(100vw - 32px);
   border-radius: 16px;
@@ -97,7 +97,98 @@
   margin: 0px auto;
   object-fit: cover;
 }
+.preferences-container {
+  display: block;
+}
+.preferences-titles {
+  max-width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.preferences {
+  max-width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-top: 15px;
+}
 
+.extra-instructions {
+  font-size: 16px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+.special-requests {
+  font-size: 16px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(73, 73, 73);
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+.preferences-text-box {
+  display: flex;
+  min-height: 48px;
+  margin-top: 4px;
+}
+.preferences-text-area {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0ch;
+  font-weight: 500;
+  display: flex;
+  min-height: 48px;
+  height: 100px;
+  margin-top: 4px;
+  width: 94%;
+  max-width: 94%;
+  margin-left: 16px;
+  margin-right: 16px;
+  font-family: "Maven Pro", sans-serif;
+
+  color: rgb(25, 25, 25);
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  z-index: 1;
+  padding-top: 8px;
+  padding-left: 8px;
+  border: black;
+  box-shadow: rgb(247 247 247) 0px 0px 0px 1px inset;
+  background-color: rgb(247, 247, 247);
+}
+
+.preferences-character-count {
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Maven Pro", sans-serif;
+  margin-top: 6px;
+  margin-right: 16px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  /* margin: 0px; */
+  padding: 0px;
+}
 /* button area stuff */
 
 .item-form-button {

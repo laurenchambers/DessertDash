@@ -22,29 +22,31 @@ const AddressSearch = () => {
     }
   };
 
+  const handleSelect = async (value) => {
+    const results = await geocodeByAddress(value);
+    setAddress(results);
+    // setShowAddress(false);
+    closeAddress();
+  };
   useEffect(() => {
     if (!showAddress) return;
 
     document.addEventListener("mouseEnter", closeAddress);
 
     return () => document.removeEventListener("mouseEnter", closeAddress);
-  }, [showAddress]);
-
-  const handleSelect = async (value) => {
-    await geocodeByAddress(value);
-    setAddress(value);
-  };
+  }, [showAddress, closeAddress]);
 
   return (
     <div className="address-search-container">
       <div className="address-serach-initial" onClick={openAddress}>
-        1221 S Congress Ave
+        {address === "" ? "1221 S Congress Ave" : address}
       </div>
       {showAddress && (
         <PlacesAutocomplete
           value={address}
           onChange={setAddress}
           onSelect={handleSelect}
+          className="address-serach-initial"
           className="address-search-box"
         >
           {({

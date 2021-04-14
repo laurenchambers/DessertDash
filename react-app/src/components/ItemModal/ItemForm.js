@@ -13,6 +13,8 @@ const ItemForm = ({ item, setShowModal }) => {
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
   const [cart, setCart] = useState(null);
+  const [preferences, setPreferences] = useState("");
+  const [textLength, setTextLength] = useState(0);
 
   const addOne = () => {
     setQuantity(quantity + 1);
@@ -39,7 +41,8 @@ const ItemForm = ({ item, setShowModal }) => {
     setQuantity(quantity);
     setCart(cart);
     dispatch(getAllCarts());
-  }, [dispatch, cart, quantity]);
+    setTextLength(500 - preferences.length);
+  }, [dispatch, cart, quantity, preferences, textLength]);
 
   const price = parseFloat(item.price) * parseFloat(quantity);
 
@@ -61,6 +64,23 @@ const ItemForm = ({ item, setShowModal }) => {
       <div className="item-form-picture-container">
         <div className="item-form-picture">
           <img className="item-form-picture" src={item.image_src} alt="" />
+        </div>
+      </div>
+      <div className="preferences-container">
+        <div clasname="preferences-titles">
+          <div className="preferences">
+            <label className="extra-instructions">Extra Instructions</label>
+            <span className="special-requests">List any special requests</span>
+          </div>
+        </div>
+        <div>
+          <textarea
+            className="preferences-text-area"
+            onChange={(e) => setPreferences(e.target.value)}
+            placeholder="Add any special requests (e.g., food allergies, extra icing, etc.) and the store wil do its best to accomodate you."
+            value={preferences}
+          />
+          <span className="preferences-character-count">{textLength} characters left</span>
         </div>
       </div>
 
