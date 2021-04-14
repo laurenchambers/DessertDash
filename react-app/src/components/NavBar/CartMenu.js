@@ -5,13 +5,14 @@ import { getAllCarts, removeFromCart } from "../../store/cart";
 import greyx from "../site-images/grey-x.png";
 import carticon from "../site-images/cart-icon.jpeg";
 import "./CartMenu.css";
+import { Modal } from "../context/Modal";
+import EditItemForm from "../ItemModal/EditItemForm";
 
 function Cart({ cart, submission, authenticated }) {
-  const [showCart, setShowCart] = useState(false);
+  const [showCart, setShowCart] = useState(null);
+  const [showModal, setShowModal] = useState(null);
   const dispatch = useDispatch();
-  const cartsArray = useSelector((state) => state.carts.cart);
-
-  // const totalPrice = cartsArray?.reduce(
+  const cartsArray = useSelector((state) => state?.carts?.cart); // const totalPrice = cartsArray?.reduce(
   //   (a, b) => a + (b["item_price"] || 0),
   //   0
   // );
@@ -31,6 +32,7 @@ function Cart({ cart, submission, authenticated }) {
     }
   };
 
+  console.log("cartsarray", cartsArray);
   useEffect(() => {
     dispatch(getAllCarts());
     if (!showCart) return;
@@ -54,9 +56,7 @@ function Cart({ cart, submission, authenticated }) {
           <div className="cart-your-order">Your Order</div>
           <div onClick={closeCart}>
             <NavLink to="/checkout" exact={true} className="cart-checkout">
-              <button className="cart-checkout-button">
-                Checkout
-              </button>
+              <button className="cart-checkout-button">Checkout</button>
             </NavLink>
           </div>
           <div className="cart-current-items">
@@ -72,6 +72,9 @@ function Cart({ cart, submission, authenticated }) {
                     <span className="curent-item-name-cart">
                       {cart.item_name}
                     </span>
+                    <div className="cart-current-item-preferences">
+                      {cart.preferences}
+                    </div>
                   </div>
                   <div className="cart-current-item-remove">
                     <button
@@ -82,6 +85,19 @@ function Cart({ cart, submission, authenticated }) {
                     >
                       Remove
                     </button>
+                  </div>
+                  <div>
+                    <button
+                      onClick={() => setShowModal(cart.id)}
+                      className="edit-item-button"
+                    >
+                      Edit
+                    </button>
+                    {cart.id === showModal && (
+                      <Modal onClose={() => setShowModal(null)}>
+                        <EditItemForm cart={cart} setShowModal={setShowModal} />
+                      </Modal>
+                    )}
                   </div>
                   <div className="cart-current-item-price">
                     <span className="current-item-price">

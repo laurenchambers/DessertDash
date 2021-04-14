@@ -1,51 +1,55 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { useHistory } from "react-router";
-import { updateItem } from "../../store/items";
+import { editItem } from "../../store/items";
 import greyx from "../site-images/grey-x.png";
 import plus from "../site-images/plus.png";
 import minus from "../site-images/minus.png";
 import "./ItemForm.css";
-import { getAllCarts } from "../../store/cart";
+import cartsReducer, { getAllCarts } from "../../store/cart";
 
-const ItemForm = ({ item, setShowModal }) => {
+const EditItemForm = ({ cart, item, setShowModal }) => {
   const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
-  const [quantity, setQuantity] = useState(1);
-  const [cart, setCart] = useState(null);
-  const [preferences, setPreferences] = useState("");
-  const [textLength, setTextLength] = useState(0);
+  const { quantity, preferences } = cart;
+
+  const [newQuantity, setNewQuantity] = useState(quantity ? quantity : null);
+  const [newPreferences, setNewPreferences] = useState(
+    preferences ? preferences : ""
+  );
+  const [textLength, setTextLength] = useState(
+    preferences ? preferences.length : 0
+  );
 
   const addOne = () => {
-    setQuantity(quantity + 1);
+    setNewQuantity(newQuantity + 1);
   };
 
   const subtractOne = () => {
-    setQuantity(quantity - 1);
+    setNewQuantity(newQuantity - 1);
   };
 
   const handleSubmit = () => {
     const submission = {
+      id: cart.id,
       user_id: user.id,
-      item_id: item.id,
-      quantity,
-      preferences
+      quantity: newQuantity,
+      preferences: newPreferences,
     };
     console.log("submission", submission);
-    dispatch(updateItem(submission));
+    dispatch(editItem(submission));
     dispatch(getAllCarts());
     setShowModal(false);
-    setQuantity(1);
-    setCart(submission);
+    // setCart(submission);
   };
-  useEffect(() => {
-    setQuantity(quantity);
-    setCart(cart);
-    dispatch(getAllCarts());
-    setTextLength(500 - preferences.length);
-  }, [dispatch, cart, quantity, preferences, textLength]);
 
-  const price = parseFloat(item.price) * parseFloat(quantity);
+  useEffect(() => {
+    setNewQuantity(newQuantity);
+    // setCart(cart);
+    // dispatch(getAllCarts());
+    setTextLength(500 - newPreferences.length);
+  }, [dispatch, cart, quantity, newPreferences, textLength]);
+
+  const price = parseFloat(cart.item_price) * parseFloat(newQuantity);
 
   return (
     <div className="item-form-container">
@@ -58,13 +62,13 @@ const ItemForm = ({ item, setShowModal }) => {
         </button>
       </div>
       <div>
-        <div className="item-form-title">{item.name}</div>
-        <div className="item-form-description">{item.description}</div>
-        <div className="item-form-price">${item.price}.00</div>
+        <div className="item-form-title">{cart.item_name}</div>
+        <div className="item-form-description">{cart.item_description}</div>
+        <div className="item-form-price">${cart.item_price}</div>
       </div>
       <div className="item-form-picture-container">
         <div className="item-form-picture">
-          <img className="item-form-picture" src={item.image_src} alt="" />
+          <img className="item-form-picture" src={cart.item_image_src} alt="" />
         </div>
       </div>
       <div className="preferences-container">
@@ -77,11 +81,13 @@ const ItemForm = ({ item, setShowModal }) => {
         <div>
           <textarea
             className="preferences-text-area"
-            onChange={(e) => setPreferences(e.target.value)}
+            onChange={(e) => setNewPreferences(e.target.value)}
             placeholder="Add any special requests (e.g., food allergies, extra icing, etc.) and the store wil do its best to accomodate you."
-            value={preferences}
+            value={newPreferences}
           />
-          <span className="preferences-character-count">{textLength} characters left</span>
+          <span className="preferences-character-count">
+            {textLength} characters left
+          </span>
         </div>
       </div>
 
@@ -90,11 +96,11 @@ const ItemForm = ({ item, setShowModal }) => {
           <button
             className="form-add-minus-button"
             onClick={subtractOne}
-            disabled={quantity === 1}
+            disabled={newQuantity === 1}
           >
             <img className="form-minus" src={minus} alt="" />
           </button>
-          <div className="item-form-current-quantity">{quantity}</div>
+          <div className="item-form-current-quantity">{newQuantity}</div>
           <button className="form-add-minus-button" onClick={addOne}>
             <img className="form-plus" src={plus} alt="" />
           </button>
@@ -103,7 +109,7 @@ const ItemForm = ({ item, setShowModal }) => {
             onClick={() => handleSubmit() && setShowModal(false)}
           >
             {/* {console.log("q", quantity)} */}
-            Add to cart - ${price}
+            Update cart - ${parseFloat(price)}
           </button>
         </div>
       </div>
@@ -111,4 +117,4 @@ const ItemForm = ({ item, setShowModal }) => {
   );
 };
 
-export default ItemForm;
+export default EditItemForm;
