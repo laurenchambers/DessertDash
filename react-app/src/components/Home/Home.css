@@ -2,7 +2,6 @@
 
 .landing-page-container {
   display: flex;
-  
   flex-direction: row;
   margin: 0px 16px 64px;
   justify-content: center;

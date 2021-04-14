@@ -6,6 +6,7 @@ import { getRestaurant } from "../../store/restaurant-detail";
 import "./IndividualRestaurant.css";
 import ItemForm from "../ItemModal/ItemForm";
 import Footer from "../Footer";
+import { Link } from "react-router-dom";
 
 const RestaurantDetail = ({ cart }) => {
   const params = useParams();
@@ -35,7 +36,13 @@ const RestaurantDetail = ({ cart }) => {
                 </div>
                 <div className="store-header-genres">
                   {eachRestaurant?.genres?.map((genre) => (
-                    <span>{genre.name}</span>
+                    <Link
+                      to={`/genres/${genre.id}`}
+                      className="store-header-genres"
+                    >
+                      {genre.name}
+                    </Link>
+                    // <span>{genre.name}</span>
                   ))}
                 </div>
                 <div className="rating-price-container">

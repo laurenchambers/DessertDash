@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap");
+
+.genre-page-title-name {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  margin-left: 25px;
+}
+
+.genres-genres-header {
+  margin-left: 25px;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 25px;
+  padding-top: 30px;
+  font-weight: bold;
+  color: black;
+}
+
+.genres-genres-subheder {
+  margin-left: 29px;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 12px;
+  padding-top: 5px;
+  font-weight: bold;
+  color: black;
+}
