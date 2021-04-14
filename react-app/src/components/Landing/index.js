@@ -1,31 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Redirect, useHistory } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { featuredRestaurants } from "../../store/restaurants";
 import "./Landing.css";
+import { Link } from "react-router-dom";
 import dessertdash_logo from "../site-images/desssertdash-logo.jpg";
 import brownie from "../site-images/brownie.jpg";
 import donut from "../site-images/donut.jpg";
-import Footer from '../Footer'
+import Footer from "../Footer";
 
 const Landing = ({ restaurant, genre, authenticated }) => {
-  // const dispatch = useDispatch();
-  // const genresArray = useSelector((state) => state?.genres?.allGenres?.genres);
-  //   let eachGenre = genresArray?.map((genre) => {
-  //     return genre.name;
-  //   });
-  //   console.log("each genre", eachGenre);
-  //   console.log("genres array", genresArray);
-  // const restaurants = useSelector((state) => state?.restaurants?.restaurants);
+  const dispatch = useDispatch();
+  const featuredArray = useSelector(
+    (state) => state?.restaurants?.featured?.restaurants
+  );
+
+  useEffect(() => {
+    dispatch(featuredRestaurants());
+  }, [dispatch]);
+
   const history = useHistory();
   if (authenticated) {
     return <Redirect to="/home" />;
   }
-
-  // useEffect(() => {
-  //   dispatch(getAllGenres());
-  //   dispatch(allRestaurants());
-  // }, [dispatch]);
-
   return (
     <>
       <div className="landing-all-container">
@@ -43,9 +40,9 @@ const Landing = ({ restaurant, genre, authenticated }) => {
             >
               Sign Up
             </div>
-            <div className="landing-logo">
+            {/* <div className="landing-logo">
               <img className="logo" src={dessertdash_logo} alt="" />
-            </div>
+            </div> */}
             <div className="landing-site-title">DESSERTDASH</div>
           </div>
 
@@ -56,9 +53,33 @@ const Landing = ({ restaurant, genre, authenticated }) => {
         </div>
         <div className="landing-lower-section">
           <div className="landing-second-section-message">
-            <div>Local Favorites</div>
-            <div>INSERT 6 RESTAURANTS HERE</div>
-          </div>
+            <div>Local Favorites</div></div>
+            <div className="featured-restaurants-container">
+              {featuredArray?.map((featured) => (
+                <div className="featured-restaurant-list">
+                  <Link
+                    to={`/restaurants/${featured.id}`}
+                    className="featured-image-container"
+                  >
+                    <img
+                      onClick={`/restaurants/${featured.id}`}
+                      className="featured-rest-image"
+                      src={featured?.items[2]?.image_src}
+                      alt=""
+                    />
+                  </Link>
+                  <Link
+                    className="restaurant-info"
+                    to={`/restaurants/${featured.id}`}
+                  >
+                    <div className="featured-restaurant-name">
+                      {featured.name}
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+
         </div>
         <div className="landing-third-container">
           <div className="landing-lower-section">

@@ -60,7 +60,6 @@ export const logout = () => async (dispatch) => {
 };
 
 export const signUp = (
-  username,
   first_name,
   last_name,
   email,
@@ -72,7 +71,6 @@ export const signUp = (
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      username,
       first_name,
       last_name,
       email,

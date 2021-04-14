@@ -12,6 +12,7 @@ const ItemForm = ({ item, setShowModal }) => {
   const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
+  const [cart, setCart] = useState(null);
 
   const addOne = () => {
     setQuantity(quantity + 1);
@@ -32,11 +33,13 @@ const ItemForm = ({ item, setShowModal }) => {
     dispatch(getAllCarts());
     setShowModal(false);
     setQuantity(1);
+    setCart(submission);
   };
   useEffect(() => {
     setQuantity(quantity);
+    setCart(cart);
     dispatch(getAllCarts());
-  }, [dispatch, quantity]);
+  }, [dispatch, cart, quantity]);
 
   const price = parseFloat(item.price) * parseFloat(quantity);
 

@@ -16,6 +16,11 @@ def individualRestaurant(id):
     restaurant = Restaurant.query.get(id)
     return {"currentRestaurant" : restaurant.to_dict()}
 
+@restaurant_routes.route('/featured/')
+def featured_restaurants():
+    featured = Restaurant.query.order_by(Restaurant.latitude.asc()).limit(6).all()
+    return {"restaurants": [restaurant.to_dict() for restaurant in featured]}
+
 
 @restaurant_routes.route('/add-item/', methods=["POST"])
 @login_required

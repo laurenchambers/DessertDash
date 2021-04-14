@@ -7,10 +7,11 @@ import "./IndividualRestaurant.css";
 import ItemForm from "../ItemModal/ItemForm";
 import Footer from "../Footer";
 
-const RestaurantDetail = () => {
+const RestaurantDetail = ({ cart }) => {
   const params = useParams();
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(null);
+
   const eachRestaurant = useSelector(
     (state) => state?.restaurant?.currentRestaurant
   );
@@ -66,7 +67,7 @@ const RestaurantDetail = () => {
                         {item.description}
                       </div>
                       <div className="restaurant-menu-items-price">
-                        ${item.price}.00
+                        ${item.price.toFixed(2)}
                       </div>
                     </div>
                     {item.id === showModal && (
