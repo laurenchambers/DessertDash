@@ -76,8 +76,7 @@ function Cart({ cart, submission, authenticated }) {
                   <div className="cart-current-item-remove">
                     <button
                       onClick={() => {
-                        dispatch(removeFromCart(cart.id)) &&
-                          dispatch(getAllCarts());
+                        dispatch(removeFromCart(cart.id));
                       }}
                       className="remove-button"
                     >
