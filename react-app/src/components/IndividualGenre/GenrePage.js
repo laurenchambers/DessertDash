@@ -1,14 +1,14 @@
 import React from "react";
-
-
+import GenreContainer from "../Genres/GenreContainer";
+import "./GenrePage.css";
 
 const GenrePage = ({ genre }) => {
   if (genre) {
     return (
-      <div>
-        <div>{genre.restaurants[0].image_src}</div>
-        <div>{genre.name}</div>
-      </div>
+      <>
+        <div className="genre-page-title-name">{genre.name}</div>
+        <GenreContainer key={genre} genre={genre} />
+      </>
     );
   } else {
     return <></>;

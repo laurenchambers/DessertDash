@@ -53,6 +53,8 @@
   letter-spacing: 0ch;
   text-transform: none;
   color: #767676;
+  padding-right: 10px;
+  text-decoration: none;
 }
 
 .store-header-genres span {
