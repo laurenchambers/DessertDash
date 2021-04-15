@@ -1,5 +1,6 @@
 const GET_ITEMS = "/items/getItems";
 const UPDATE_ITEMS = "/items/updateItems";
+const EDIT_ITEMS = "/items/edit";
 
 const getItems = (items) => ({
   type: GET_ITEMS,
@@ -8,6 +9,11 @@ const getItems = (items) => ({
 
 const updateItems = (cart) => ({
   type: UPDATE_ITEMS,
+  cart,
+});
+
+const edit = (cart) => ({
+  type: EDIT_ITEMS,
   cart,
 });
 
@@ -25,7 +31,7 @@ export const getAllItems = () => async (dispatch) => {
 };
 
 export const updateItem = (cart) => async (dispatch) => {
-  const { id, user_id, item_id, quantity } = cart;
+  const { id, user_id, item_id, quantity, preferences } = cart;
   const response = await fetch("/api/restaurants/add-item/", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -34,11 +40,31 @@ export const updateItem = (cart) => async (dispatch) => {
       user_id,
       item_id,
       quantity,
+      preferences,
     }),
   });
   const data = await response.json();
   if (response.ok) {
     dispatch(updateItems(data));
+    return response;
+  }
+};
+
+export const editItem = (cart) => async (dispatch) => {
+  const { id, user_id, quantity, preferences } = cart;
+  const response = await fetch(`/api/restaurants/edit-item/${id}/`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      id,
+      user_id,
+      quantity,
+      preferences,
+    }),
+  });
+  const editedItem = await response.json();
+  if (response.ok) {
+    dispatch(edit(editedItem));
     return response;
   }
 };
@@ -54,6 +80,10 @@ const itemsReducer = (state = initialState, action) => {
     case UPDATE_ITEMS:
       newState = Object.assign({}, state);
       newState = action.cart;
+      return newState;
+    case EDIT_ITEMS:
+      newState = Object.assign({}, state);
+      newState.cart = newState?.cart?.filter((cart) => cart.id === action.cart);
       return newState;
     default:
       return state;

@@ -20,7 +20,7 @@ const RestaurantDetail = ({ cart }) => {
 
   useEffect(() => {
     dispatch(getRestaurant(params.id));
-  }, [params, dispatch]);
+  }, [params, dispatch, cart]);
 
   return (
     <>

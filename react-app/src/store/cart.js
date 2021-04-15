@@ -45,7 +45,7 @@ const cartsReducer = (state = initialState, action) => {
       return newState;
     case REMOVE:
       newState = Object.assign({}, state);
-      newState = newState.cart.filter((cart) => cart.id !== action.cart);
+      newState.cart = newState.cart.filter((cart) => cart.id !== action.cart);
       return newState;
     default:
       return state;

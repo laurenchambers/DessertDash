@@ -30,9 +30,23 @@ def add_item():
     if form.validate_on_submit():
         new_cart = Cart(user_id=form.user_id.data,
                           item_id=form.item_id.data,
-                          quantity=form.quantity.data)
+                          quantity=form.quantity.data,
+                          preferences=form.preferences.data)
         db.session.add(new_cart)
         db.session.commit()
         return new_cart.to_dict()
     else:
         return {"errors": "invalid submission"}
+
+@restaurant_routes.route('/edit-item/<int:id>/', methods=["POST"])
+@login_required
+def edit_item(id):
+    req = request.get_json()
+    print('req!!', req)
+    cart = Cart.query.get(id)
+    cart.id = req['id']
+    cart.user_id = req['user_id']
+    cart.quantity = req['quantity']
+    cart.preferences = req['preferences']
+    db.session.commit()
+    return  cart.to_dict()
