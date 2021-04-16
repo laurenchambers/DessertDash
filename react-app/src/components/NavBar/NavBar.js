@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 import dessertdash_logo from "../site-images/desssertdash-logo.jpg";
@@ -40,28 +40,14 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
               <SearchBar />
             </div>
           </nav>
-              <div className="navbar-cart-container">
-                <Cart />
-              </div>
+          <div className="navbar-cart-container">
+            <Cart />
+          </div>
         </div>
-        {/* div below goes with navbar container */}
       </div>
     );
   } else {
-    return (
-      <div>
-        {/* <div className="navbar-unath-container">
-          <nav className="navbar-navgation">
-            <img
-              className="navbar-unauth-image"
-              src={dessertdash_logo}
-              alt=""
-            />
-            DESSERTDASH
-          </nav>
-        </div> */}
-      </div>
-    );
+    return <div></div>;
   }
 };
 

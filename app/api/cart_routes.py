@@ -8,7 +8,7 @@ cart_routes = Blueprint('carts', __name__)
 @cart_routes.route('/')
 def carts():
     carts = Cart.query.all()
-    return {"cart": [cart.to_dict() for cart in carts]}
+    return {'cart': [cart.to_dict() for cart in carts]}
 
 @cart_routes.route("/<int:id>/delete/", methods=["GET"])
 def remove_cart(id):

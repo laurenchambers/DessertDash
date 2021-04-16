@@ -57,9 +57,6 @@ function MeunBar({ setAuthenticated }) {
             <LogoutButton className="dropdown-item" setAuthenticated={setAuthenticated} />
             </div>
           </div>
-          {/* <div className="logout-button-nav">
-            <LogoutButton setAuthenticated={setAuthenticated} />
-          </div> */}
         </div>
       )}
     </div>

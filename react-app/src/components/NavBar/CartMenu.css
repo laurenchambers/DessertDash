@@ -155,12 +155,12 @@
   display: block;
   font-variant-ligatures: no-common-ligatures;
   max-width: 75%;
-  overflow:auto;
+  overflow: auto;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.cart-current-item-preferences{
+.cart-current-item-preferences {
   font-size: 12px;
   font-weight: 500;
   line-height: 18px;
@@ -255,4 +255,37 @@
   outline: 0;
   border: 0;
   cursor: pointer;
+}
+
+.empty-cart-container {
+  margin-top: 50px;
+  display: block;
+}
+
+.empty-cart {
+  font-size: 14px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(118, 118, 118);
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+
+.add-items-empty-cart {
+  font-size: 14px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(118, 118, 118);
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  display: block;
 }

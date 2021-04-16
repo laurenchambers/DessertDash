@@ -1,14 +1,14 @@
 const GET_CARTS = "carts/getCarts";
 const REMOVE = "carts/remove_cart";
 
-const getCarts = (carts) => ({
+const getCarts = (cart) => ({
   type: GET_CARTS,
-  carts,
+  payload: cart,
 });
 
 const remove = (cart) => ({
   type: REMOVE,
-  cart,
+  payload: cart,
 });
 
 export const getAllCarts = () => async (dispatch) => {
@@ -19,6 +19,7 @@ export const getAllCarts = () => async (dispatch) => {
   });
   if (response.ok) {
     const data = await response.json();
+    console.log("data", data.cart);
     dispatch(getCarts(data));
     return response;
   }
@@ -40,13 +41,16 @@ const cartsReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
     case GET_CARTS:
+      // return { cart: [...state.cart, action.payload] };
       newState = Object.assign({}, state);
-      newState = action.carts;
+      console.log("action", action.payload);
+      newState = action.payload;
       return newState;
     case REMOVE:
-      newState = Object.assign({}, state);
-      newState.cart = newState.cart.filter((cart) => cart.id !== action.cart);
-      return newState;
+      return {
+        ...state,
+        cart: state.cart.filter((cart) => cart.id !== action.payload),
+      };
     default:
       return state;
   }

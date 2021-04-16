@@ -6,8 +6,6 @@ import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-// import User from "./components/User";
-// import ShowRestaurant from "./components/Restaurants";
 import Landing from "./components/Landing";
 import HomePage from "./components/Home";
 import RestaurantDetail from "./components/IndividualRestaurant";
@@ -52,13 +50,6 @@ function App() {
             setAuthenticated={setAuthenticated}
           />
         </Route>
-        {/* <ProtectedRoute
-          path="/users/:userId"
-          exact={true}
-          authenticated={authenticated}
-        >
-          <User />
-        </ProtectedRoute> */}
         <Route path="/" exact={true} authenticated={authenticated}>
           <Landing />
         </Route>
