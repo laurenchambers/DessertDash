@@ -34,24 +34,23 @@
 
 .cart-image {
   height: 27px;
-  margin-top: 10px;
-  margin-right: 20px;
+  cursor: pointer;
 }
+
+
 .cart-image-container {
   position: absolute;
   margin-top: 0px;
 }
 
 .cart {
-  /* display: block;
-  align-items: center;
-  position: fixed; */
+  position: absolute;
   width: 380px;
-  margin-right: 0px;
+  top: 0px;
+  right: 0px;
   height: 100vh;
-  overflow: auto;
-  position: relative;
-  padding-top: 56px;
+  box-shadow: rgb(0 0 0 / 20%) 0px 8px 24px;
+  padding-top: 00px;
   background-color: rgb(255, 255, 255);
 }
 
@@ -63,6 +62,7 @@
   position: fixed;
   top: 0px;
   left: 0px;
+  padding-left: 10px;
   z-index: 1;
   width: 100%;
   background: rgb(255, 255, 255);
@@ -71,7 +71,7 @@
 .menubar-x {
   position: relative;
   max-width: 100%;
-  margin: 0px;
+  margin: 8px;
   display: fixed;
   border-radius: 100%;
   border: none;
@@ -81,7 +81,7 @@
   background-color: rgb(255, 255, 255);
   height: 20px;
   width: 20px;
-  padding: 0px;
+  padding: 8px;
   align-items: center;
   justify-content: center;
 }

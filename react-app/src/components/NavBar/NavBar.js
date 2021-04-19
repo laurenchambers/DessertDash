@@ -39,10 +39,8 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
             <div className="narbar-search-container">
               <SearchBar />
             </div>
+          <Cart clasName='nav-cart-area'/>
           </nav>
-          <div className="navbar-cart-container">
-            <Cart />
-          </div>
         </div>
       </div>
     );

@@ -75,8 +75,14 @@
 .narbar-search-container {
   padding-right: 10px;
   padding-left: 50px;
+  margin-left: 40px;
+  position: relative;
+  /* height: 60px; */
 }
 
+.nav-cart-area {
+  position: absolute;
+}
 /* unath */
 
 .navbar-unath-container {
@@ -106,6 +112,7 @@
   font-family: "Maven Pro", sans-serif;
   font-weight: bold;
   color: red;
+  width: 1735px;
 }
 
 .navbar-cart-container {
