@@ -8,7 +8,7 @@ import ItemForm from "../ItemModal/ItemForm";
 import Footer from "../Footer";
 import { Link } from "react-router-dom";
 
-const RestaurantDetail = ({ cart }) => {
+const RestaurantDetail = ({ cart, address }) => {
   const params = useParams();
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(null);

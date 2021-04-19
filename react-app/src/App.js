@@ -10,6 +10,7 @@ import Landing from "./components/Landing";
 import HomePage from "./components/Home";
 import RestaurantDetail from "./components/IndividualRestaurant";
 import GenreDetail from "./components/IndividualGenre";
+import Checkout from "./components/Checkout";
 
 function App() {
   const dispatch = useDispatch();
@@ -65,6 +66,9 @@ function App() {
         </Route>
         <Route path="/genres/:id" exact={true} authenticated={authenticated}>
           <GenreDetail />
+        </Route>
+        <Route path="/checkout" exact={true} authenticated={authenticated}>
+          <Checkout />
         </Route>
       </Switch>
     </BrowserRouter>
