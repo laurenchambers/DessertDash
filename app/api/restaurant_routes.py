@@ -49,4 +49,4 @@ def edit_item(id):
     cart.quantity = req['quantity']
     cart.preferences = req['preferences']
     db.session.commit()
-    return  cart.to_dict()
+    return  {'edited': cart.to_dict()}
