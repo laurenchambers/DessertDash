@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { editItem } from "../../store/items";
+import { editItem } from "../../store/cart";
 import greyx from "../site-images/grey-x.png";
 import plus from "../site-images/plus.png";
 import minus from "../site-images/minus.png";

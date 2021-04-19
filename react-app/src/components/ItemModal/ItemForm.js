@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import { useHistory } from "react-router";
-import { updateItem } from "../../store/items";
+import { updateItem } from "../../store/cart";
 import greyx from "../site-images/grey-x.png";
 import plus from "../site-images/plus.png";
 import minus from "../site-images/minus.png";
@@ -29,7 +29,7 @@ const ItemForm = ({ item, setShowModal }) => {
       user_id: user.id,
       item_id: item.id,
       quantity,
-      preferences
+      preferences,
     };
     console.log("submission", submission);
     dispatch(updateItem(submission));
@@ -60,7 +60,7 @@ const ItemForm = ({ item, setShowModal }) => {
       <div>
         <div className="item-form-title">{item.name}</div>
         <div className="item-form-description">{item.description}</div>
-        <div className="item-form-price">${item.price}.00</div>
+        <div className="item-form-price">${item.price}</div>
       </div>
       <div className="item-form-picture-container">
         <div className="item-form-picture">
@@ -81,7 +81,9 @@ const ItemForm = ({ item, setShowModal }) => {
             placeholder="Add any special requests (e.g., food allergies, extra icing, etc.) and the store wil do its best to accomodate you."
             value={preferences}
           />
-          <span className="preferences-character-count">{textLength} characters left</span>
+          <span className="preferences-character-count">
+            {textLength} characters left
+          </span>
         </div>
       </div>
 
