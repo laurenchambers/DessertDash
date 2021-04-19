@@ -48,14 +48,22 @@ function Cart({ cart, submission, authenticated }) {
   if (cartsArray?.length) {
     return (
       <>
-        <img className="cart-image" src={carticon} alt="" onClick={openCart} />
+        <div className="cart-image-button">
+          <img
+            className="cart-image"
+            src={carticon}
+            alt=""
+            onClick={openCart}
+          />
+        </div>
+        {/* <div className="cart-box-container"> */}
         {showCart && (
           <div className="cart">
-            <div onClick={closeCart}>
-              <img src={greyx} alt="" className="menubar-x" />
-            </div>
+            {/* <div onClick={closeCart}> */}
+            <img onClick={closeCart} src={greyx} alt="" className="menubar-x" />
+            {/* </div> */}
             <div className="cart-your-order">Your Order</div>
-            <div onClick={closeCart}>
+            <div className="checkout-container" onClick={closeCart}>
               <NavLink to="/checkout" exact={true} className="cart-checkout">
                 <button className="cart-checkout-button">Checkout</button>
               </NavLink>
@@ -86,14 +94,14 @@ function Cart({ cart, submission, authenticated }) {
                       >
                         Remove
                       </button>
-                    </div>
-                    <div>
                       <button
                         onClick={() => setShowModal(cart.id)}
                         className="edit-item-button"
                       >
                         Edit
                       </button>
+                    </div>
+                    <div>
                       {cart.id === showModal && (
                         <Modal onClose={() => setShowModal(null)}>
                           <EditItemForm
@@ -114,6 +122,7 @@ function Cart({ cart, submission, authenticated }) {
             </div>
           </div>
         )}
+        {/* </div> */}
       </>
     );
   } else {

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap");
 
 .entire-search-container {
-  position: relative;
+  position: initial;
   margin-top: 43px;
   z-index: 1;
   padding-right: 15px;

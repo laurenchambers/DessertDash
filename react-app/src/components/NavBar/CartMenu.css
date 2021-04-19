@@ -20,6 +20,8 @@
 
 .cart-your-order {
   font-size: 16px;
+  padding-left: 16px;
+  padding-bottom: 10px;
   font-family: "Maven Pro", sans-serif;
   font-weight: 700;
   line-height: 24px;
@@ -27,31 +29,29 @@
   text-transform: none;
   color: rgb(25, 25, 25);
   margin: 0px;
-  padding: 0px;
+  /* padding: 0px; */
   display: block;
   font-variant-ligatures: no-common-ligatures;
 }
 
 .cart-image {
   height: 27px;
-  margin-top: 10px;
-  margin-right: 20px;
+  cursor: pointer;
 }
+
 .cart-image-container {
   position: absolute;
   margin-top: 0px;
 }
 
 .cart {
-  /* display: block;
-  align-items: center;
-  position: fixed; */
+  position: absolute;
   width: 380px;
-  margin-right: 0px;
+  top: 0px;
+  right: 0px;
   height: 100vh;
-  overflow: auto;
-  position: relative;
-  padding-top: 56px;
+  box-shadow: rgb(0 0 0 / 20%) 0px 8px 24px;
+  padding-top: 00px;
   background-color: rgb(255, 255, 255);
 }
 
@@ -63,6 +63,7 @@
   position: fixed;
   top: 0px;
   left: 0px;
+  padding-left: 10px;
   z-index: 1;
   width: 100%;
   background: rgb(255, 255, 255);
@@ -71,7 +72,7 @@
 .menubar-x {
   position: relative;
   max-width: 100%;
-  margin: 0px;
+  margin: 8px;
   display: fixed;
   border-radius: 100%;
   border: none;
@@ -81,7 +82,7 @@
   background-color: rgb(255, 255, 255);
   height: 20px;
   width: 20px;
-  padding: 0px;
+  padding: 8px;
   align-items: center;
   justify-content: center;
 }
@@ -185,6 +186,27 @@
   position: relative;
   max-width: 100%;
   margin: 0px;
+  padding-left: 0px;
+  padding-right: 8px;
+  display: inline-flex;
+  width: auto;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 1000px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  text-align: center;
+  background-color: transparent;
+  color: rgb(235, 23, 0);
+}
+
+.edit-item-button {
+  padding-top: 4px;
+  position: relative;
+  max-width: 100%;
+  margin: 0px;
   padding: 0px;
   display: inline-flex;
   width: auto;
@@ -223,10 +245,12 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
+.checkout-container {
+  padding-left: 20px;
+}
 .cart-checkout {
   position: relative;
-  max-width: 75%;
+  max-width: 85%;
   margin: 0px;
   padding: 0 10px 0 10px;
   display: flex;

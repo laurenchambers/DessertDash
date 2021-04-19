@@ -60,7 +60,7 @@ const ItemForm = ({ item, setShowModal }) => {
       <div>
         <div className="item-form-title">{item.name}</div>
         <div className="item-form-description">{item.description}</div>
-        <div className="item-form-price">${item.price}</div>
+        <div className="item-form-price">${item.price.toFixed(2)}</div>
       </div>
       <div className="item-form-picture-container">
         <div className="item-form-picture">
