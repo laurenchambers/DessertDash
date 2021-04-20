@@ -10,7 +10,6 @@ import {
 
 function Map() {
   const user = useSelector((state) => state.session.user);
-  const address = user?.address;
   return (
     <GoogleMap
       defaultZoom={14}
@@ -50,7 +49,7 @@ const Checkout = () => {
           <div className="payment-card-info">card info</div>
         </div>
         <div className="place-order-container">
-          <button className='place-order-button'>Place Order</button>
+          <button className="place-order-button">Place Order</button>
         </div>
       </div>
     </div>
