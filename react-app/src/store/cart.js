@@ -61,7 +61,7 @@ export const editItem = (cart) => async (dispatch) => {
   });
   const editedItem = await response.json();
   if (response.ok) {
-    dispatch(edit(editedItem.edited));
+    dispatch(edit(editedItem));
     return editedItem;
   }
 };
@@ -105,12 +105,12 @@ const cartsReducer = (state = initialState, action) => {
       };
     case EDIT_ITEMS:
       console.log("state", ...state.cart);
-      console.log("payload", action.payload.id);
+      console.log("edited", action.payload.id);
       return {
         ...state,
         cart: [
-          state.cart.filter((cart) => cart.id !== action.payload.id),
-          action.payload,
+          state.cart.filter((cart) => cart.id !== action.payload.id) &&
+            action.payload,
         ],
       };
     case UPDATE_ITEMS:

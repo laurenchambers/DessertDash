@@ -105,7 +105,7 @@ const ItemForm = ({ item, setShowModal }) => {
             onClick={() => handleSubmit() && setShowModal(false)}
           >
             {/* {console.log("q", quantity)} */}
-            Add to cart - ${price}
+            Add to cart - ${price.toFixed(2)}
           </button>
         </div>
       </div>

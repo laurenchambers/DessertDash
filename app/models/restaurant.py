@@ -11,11 +11,11 @@ class Restaurant(db.Model):
     city = db.Column(db.String, nullable=False)
     state = db.Column(db.String, nullable=False)
     zip_code = db.Column(db.String, nullable=False)
-    latitude = db.Column(db.Integer)
-    longitude = db.Column(db.Integer)
+    lat = db.Column(db.Float)
+    lng = db.Column(db.Float)
     hours = db.Column(db.String, nullable=False)
     price = db.Column(db.String, nullable=False)
-    rating = db.Column(db.Integer, nullable=False)
+    rating = db.Column(db.Float, nullable=False)
     logo_src = db.Column(db.String)
 
     genres = db.relationship("Genre", secondary=restaurants_genres, back_populates="restaurants")
@@ -30,8 +30,8 @@ class Restaurant(db.Model):
             "city": self.city,
             "state": self.state,
             "zip_code": self.zip_code,
-            "latitude": self.latitude,
-            "longitude": self.longitude,
+            "lat": self.lat,
+            "lng": self.lng,
             "hours": self.hours,
             "price": self.price,
             "rating": self.rating,
@@ -49,8 +49,8 @@ class Restaurant(db.Model):
                 "city": self.city,
                 "state": self.state,
                 "zip_code": self.zip_code,
-                "latitude": self.latitude,
-                "longitude": self.longitude,
+                "lat": self.lat,
+                "lng": self.lng,
                 "hours": self.hours,
                 "price": self.price,
                 "rating": self.rating,

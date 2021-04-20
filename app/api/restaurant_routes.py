@@ -18,7 +18,7 @@ def individualRestaurant(id):
 
 @restaurant_routes.route('/featured/')
 def featured_restaurants():
-    featured = Restaurant.query.order_by(Restaurant.latitude.asc()).limit(6).all()
+    featured = Restaurant.query.order_by(Restaurant.lat.asc()).limit(6).all()
     return {"restaurants": [restaurant.to_dict() for restaurant in featured]}
 
 
@@ -49,4 +49,4 @@ def edit_item(id):
     cart.quantity = req['quantity']
     cart.preferences = req['preferences']
     db.session.commit()
-    return  {'edited': cart.to_dict()}
+    return  cart.to_dict()

@@ -1,6 +1,12 @@
 const GET_USER = "/session/get_user";
 const REMOVE_USER = "/session/remove_user";
 const CREATE_USER = "/session/create_user";
+const EDIT_USER = "/user/edit";
+
+const edit = (user) => ({
+  type: EDIT_USER,
+  payload: user,
+});
 
 const getUser = (user) => ({
   type: GET_USER,
@@ -59,12 +65,9 @@ export const logout = () => async (dispatch) => {
   return response;
 };
 
-export const signUp = (
-  first_name,
-  last_name,
-  email,
-  password
-) => async (dispatch) => {
+export const signUp = (first_name, last_name, email, password) => async (
+  dispatch
+) => {
   const response = await fetch("/api/auth/signup/", {
     method: "POST",
     headers: {
@@ -84,6 +87,25 @@ export const signUp = (
   }
 };
 
+export const editUser = (user) => async (dispatch) => {
+  const { id, address, lat, lng } = user;
+  const response = await fetch(`/api/users/edit-user/${id}/`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      id,
+      address,
+      lat,
+      lng,
+    }),
+  });
+  const editedUser = await response.json();
+  if (response.ok) {
+    dispatch(edit(editedUser));
+    return editedUser;
+  }
+};
+
 let initialState = { user: null };
 
 const sessionReducer = (state = initialState, action) => {
@@ -99,6 +121,11 @@ const sessionReducer = (state = initialState, action) => {
       newState = Object.assign({}, state);
       newState.user = null;
       return newState;
+    case EDIT_USER:
+      return {
+        ...state,
+        user: action.payload,
+      };
     default:
       return state;
   }

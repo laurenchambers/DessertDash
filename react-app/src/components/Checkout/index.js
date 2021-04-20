@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import {
   GoogleMap,
   withScriptjs,
@@ -6,13 +7,14 @@ import {
   Marker,
 } from "react-google-maps";
 
-function Map({ address }) {
+function Map({ user }) {
+  // const user = useSelector((state) => state.session.user);
   return (
     <GoogleMap
       defaultZoom={10}
       defaultCenter={{ lat: 30.26498, lng: -97.746597 }}
     >
-      {/* <Marker position={{ lat: address.lat, lng: address.lng }} /> */}
+      {/* <Marker position={{ lat: user.lat, lng: user.lng }} /> */}
     </GoogleMap>
   );
 }
