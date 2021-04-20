@@ -2,14 +2,14 @@
 
 .address-serach-initial {
   font-size: 15px;
-  font-family: "Maven Pro", sans-serif;
+
   font-weight: bold;
   color: red;
 }
 
 .address-search-box {
   margin-top: 10px;
-  margin-left: -10px;
+  margin-left: -10px;font-family: "Maven Pro", sans-serif;
   /* display: inline-block; */
   padding-top: 10px;
   position: absolute;

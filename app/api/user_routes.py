@@ -27,7 +27,7 @@ def edit_user(id):
     user = User.query.get(id)
     user.id = req['id']
     user.address = req['address']
-    # user.lat = req['lat']
-    # user.lng = req['lng']
+    user.lat = req['lat']
+    user.lng = req['lng']
     db.session.commit()
     return  user.to_dict()

@@ -8,7 +8,6 @@ import { editUser } from "../../store/session";
 
 const AddressSearch = () => {
   const [address, setAddress] = useState("");
-  const [coordinates, setCoordinates] = useState({ lat: null, lng: null });
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
 
@@ -29,15 +28,13 @@ const AddressSearch = () => {
   const handleSelect = async (value) => {
     const results = await geocodeByAddress(value);
     const latlng = await getLatLng(results[0]);
-    console.log("address resuots", latlng);
     setAddress(results.formatted_address);
-    setCoordinates(latlng);
-    console.log("coordination", address);
+
     const submission = {
       id: user.id,
       address: address,
-      // lat: lat,
-      // lng: lng
+      lat: latlng.lat,
+      lng: latlng.lng,
     };
     dispatch(editUser(submission));
     closeAddress();
