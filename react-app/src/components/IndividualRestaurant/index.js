@@ -78,7 +78,7 @@ const RestaurantDetail = ({ cart, address }) => {
                 </div>
                 <div className="rating-price-container">
                   <div className="store-header-rating">
-                    {eachRestaurant?.rating} ⭐️
+                    {eachRestaurant?.rating} ⭐<i class="fas fa-star"></i>
                   </div>
                   <div className="bullet-point-between">•</div>
                   <div className="store-header-price">
