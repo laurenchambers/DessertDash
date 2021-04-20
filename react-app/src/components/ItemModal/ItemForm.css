@@ -197,6 +197,7 @@
   margin-top: 110px;
   justify-content: flex-end;
   margin-right: 30px;
+  outline:none;
 }
 
 .item-form-button-container {
@@ -271,4 +272,5 @@
   color: rgb(255, 255, 255);
   margin: 0px;
   padding: 0px;
+  outline: none;
 }

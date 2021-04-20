@@ -200,6 +200,7 @@
   text-align: center;
   background-color: transparent;
   color: rgb(235, 23, 0);
+  outline: none;
 }
 
 .edit-item-button {
@@ -220,6 +221,7 @@
   text-align: center;
   background-color: transparent;
   color: rgb(235, 23, 0);
+  outline: none;
 }
 .cart-current-item-price {
   flex-shrink: 0;
@@ -279,6 +281,7 @@
   outline: 0;
   border: 0;
   cursor: pointer;
+  outline: none;
 }
 
 .empty-cart-container {
