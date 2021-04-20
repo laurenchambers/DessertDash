@@ -109,7 +109,7 @@ const EditItemForm = ({ cart, item, setShowModal }) => {
             onClick={() => handleSubmit() && setShowModal(false)}
           >
             {/* {console.log("q", quantity)} */}
-            Update cart - ${parseFloat(price)}
+            Update cart - ${price.toFixed(2)}
           </button>
         </div>
       </div>

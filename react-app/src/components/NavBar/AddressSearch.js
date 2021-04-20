@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import PlacesAutocomplete from "react-places-autocomplete";
 import "./AddressSearch.css";
 import pinicon from "../site-images/pin-icon.jpeg";
-
+import { useDispatch, useSelector } from "react-redux";
 import { geocodeByAddress } from "react-places-autocomplete";
+import { editUser } from "../../store/session";
 
 const AddressSearch = () => {
   const [address, setAddress] = useState("");
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.session.user);
 
   const [showAddress, setShowAddress] = useState(false);
 
@@ -24,8 +27,15 @@ const AddressSearch = () => {
 
   const handleSelect = async (value) => {
     const results = await geocodeByAddress(value);
-    setAddress(results);
-    // setShowAddress(false);
+    console.log("address resuots", results);
+    setAddress(results.formatted_address);
+    const submission = {
+      id: user.id,
+      address: address,
+      // lat: lat,
+      // lng: lng
+    };
+    dispatch(editUser(submission));
     closeAddress();
   };
   useEffect(() => {
@@ -39,7 +49,7 @@ const AddressSearch = () => {
   return (
     <div className="address-search-container">
       <div className="address-serach-initial" onClick={openAddress}>
-        {address === "" ? "1221 S Congress Ave" : address}
+        {user.address === "" ? "1221 S Congress Ave" : user.address}
       </div>
       {showAddress && (
         <PlacesAutocomplete

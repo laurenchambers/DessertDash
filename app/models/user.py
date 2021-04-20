@@ -10,6 +10,9 @@ class User(db.Model, UserMixin):
   last_name = db.Column(db.String(50), nullable= False)
   email = db.Column(db.String(255), nullable = False, unique = True)
   hashed_password = db.Column(db.String(255), nullable = False)
+  address = db.Column(db.String)
+  lat = db.Column(db.Float)
+  lng = db.Column(db.Float)
 
   cart = db.relationship("Cart", uselist=False ,back_populates="user")
 
@@ -33,5 +36,8 @@ class User(db.Model, UserMixin):
       "id": self.id,
       "first_name": self.first_name,
       "last_name": self.last_name,
-      "email": self.email
+      "email": self.email,
+      "address": self.address,
+      "lat": self.lat,
+      "lng": self.lng,
     }
