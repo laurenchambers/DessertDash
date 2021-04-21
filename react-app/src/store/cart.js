@@ -108,16 +108,13 @@ const cartsReducer = (state = initialState, action) => {
       console.log("edited", action.payload.id);
       return {
         ...state,
-        cart: [...state.cart, action.payload],
-      };
-    case UPDATE_ITEMS:
-      return {
-        ...state,
         cart: [
-          state.cart.filter((cart) => cart.id !== action.payload.id),
+          state.cart.filter((cart) => cart.id !== action.payload.id) &&
             action.payload,
         ],
       };
+    case UPDATE_ITEMS:
+      return { ...state, cart: [...state.cart, action.payload] };
     default:
       return state;
   }

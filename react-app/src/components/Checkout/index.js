@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import CheckoutCart from "../Cart";
 import "./Checkout.css";
 import {
   GoogleMap,
@@ -24,6 +25,8 @@ const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 const Checkout = () => {
   const user = useSelector((state) => state.session.user);
+  const currentURL = window.location.pathname;
+  console.log("URL", currentURL);
 
   return (
     <div className="checkout-page">
@@ -50,6 +53,9 @@ const Checkout = () => {
         </div>
         <div className="place-order-container">
           <button className="place-order-button">Place Order</button>
+        </div>
+        <div>
+          <CheckoutCart />
         </div>
       </div>
     </div>

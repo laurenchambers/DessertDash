@@ -32,7 +32,10 @@ function Cart({ cart, submission, authenticated }) {
     }
   };
 
-  console.log("cartsarray", cartsArray);
+  // if (window.location.href.includes("/restaurants/")) {
+  //   setShowCart(true);
+  // }
+
   useEffect(() => {
     dispatch(getAllCarts());
     if (!cartsArray?.length) {

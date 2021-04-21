@@ -61,7 +61,7 @@
   font-family: "Maven Pro", sans-serif;
   font-weight: bold;
   color: red;
-  width: 250px
+  width: 250px;
 }
 
 .navbar-to-address {
@@ -122,7 +122,7 @@
   height: 40px;
   cursor: pointer; */
   z-index: 1;
-    position: fixed;
-    top: 0px;
-    right: 0px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
 }

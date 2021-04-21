@@ -7,6 +7,7 @@ import "./IndividualRestaurant.css";
 import ItemForm from "../ItemModal/ItemForm";
 import Footer from "../Footer";
 import { Link } from "react-router-dom";
+import TheCart from "../Cart";
 import {
   GoogleMap,
   withScriptjs,
@@ -18,7 +19,6 @@ function Map() {
   const eachRestaurant = useSelector(
     (state) => state?.restaurant?.currentRestaurant
   );
-  console.log("lat", eachRestaurant?.lat);
   return (
     <GoogleMap
       defaultZoom={14}
@@ -55,12 +55,12 @@ const RestaurantDetail = ({ cart, address }) => {
             <div className="store-header-container">
               <div className="store-header-information">
                 <div className="store-header-name">{eachRestaurant?.name}</div>
-                <WrappedMap
-                  googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyB3lFaDSw-OH95uJunSPk6f8EUrZGvpcx8`}
+                {/* <WrappedMap
+                  googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_API_KEY}`}
                   loadingElement={<div style={{ height: "100%" }} />}
                   containerElement={<div style={{ height: "100%" }} />}
                   mapElement={<div style={{ height: "100%" }} />}
-                />
+                /> */}
                 <div className="store-header-dashpass"></div>
                 <div className="store-header-hours">
                   {eachRestaurant?.hours}
@@ -127,6 +127,9 @@ const RestaurantDetail = ({ cart, address }) => {
               ))}
             </div>
           </div>
+        </div>
+        <div>
+          <TheCart />
         </div>
         <div className="footer-container">
           <Footer />
