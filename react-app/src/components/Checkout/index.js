@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import CheckoutCart from "../Cart";
+import CheckoutCart from "../Cart/CheckoutCart";
 import "./Checkout.css";
 import {
   GoogleMap,
