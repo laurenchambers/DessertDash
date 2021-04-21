@@ -7,8 +7,34 @@ import AddressSearch from "./AddressSearch";
 import SearchBar from "./SearchBar";
 import Cart from "./CartMenu";
 
-const NavBar = ({ authenticated, setAuthenticated }) => {
-  if (authenticated) {
+const NavBar = ({ authenticated }) => {
+  const currentURL = window.location.pathname;
+  if (authenticated && currentURL === "/checkout") {
+    return (
+      <div>
+        <div className="navbar-container">
+          <nav className="navbar-navgation">
+            <div>
+              <div className="navbar-toggle-menu">
+                <MeunBar />
+              </div>
+            </div>
+            <div className="navbar-logo">
+              <NavLink
+                className="navbar-logo"
+                to="/home"
+                exact={true}
+                activeClassName="active"
+              >
+                <img className="navbar-image" src={dessertdash_logo} alt="" />
+                DESSERTDASH
+              </NavLink>
+            </div>
+          </nav>
+        </div>
+      </div>
+    );
+  } else if (authenticated) {
     return (
       <div>
         <div className="navbar-container">
@@ -39,13 +65,13 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
             <div className="narbar-search-container">
               <SearchBar />
             </div>
-          <Cart clasName='nav-cart-area'/>
+            <Cart clasName="nav-cart-area" />
           </nav>
         </div>
       </div>
     );
   } else {
-    return <div></div>;
+    return <></>;
   }
 };
 

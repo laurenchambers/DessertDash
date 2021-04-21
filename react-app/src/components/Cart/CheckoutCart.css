@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap");
+
+.line-divider {
+  border-bottom: 1px solid rgb(214, 214, 214);
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.dasher-tip-container {
+  display: block;
+}
+
+.dasher-tip-amounts {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.dasher-tip-title {
+  font-size: 16px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+
+.dasher-tip-amount {
+  font-size: 16px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+
+.dasher-tip-blurb {
+  margin-top: 16px;
+  font-size: 12px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(118, 118, 118);
+  margin: 0px;
+  padding: 16px;
+  display: block;
+}
+
+.dash-total {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.dash-total-title {
+  font-size: 17px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+
+.dash-total-amount {
+  font-size: 17px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}

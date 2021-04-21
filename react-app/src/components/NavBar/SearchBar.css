@@ -47,16 +47,20 @@ input {
   width: 260px;
   color: black;
   font-family: "Maven Pro", sans-serif;
-  font-size: 18px;
-  font-weight: 100;
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
   text-decoration: none;
   margin-right: -15px;
-  border-radius: 0 0 0 0;
-  padding: 8px;
+  border-radius: 0;
   background-color: rgb(255, 255, 255);
   align-items: center;
-  border: 0.5px solid rgb(118, 118, 118);
+  border: 1px solid rgb(231, 231, 231);
+  padding: 8px 20px;
+}
+
+.search-bar-results:hover {
+  background-color: rgb(247, 247, 247);
 }
 
 .search-bar-name-results {
@@ -66,7 +70,6 @@ input {
   font-size: 18px;
   font-weight: 100;
   cursor: pointer;
-  position: relative;
   display: flex;
 }
 
@@ -84,5 +87,4 @@ input {
   padding: 8px;
   background-color: transparent;
   align-items: center;
-  /* border: 0.5px solid rgb(118, 118, 118); */
 }

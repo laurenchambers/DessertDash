@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap");
+
+.the-cart {
+  position: fixed;
+  width: 380px;
+  top: 49px;
+  right: 0px;
+  height: 100vh;
+  box-shadow: rgb(0 0 0 / 20%) 0px 8px 24px;
+  padding-top: 0px;
+  background-color: rgb(255, 255, 255);
+  border-top: 1px solid rgb(214, 214, 214);
+}
+
+.the-cart-your-order {
+  font-size: 16px;
+  padding-left: 16px;
+  padding-bottom: 10px;
+  padding-top: 15px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  display: block;
+}
