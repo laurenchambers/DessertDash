@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField
+from wtforms import StringField, FloatField
 from wtforms.validators import DataRequired, Email, ValidationError
 from app.models import User
 
@@ -27,3 +27,5 @@ class LoginForm(FlaskForm):
     email = StringField('email', validators=[DataRequired(), user_exists])
     password = StringField('password', validators=[
                            DataRequired(), password_matches])
+    lat = FloatField('lat')
+    lng = FloatField('lng')

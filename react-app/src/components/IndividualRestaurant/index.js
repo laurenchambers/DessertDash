@@ -8,30 +8,31 @@ import ItemForm from "../ItemModal/ItemForm";
 import Footer from "../Footer";
 import { Link } from "react-router-dom";
 import TheCart from "../Cart";
-import {
-  GoogleMap,
-  withScriptjs,
-  withGoogleMap,
-  Marker,
-} from "react-google-maps";
+import greystar from '../site-images/grey-star.png'
+// import {
+//   GoogleMap,
+//   withScriptjs,
+//   withGoogleMap,
+//   Marker,
+// } from "react-google-maps";
 
-function Map() {
-  const eachRestaurant = useSelector(
-    (state) => state?.restaurant?.currentRestaurant
-  );
-  return (
-    <GoogleMap
-      defaultZoom={14}
-      defaultCenter={{ lat: 30.26498, lng: -97.746597 }}
-    >
-      <Marker
-        position={{ lat: eachRestaurant?.lat, lng: eachRestaurant?.lng }}
-      />
-    </GoogleMap>
-  );
-}
+// function Map() {
+//   const eachRestaurant = useSelector(
+//     (state) => state?.restaurant?.currentRestaurant
+//   );
+//   return (
+//     <GoogleMap
+//       defaultZoom={14}
+//       defaultCenter={{ lat: 30.26498, lng: -97.746597 }}
+//     >
+//       <Marker
+//         position={{ lat: eachRestaurant?.lat, lng: eachRestaurant?.lng }}
+//       />
+//     </GoogleMap>
+//   );
+// }
 
-const WrappedMap = withScriptjs(withGoogleMap(Map));
+// const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 const RestaurantDetail = ({ cart, address }) => {
   const params = useParams();
@@ -71,14 +72,14 @@ const RestaurantDetail = ({ cart, address }) => {
                       to={`/genres/${genre.id}`}
                       className="store-header-genres"
                     >
-                      {genre.name}
+                      {genre.name} •
                     </Link>
                     // <span>{genre.name}</span>
                   ))}
                 </div>
                 <div className="rating-price-container">
                   <div className="store-header-rating">
-                    {eachRestaurant?.rating} ⭐
+                    {eachRestaurant?.rating} <img className='grey-star' src={greystar} alt=""/>
                   </div>
                   <div className="bullet-point-between">•</div>
                   <div className="store-header-price">

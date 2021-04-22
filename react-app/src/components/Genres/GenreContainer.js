@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 const GenreContainer = ({ genre }) => {
   const dispatch = useDispatch();
   const genresArray = useSelector((state) => state?.genres?.allGenres?.genres);
-  //   const [getGenres, setGetGenres] = useState(null);
+  const currentGenreRestaurantsArray = useSelector(
+    (state) => state?.genres?.currentGenre?.restaurants
+  );
+  console.log("curr", currentGenreRestaurantsArray?.length);
   useEffect(() => {
     dispatch(getAllGenres());
     // setGetGenres(genresArray);
@@ -14,7 +17,12 @@ const GenreContainer = ({ genre }) => {
   return (
     <div>
       <div className="genres-genres-header">Categories</div>
-      <div className="genres-genres-subheder">49 STORES NEARBY</div>
+      <div className="genres-genres-subheder">
+        {currentGenreRestaurantsArray
+          ? currentGenreRestaurantsArray?.length
+          : 32}{" "}
+        STORES NEARBY
+      </div>
       <div className="genres-container">
         {genresArray?.map((genre) => (
           <div className="genres-name">

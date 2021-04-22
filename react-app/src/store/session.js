@@ -35,7 +35,7 @@ export const authenticate = () => async (dispatch) => {
   return user;
 };
 
-export const login = (email, password) => async (dispatch) => {
+export const login = (email, password, lat, lng) => async (dispatch) => {
   const response = await fetch("/api/auth/login/", {
     method: "POST",
     headers: {
@@ -44,6 +44,8 @@ export const login = (email, password) => async (dispatch) => {
     body: JSON.stringify({
       email,
       password,
+      lat,
+      lng,
     }),
   });
   let user = await response.json();

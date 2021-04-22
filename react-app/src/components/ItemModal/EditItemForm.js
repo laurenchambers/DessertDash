@@ -5,7 +5,7 @@ import greyx from "../site-images/grey-x.png";
 import plus from "../site-images/plus.png";
 import minus from "../site-images/minus.png";
 import "./ItemForm.css";
-import cartsReducer, { getAllCarts } from "../../store/cart";
+import { getAllCarts } from "../../store/cart";
 
 const EditItemForm = ({ cart, item, setShowModal }) => {
   const user = useSelector((state) => state.session.user);

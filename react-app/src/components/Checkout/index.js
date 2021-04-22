@@ -2,26 +2,20 @@ import React from "react";
 import { useSelector } from "react-redux";
 import CheckoutCart from "../Cart/CheckoutCart";
 import "./Checkout.css";
-import {
-  GoogleMap,
-  withScriptjs,
-  withGoogleMap,
-  Marker,
-} from "react-google-maps";
+import { GoogleMap, withGoogleMap, Marker } from "react-google-maps";
 
-function Map() {
+const Map = withGoogleMap(() => {
   const user = useSelector((state) => state.session.user);
   return (
     <GoogleMap
       defaultZoom={14}
       defaultCenter={{ lat: 30.26498, lng: -97.746597 }}
     >
-      <Marker position={{ lat: user.lat, lng: user.lng }} />
+      <Marker postition={{ lat: user.lat, lng: user.lng }} />
     </GoogleMap>
   );
-}
+});
 
-const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 const Checkout = () => {
   const user = useSelector((state) => state.session.user);
@@ -38,12 +32,14 @@ const Checkout = () => {
         <div className="checkout-page-address-container">
           <div className="checkout-address-title">ADDRESS</div>
           <div className="checkout-address-map">
-            <WrappedMap
-              googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyB3lFaDSw-OH95uJunSPk6f8EUrZGvpcx8`}
-              loadingElement={<div style={{ height: "100%" }} />}
+            <Map
+              googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places`}
+              loadingElement={<div style={{ height: `100%` }} />}
               containerElement={<div style={{ height: "100%" }} />}
               mapElement={<div style={{ height: "100%" }} />}
-            />
+            >
+              <Marker postition={{ lat: user.lat, lng: user.lng }} />
+            </Map>
             <div className="checkout-address-subaddress">{user.address}</div>
           </div>
         </div>

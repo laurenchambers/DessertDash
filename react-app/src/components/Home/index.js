@@ -3,21 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllGenres } from "../../store/genres";
 import { Link } from "react-router-dom";
 import { allRestaurants } from "../../store/restaurants";
-// import { featuredRestaurants } from "../../store/restaurants";
 import "./Home.css";
 import Footer from "../Footer";
 
-// import TopRestaurants from "../TopRestaurants";
 import "./Home.css";
 
 const HomePage = ({ restaurant, genre }) => {
   const dispatch = useDispatch();
   const genresArray = useSelector((state) => state?.genres?.allGenres?.genres);
-  //   let eachGenre = genresArray?.map((genre) => {
-  //     return genre.name;
-  //   });
-  //   console.log("each genre", eachGenre);
-  //   console.log("genres array", genresArray);
   const restaurants = useSelector((state) => state?.restaurants?.restaurants);
   useEffect(() => {
     dispatch(getAllGenres());
@@ -30,7 +23,7 @@ const HomePage = ({ restaurant, genre }) => {
       <div className="landing-page-container">
         <div className="landing-genres-container">
           <div className="landing-genres-header">Categories</div>
-          <div className="landing-genres-subheder">49 STORES NEARBY</div>
+          <div className="landing-genres-subheder">32 STORES NEARBY</div>
           <div className="genres-container">
             {genresArray?.map((genre) => (
               <div className="genres-name">

@@ -28,8 +28,8 @@ function Root() {
 }
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <Root />
-  </React.StrictMode>,
+  </React.Fragment>,
   document.getElementById("root")
 );
