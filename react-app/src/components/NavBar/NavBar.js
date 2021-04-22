@@ -7,7 +7,7 @@ import AddressSearch from "./AddressSearch";
 import SearchBar from "./SearchBar";
 import Cart from "./CartMenu";
 
-const NavBar = ({ authenticated }) => {
+const NavBar = ({ authenticated, setAuthenticated }) => {
   const currentURL = window.location.pathname;
   if (authenticated && currentURL === "/checkout") {
     return (
@@ -16,7 +16,7 @@ const NavBar = ({ authenticated }) => {
           <nav className="navbar-navgation">
             <div>
               <div className="navbar-toggle-menu">
-                <MeunBar />
+                <MeunBar setAuthenticated={setAuthenticated} />
               </div>
             </div>
             <div className="navbar-logo">
@@ -41,7 +41,7 @@ const NavBar = ({ authenticated }) => {
           <nav className="navbar-navgation">
             <div>
               <div className="navbar-toggle-menu">
-                <MeunBar />
+                <MeunBar setAuthenticated={setAuthenticated} />
               </div>
             </div>
             <div className="navbar-address">
