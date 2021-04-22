@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 import dessertdash_logo from "../site-images/desssertdash-logo.jpg";
@@ -9,6 +9,7 @@ import Cart from "./CartMenu";
 
 const NavBar = ({ authenticated, setAuthenticated }) => {
   const currentURL = window.location.pathname;
+
   if (authenticated && currentURL === "/checkout") {
     return (
       <div>
@@ -65,7 +66,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
             <div className="narbar-search-container">
               <SearchBar />
             </div>
-            <Cart clasName="nav-cart-area" />
+            <Cart className="nav-cart-area" />
           </nav>
         </div>
       </div>

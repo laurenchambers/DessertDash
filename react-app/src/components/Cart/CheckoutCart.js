@@ -8,7 +8,7 @@ import "./TheCart.css";
 import "./CheckoutCart.css";
 
 function CheckoutCart() {
-  const user = useSelector((state) => state.session.user);
+  // const user = useSelector((state) => state.session.user);
   const [showModal, setShowModal] = useState(null);
   const dispatch = useDispatch();
   const cartsArray = useSelector((state) => state?.carts?.cart);
@@ -27,7 +27,7 @@ function CheckoutCart() {
     if (!cartsArray?.length) {
       return [];
     }
-  }, [dispatch]);
+  }, [dispatch, cartsArray?.length]);
 
   return (
     <>
@@ -43,7 +43,7 @@ function CheckoutCart() {
             <>
               <div className="cart-items-container">
                 <div className="cart-current-item-quantity">
-                  <span classname="current-item-quantity-cart">
+                  <span className="current-item-quantity-cart">
                     {cart.quantity} x
                   </span>
                 </div>
@@ -75,7 +75,7 @@ function CheckoutCart() {
                 <div>
                   {cart.id === showModal && (
                     <Modal onClose={() => setShowModal(null)}>
-                      <EditItemForm cart={cart} setShowModal={setShowModal} />
+                      <EditItemForm key={cart.id} cart={cart} setShowModal={setShowModal} />
                     </Modal>
                   )}
                 </div>
@@ -91,7 +91,7 @@ function CheckoutCart() {
         <div>
           <div className="line-divider"></div>
         </div>
-        <div clasName="dasher-tip-container">
+        <div className="dasher-tip-container">
           <div className="dasher-tip-amounts">
             <div className="dasher-tip-title">Dasher Tip</div>
             <div className="dasher-tip-amount">${tip}.00</div>

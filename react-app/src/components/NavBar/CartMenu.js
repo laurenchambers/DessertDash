@@ -76,7 +76,7 @@ function Cart({ cart, submission, authenticated }) {
                 <>
                   <div className="cart-items-container">
                     <div className="cart-current-item-quantity">
-                      <span classname="current-item-quantity-cart">
+                      <span className="current-item-quantity-cart">
                         {cart.quantity} x
                       </span>
                     </div>

@@ -72,7 +72,7 @@ const EditItemForm = ({ cart, item, setShowModal }) => {
         </div>
       </div>
       <div className="preferences-container">
-        <div clasname="preferences-titles">
+        <div classname="preferences-titles">
           <div className="preferences">
             <label className="extra-instructions">Extra Instructions</label>
             <span className="special-requests">List any special requests</span>
