@@ -10,13 +10,19 @@ function TheCart() {
   const [showModal, setShowModal] = useState(null);
   const dispatch = useDispatch();
   const cartsArray = useSelector((state) => state?.carts?.cart);
+  const totalPrice = cartsArray?.map((cart) =>
+  (cart.item_price * cart.quantity).toFixed(2)
+);
+
+const totalNumbers = totalPrice?.map((price) => parseFloat(price));
+const cartTotal = totalNumbers?.reduce((a, b) => a + b, 0);
 
   useEffect(() => {
     dispatch(getAllCarts());
     if (!cartsArray?.length) {
       return [];
     }
-  }, [dispatch]);
+  }, [dispatch, cartsArray?.length]);
 
   if (cartsArray?.length) {
     return (
@@ -25,7 +31,7 @@ function TheCart() {
             <div className="the-cart-your-order">Your Order</div>
             <div className="checkout-container">
               <NavLink to="/checkout" exact={true} className="cart-checkout">
-                <button className="cart-checkout-button">Checkout</button>
+                <button className="cart-checkout-button">Checkout - ${cartTotal.toFixed(2)}</button>
               </NavLink>
             </div>
             <div className="cart-current-items">
@@ -33,7 +39,7 @@ function TheCart() {
                 <>
                   <div className="cart-items-container">
                     <div className="cart-current-item-quantity">
-                      <span classname="current-item-quantity-cart">
+                      <span className="current-item-quantity-cart">
                         {cart.quantity} x
                       </span>
                     </div>

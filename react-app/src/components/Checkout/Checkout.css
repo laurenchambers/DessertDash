@@ -112,7 +112,29 @@ payment area */
   margin: 0px;
   padding: 0px;
 }
-
+.payment-change-add {
+  font-size: 14px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  color: rgb(235, 23, 0);
+  cursor: pointer;
+}
+.payment-card-info {
+  display: flex;
+}
+.payment-card-img {
+  width: 50px;
+}
+.payment-card-numbers {
+  /* padding: 16px; */
+  font-size: 14px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 400;
+  line-height: 20px;
+  /* letter-spacing: 0.1ch; */
+  color: rgb(25, 25, 25);
+  margin-left: 5px;
+}
 /* place order area */
 .place-order-container {
   display: flex;

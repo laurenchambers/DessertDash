@@ -5,7 +5,7 @@ import greyx from "../site-images/grey-x.png";
 import plus from "../site-images/plus.png";
 import minus from "../site-images/minus.png";
 import "./ItemForm.css";
-import cartsReducer, { getAllCarts } from "../../store/cart";
+import { getAllCarts } from "../../store/cart";
 
 const EditItemForm = ({ cart, item, setShowModal }) => {
   const user = useSelector((state) => state.session.user);
@@ -72,7 +72,7 @@ const EditItemForm = ({ cart, item, setShowModal }) => {
         </div>
       </div>
       <div className="preferences-container">
-        <div clasname="preferences-titles">
+        <div classname="preferences-titles">
           <div className="preferences">
             <label className="extra-instructions">Extra Instructions</label>
             <span className="special-requests">List any special requests</span>

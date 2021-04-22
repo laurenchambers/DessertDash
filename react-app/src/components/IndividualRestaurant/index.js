@@ -8,30 +8,7 @@ import ItemForm from "../ItemModal/ItemForm";
 import Footer from "../Footer";
 import { Link } from "react-router-dom";
 import TheCart from "../Cart";
-import {
-  GoogleMap,
-  withScriptjs,
-  withGoogleMap,
-  Marker,
-} from "react-google-maps";
-
-function Map() {
-  const eachRestaurant = useSelector(
-    (state) => state?.restaurant?.currentRestaurant
-  );
-  return (
-    <GoogleMap
-      defaultZoom={14}
-      defaultCenter={{ lat: 30.26498, lng: -97.746597 }}
-    >
-      <Marker
-        position={{ lat: eachRestaurant?.lat, lng: eachRestaurant?.lng }}
-      />
-    </GoogleMap>
-  );
-}
-
-const WrappedMap = withScriptjs(withGoogleMap(Map));
+import greystar from "../site-images/grey-star.png";
 
 const RestaurantDetail = ({ cart, address }) => {
   const params = useParams();
@@ -55,12 +32,6 @@ const RestaurantDetail = ({ cart, address }) => {
             <div className="store-header-container">
               <div className="store-header-information">
                 <div className="store-header-name">{eachRestaurant?.name}</div>
-                {/* <WrappedMap
-                  googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_API_KEY}`}
-                  loadingElement={<div style={{ height: "100%" }} />}
-                  containerElement={<div style={{ height: "100%" }} />}
-                  mapElement={<div style={{ height: "100%" }} />}
-                /> */}
                 <div className="store-header-dashpass"></div>
                 <div className="store-header-hours">
                   {eachRestaurant?.hours}
@@ -71,14 +42,15 @@ const RestaurantDetail = ({ cart, address }) => {
                       to={`/genres/${genre.id}`}
                       className="store-header-genres"
                     >
-                      {genre.name}
+                      {genre.name} •
                     </Link>
                     // <span>{genre.name}</span>
                   ))}
                 </div>
                 <div className="rating-price-container">
                   <div className="store-header-rating">
-                    {eachRestaurant?.rating} ⭐<i class="fas fa-star"></i>
+                    {eachRestaurant?.rating}{" "}
+                    <img className="grey-star" src={greystar} alt="" />
                   </div>
                   <div className="bullet-point-between">•</div>
                   <div className="store-header-price">

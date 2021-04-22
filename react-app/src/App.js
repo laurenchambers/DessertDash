@@ -11,6 +11,7 @@ import HomePage from "./components/Home";
 import RestaurantDetail from "./components/IndividualRestaurant";
 import GenreDetail from "./components/IndividualGenre";
 import Checkout from "./components/Checkout";
+import OrderComplete from "./components/OrderComplete";
 
 function App() {
   const dispatch = useDispatch();
@@ -52,24 +53,39 @@ function App() {
           />
         </Route>
         <Route path="/" exact={true} authenticated={authenticated}>
-          <Landing />
+          <Landing authenticated={authenticated} />
         </Route>
         <ProtectedRoute path="/home" exact={true} authenticated={authenticated}>
           <HomePage authenticated={authenticated} />
         </ProtectedRoute>
-        <Route
+        <ProtectedRoute
           path="/restaurants/:id"
           exact={true}
           authenticated={authenticated}
         >
           <RestaurantDetail />
-        </Route>
-        <Route path="/genres/:id" exact={true} authenticated={authenticated}>
+        </ProtectedRoute>
+        <ProtectedRoute
+          path="/genres/:id"
+          exact={true}
+          authenticated={authenticated}
+        >
           <GenreDetail />
-        </Route>
-        <Route path="/checkout" exact={true} authenticated={authenticated}>
+        </ProtectedRoute>
+        <ProtectedRoute
+          path="/checkout"
+          exact={true}
+          authenticated={authenticated}
+        >
           <Checkout />
-        </Route>
+        </ProtectedRoute>
+        <ProtectedRoute
+          path="/order-complete"
+          exact={true}
+          authenticated={authenticated}
+        >
+          <OrderComplete />
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );
