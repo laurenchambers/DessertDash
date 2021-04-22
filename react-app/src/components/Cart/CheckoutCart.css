@@ -6,6 +6,102 @@
   margin-right: 24px;
 }
 
+.price-total-container {
+  display: block;
+}
+
+.subtotal-container {
+  padding: 16px 16px 5px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.subtotal-title {
+  font-size: 16px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+.subtotal-amount {
+  font-size: 16px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+
+.delivery-fee-container {
+  padding: 5px 16px 5px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.delivery-fee-title {
+  font-size: 16px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+.deliver-fee-amount {
+  font-size: 16px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+
+.taxes-fee-container {
+  padding: 5px 16px 16px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.taxes-fee-title {
+  font-size: 16px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+.taxes-fee-amount {
+  font-size: 16px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+
+
+
 .dasher-tip-container {
   display: block;
 }
@@ -84,4 +180,105 @@
   margin: 0px;
   padding: 0px;
   display: block;
+}
+
+/* TIP SELECTION BOXES */
+.dasher-tip-selection-container {
+  display: flex;
+  max-width: 85%;
+  padding: 0 20px 0 20px;
+}
+
+.tip-selection-one {
+  background-color: rgb(231, 231, 231);
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-top-left-radius: 1000px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 1000px;
+  width: 85px;
+  height: 32px;
+  color: rgb(25, 25, 25);
+  font-family: "Maven Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.04ch;
+}
+
+.tip-selection-two {
+  background-color: rgb(231, 231, 231);
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 0px;
+  width: 85px;
+  height: 32px;
+  color: rgb(25, 25, 25);
+  font-family: "Maven Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.04ch;
+}
+
+.tip-selection-three {
+  background-color: rgb(231, 231, 231);
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 0px;
+  width: 85px;
+  height: 32px;
+  color: rgb(25, 25, 25);
+  font-family: "Maven Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.04ch;
+}
+
+.tip-selection-four {
+  background-color: rgb(231, 231, 231);
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 1000px;
+  border-bottom-right-radius: 1000px;
+  border-bottom-left-radius: 0px;
+  width: 85px;
+  height: 32px;
+  color: rgb(25, 25, 25);
+  font-family: "Maven Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.04ch;
+}
+
+.tip-selection-one:focus {
+  color: white;
+  background-color: rgb(25, 25, 25);
+}
+
+.tip-selection-two:focus {
+  color: white;
+  background-color: rgb(25, 25, 25);
+}
+
+.tip-selection-three:focus {
+  color: white;
+  background-color: rgb(25, 25, 25);
+}
+
+.tip-selection-four:focus {
+  color: white;
+  background-color: rgb(25, 25, 25);
 }

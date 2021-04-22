@@ -11,6 +11,7 @@ import HomePage from "./components/Home";
 import RestaurantDetail from "./components/IndividualRestaurant";
 import GenreDetail from "./components/IndividualGenre";
 import Checkout from "./components/Checkout";
+import OrderComplete from "./components/OrderComplete";
 
 function App() {
   const dispatch = useDispatch();
@@ -77,6 +78,13 @@ function App() {
           authenticated={authenticated}
         >
           <Checkout />
+        </ProtectedRoute>
+        <ProtectedRoute
+          path="/order-complete"
+          exact={true}
+          authenticated={authenticated}
+        >
+          <OrderComplete />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

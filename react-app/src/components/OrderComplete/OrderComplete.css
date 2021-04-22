@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap");
+
+.order-complete-image {
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25%;
+  margin-top: 40px;
+}
+
+.order-complete-words {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 100px;
+  margin-left: 32%
+}
