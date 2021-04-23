@@ -108,12 +108,12 @@ function CheckoutCart() {
             <div className="subtotal-title">Subtotal</div>
             <div className="subtotal-amount">${cartTotal?.toFixed(2)}</div>
           </div>
-          <div className="delivery-fee-container">
-            <div className="delivery-fee-title">Delivery Fee</div>
-            <div className="deliver-fee-amount">${deliveryFee}</div>
+          <div className="delivery-fee-info-container">
+            <div className="delivery-fee-info-title">Delivery Fee</div>
+            <div className="deliver-fee-info-amount">${deliveryFee}</div>
           </div>
           <div className="taxes-fee-container">
-            <div className="taxes-fee-title">Fees {`&`} Estimates Tax</div>
+            <div className="taxes-fee-title">Fees {`&`} Estimated Tax</div>
             <div className="taxes-fee-amount">
               ${cartFee.toFixed(2)}
             </div>

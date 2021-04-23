@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CheckoutCart from "../Cart/CheckoutCart";
 import "./Checkout.css";
@@ -19,6 +20,10 @@ const Map = withGoogleMap(() => {
 });
 
 const Checkout = () => {
+  const history = useHistory();
+  const redirect = () => {
+    history.push("/order-complete");
+  };
   const user = useSelector((state) => state.session.user);
   const currentURL = window.location.pathname;
   const defaultMarker = { lat: user.lat, lng: user.lng };
@@ -30,7 +35,9 @@ const Checkout = () => {
       <div className="checkout-page-rows">
         <div className="checkout-page-time">
           <div className="time-title">TIME</div>
-          <div className="time-amount-time">30mins</div>
+          <div className="time-amount-time">ASAP</div>
+          <div className="bullet-point-checkout">•</div>
+          <div className="time-amount-time">30 - 40 mins</div>
         </div>
         <div className="checkout-page-address-container">
           <div className="checkout-address-title">ADDRESS</div>
@@ -49,8 +56,8 @@ const Checkout = () => {
         </div>
         <div className="payment-container">
           <div className="payment-title">
-            <div className='payment-title-title'>PAYMENT</div>
-            <div className='payment-change-add'>Change / Add</div>
+            <div className="payment-title-title">PAYMENT</div>
+            <div className="payment-change-add">Change / Add</div>
           </div>
           <div className="payment-card-info">
             <img className="payment-card-img" src={mastercard} alt="" />
@@ -58,7 +65,9 @@ const Checkout = () => {
           </div>
         </div>
         <div className="place-order-container">
-          <button className="place-order-button">Place Order</button>
+          <button onClick={redirect} className="place-order-button">
+            Place Order
+          </button>
         </div>
         <div>
           <CheckoutCart />

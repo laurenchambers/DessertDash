@@ -9,8 +9,10 @@ import Footer from "../Footer";
 import { Link } from "react-router-dom";
 import TheCart from "../Cart";
 import greystar from "../site-images/grey-star.png";
+import { getDistance } from "geolib";
 
 const RestaurantDetail = ({ cart, address }) => {
+  const user = useSelector((state) => state?.session?.user);
   const params = useParams();
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(null);
@@ -19,6 +21,22 @@ const RestaurantDetail = ({ cart, address }) => {
     (state) => state?.restaurant?.currentRestaurant
   );
   const restaurantItems = eachRestaurant?.items;
+
+  const userLat = user?.lat;
+  const userLng = user?.lng;
+  const restaurantLat = eachRestaurant?.lat;
+  const restaurantLng = eachRestaurant?.lng;
+  console.log("user", parseFloat(userLat));
+
+  const distanceMeters = getDistance(
+    { latitude: parseFloat(userLat), longitude: parseFloat(userLng) },
+    {
+      latitude: parseFloat(restaurantLat),
+      longitude: parseFloat(restaurantLng),
+    },
+    1
+  );
+  const distanceMiles = distanceMeters * 0.000621371;
 
   useEffect(() => {
     dispatch(getRestaurant(params.id));
@@ -53,13 +71,27 @@ const RestaurantDetail = ({ cart, address }) => {
                     <img className="grey-star" src={greystar} alt="" />
                   </div>
                   <div className="bullet-point-between">•</div>
+                  <div className="store-distance">
+                    {distanceMiles.toFixed(1)} mi
+                  </div>
+                  <div className="bullet-point-between">•</div>
                   <div className="store-header-price">
                     {eachRestaurant?.price}
                   </div>
                 </div>
               </div>
             </div>
-            <div className="delivery-header-info">DEVLIERY INFO</div>
+            <div className="delivery-header-info-container">
+              <div className="delivery-fee-container">
+                <div className="delivery-fee-amount-dollar">$2.99</div>
+                <div className="delivery-fee-amount-name">delivery fee</div>
+              </div>
+              <div className="line-between"></div>
+              <div className="delivery-time-container">
+                <div className="delivery-amount-time">25-35</div>
+                <div className="delivery-amount-time-name">minutes</div>
+              </div>
+            </div>
           </header>
           <div className="menu-container">
             <div className="restaurant-menu-items">

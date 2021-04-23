@@ -18,7 +18,7 @@ def individualRestaurant(id):
 
 @restaurant_routes.route('/featured/')
 def featured_restaurants():
-    featured = Restaurant.query.order_by(Restaurant.lat.asc()).limit(6).all()
+    featured = Restaurant.query.order_by(Restaurant.zip_code.asc()).limit(6).all()
     return {"restaurants": [restaurant.to_dict() for restaurant in featured]}
 
 
