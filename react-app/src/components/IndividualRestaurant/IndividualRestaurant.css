@@ -160,10 +160,9 @@
   color: rgb(25, 25, 25);
   margin: 0px;
   padding: 0px;
-  padding-top:6px;
+  padding-top: 6px;
   display: block;
 }
-
 
 .delivery-fee-amount-name {
   max-width: 100%;
@@ -191,7 +190,6 @@
   height: 52px;
   border-radius: 8px;
 }
-
 
 .line-between {
   width: 1px;
