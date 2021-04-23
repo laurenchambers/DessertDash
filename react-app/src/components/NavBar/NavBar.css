@@ -34,8 +34,26 @@
   color: red;
   padding-right: 200px;
 }
-
+.navbar-logo-checkout {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-decoration: none;
+  height: 27px;
+  vertical-align: middle;
+  font-size: 22px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: bold;
+  color: red;
+  padding-right: 00px;
+  margin-left: 325px;
+}
 .navbar-image {
+  height: 27px;
+  padding-right: 5px;
+}
+
+.navbar-image-checkout {
   height: 27px;
   padding-right: 5px;
 }

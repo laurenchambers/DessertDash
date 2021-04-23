@@ -61,6 +61,18 @@
   padding-right: 10px;
 }
 
+.store-distance {
+  display: flex;
+  font-size: 16px;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: #767676;
+  padding-right: 10px;
+}
+
 .store-header-rating {
   display: flex;
   font-size: 16px;
@@ -111,6 +123,113 @@
 
 .rating-price-container {
   display: flex;
+}
+
+.delivery-header-info-container {
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 8px;
+  width: 350px;
+  margin-left: 244px;
+}
+
+.delivery-fee-container {
+  flex: 1 1 0%;
+  margin: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  border-radius: 8px;
+}
+.delivery-fee-amount-dollar {
+  max-width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding: 0px;
+  padding-top:6px;
+  display: block;
+}
+
+
+.delivery-fee-amount-name {
+  max-width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(118, 118, 118);
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+
+.delivery-time-container {
+  flex: 1 1 0%;
+  margin: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  border-radius: 8px;
+}
+
+
+.line-between {
+  width: 1px;
+  height: 28px;
+  background-color: rgb(231, 231, 231);
+}
+
+.delivery-amount-time {
+  max-width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: -0.04ch;
+  text-transform: none;
+  color: rgb(25, 25, 25);
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
+.delivery-amount-time-name {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0ch;
+  text-transform: none;
+  color: rgb(118, 118, 118);
+  margin: 0px;
+  padding: 0px;
+  display: block;
 }
 
 .menu-container {

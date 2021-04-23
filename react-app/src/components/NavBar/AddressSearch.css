@@ -8,7 +8,7 @@
 }
 
 .address-search-box {
-  margin-top: 10px;
+  margin-top: 17px;
   margin-left: -10px;
   font-family: "Maven Pro", sans-serif;
   /* display: inline-block; */
@@ -60,4 +60,8 @@
   font-size: 13px;
   font-weight: 100;
   cursor: pointer;
+}
+
+.address-search-container {
+  width: 320px;
 }

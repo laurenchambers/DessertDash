@@ -48,7 +48,7 @@ const Landing = ({ authenticated }) => {
           </div>
 
           <div className="landing-subtitle">
-            <div>Restaurants and more, </div>
+            <div>Desserts and more desserts, </div>
             <div>delivered to your door</div>
           </div>
         </div>

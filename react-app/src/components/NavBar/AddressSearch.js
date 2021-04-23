@@ -77,7 +77,7 @@ const AddressSearch = () => {
                       className="address-search-input"
                       {...getInputProps({
                         pinicon,
-                        placeholder: " 🐾  Address",
+                        placeholder: " 📍  Address",
                       })}
                     />
                   </div>

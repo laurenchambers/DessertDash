@@ -20,14 +20,14 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
                 <MeunBar setAuthenticated={setAuthenticated} />
               </div>
             </div>
-            <div className="navbar-logo">
+            <div className="navbar-logo-checkout">
               <NavLink
-                className="navbar-logo"
+                className="navbar-logo-checkout"
                 to="/home"
                 exact={true}
                 activeClassName="active"
               >
-                <img className="navbar-image" src={dessertdash_logo} alt="" />
+                <img className="navbar-image-checkout" src={dessertdash_logo} alt="" />
                 DESSERTDASH
               </NavLink>
             </div>
