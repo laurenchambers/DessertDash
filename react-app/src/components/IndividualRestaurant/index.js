@@ -10,43 +10,6 @@ import { Link } from "react-router-dom";
 import TheCart from "../Cart";
 import greystar from "../site-images/grey-star.png";
 import { getDistance } from "geolib";
-import { GoogleMap, withGoogleMap, Marker } from "react-google-maps";
-
-
-
-const RestaurantMap = withGoogleMap(() => {
-  const currRestaurant = useSelector(
-    (state) => state?.restaurant?.currentRestaurant
-  );
-  const locations = [
-    {
-      name: "Location 1",
-      location: {
-        lat: parseFloat(currRestaurant?.lat),
-        lng: parseFloat(currRestaurant?.lng),
-      },
-    },
-    {
-      name: "Location 2",
-      location: {
-        lat: 41.3917,
-        lng: 2.1649,
-      },
-    },
-  ];
-
-  return (
-    <GoogleMap
-      defaultZoom={14}
-      defaultCenter={{ lat: parseFloat(currRestaurant?.lat), lng: parseFloat(currRestaurant?.lng) }}
-    >
-      {locations.map((item) => {
-        return <Marker key={item.name} position={item.location} />;
-      })}
-    </GoogleMap>
-  );
-});
-
 
 const RestaurantDetail = ({ cart, address }) => {
   const user = useSelector((state) => state?.session?.user);
@@ -81,7 +44,6 @@ const RestaurantDetail = ({ cart, address }) => {
   useEffect(() => {
     dispatch(getRestaurant(params.id));
   }, [params, dispatch, cart]);
-  const defaultMarker = { lat: parseFloat(user.lat), lng: parseFloat(user.lng) };
   return (
     <>
       <>
@@ -104,16 +66,6 @@ const RestaurantDetail = ({ cart, address }) => {
                     </Link>
                   ))}
                 </div>
-                <RestaurantMap
-                className="store-header-name"
-                  currRestaurant={eachRestaurant}
-                  googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places`}
-                  loadingElement={<div style={{ height: `100%` }} />}
-                  containerElement={<div style={{ height: "100%" }} />}
-                  mapElement={<div style={{ height: "100%" }} />}
-                >
-                  {<Marker key={eachRestaurant?.id} postition={defaultMarker} />}
-                </RestaurantMap>
                 <div className="rating-price-container">
                   <div className="store-header-rating">
                     {eachRestaurant?.rating}{" "}
