@@ -7,13 +7,14 @@ import EditItemForm from "../ItemModal/EditItemForm";
 import "./TheCart.css";
 import "./CheckoutCart.css";
 
-
 function CheckoutCart() {
   const history = useHistory();
   const [tip, setTip] = useState(0);
   const [showModal, setShowModal] = useState(null);
   const dispatch = useDispatch();
   const deliveryFee = 2.99;
+  const user = useSelector((state) => state.session.user);
+
   const cartsArray = useSelector((state) => state?.carts?.cart);
 
   const totalPrice = cartsArray?.map((cart) =>
@@ -22,7 +23,7 @@ function CheckoutCart() {
 
   const totalNumbers = totalPrice?.map((price) => parseFloat(price));
   const cartTotal = totalNumbers?.reduce((a, b) => a + b, 0);
-  const cartFee = (cartTotal * 0.15 + cartTotal * 0.063)
+  const cartFee = cartTotal * 0.15 + cartTotal * 0.063;
 
   const redirect = () => {
     history.push("/order-complete");
@@ -114,9 +115,7 @@ function CheckoutCart() {
           </div>
           <div className="taxes-fee-container">
             <div className="taxes-fee-title">Fees {`&`} Estimated Tax</div>
-            <div className="taxes-fee-amount">
-              ${cartFee.toFixed(2)}
-            </div>
+            <div className="taxes-fee-amount">${cartFee.toFixed(2)}</div>
           </div>
         </div>
         <div>
