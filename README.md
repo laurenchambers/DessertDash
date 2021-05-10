@@ -8,6 +8,9 @@
 
   <p align="center">
     DessertDash is a dessert-lover's paradise website based on the popular food delivery app DoorDash. Users can view local desserts, add the item(s) to their cart, and have them delivered straight to their door!
+     <br />
+  <br />
+    <a href="https://github.com/laurenchambers/dessertdash/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://dessertdash.herokuapp.com/">View Site</a>
@@ -125,22 +128,12 @@ Here is everything we need you to do to get started with DessertDash.
    ```bash
    npm start
    ```
-## Obstacles
-
-### SQLAlchemy Querying
-
-Because of how we built our lean database, we needed to create unique ways to query data due to interdependent relationships. We defined the necessary relationships between tables and created new methods that allowed us to return information pertaining to multiple tables without running into major conflicts.
-
-
-### Likes
-
-We had issues with React updating and rendering the state of a like without refreshing our entire page. Through hours of debugging and collaboration, we realized we overcomplicated the issue from the start.
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/tedjanton/DessertDash/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/laurenchambers/DessertDash/issues) for a list of proposed features (and known issues).
 
 
 
