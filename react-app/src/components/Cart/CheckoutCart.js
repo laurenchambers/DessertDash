@@ -1,4 +1,4 @@
-import { NavLink, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCarts, removeFromCart } from "../../store/cart";
@@ -13,7 +13,7 @@ function CheckoutCart() {
   const [showModal, setShowModal] = useState(null);
   const dispatch = useDispatch();
   const deliveryFee = 2.99;
-  const user = useSelector((state) => state.session.user);
+  // const user = useSelector((state) => state.session.user);
 
   const cartsArray = useSelector((state) => state?.carts?.cart);
 

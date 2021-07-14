@@ -6,12 +6,12 @@ function Footer(props) {
     <div className="footer-container">
       <div className="footer-details">
         <img src="" alt="" />
-        <a href="https://github.com/laurenchambers" target="_blank">
+        <a href="https://github.com/laurenchambers" target="_blank" rel="noopener noreferrer">
           <FaGithub />
         </a>
         <a
           href="https://www.linkedin.com/in/lauren-chambers94/"
-          target="_blank"
+          target="_blank" rel="noopener noreferrer"
         >
           <FaLinkedin />
         </a>

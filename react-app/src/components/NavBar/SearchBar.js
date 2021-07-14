@@ -13,10 +13,16 @@ const SearchBar = () => {
   const restaurantArray = useSelector(
     (state) => state?.restaurants?.restaurants
   );
+  const itemsArray = useSelector((state) => {
+    const allItems = [];
+    const testArray = state?.restaurants?.restaurants;
+    testArray.forEach((restaurant) => allItems.push(restaurant.items));
+    return allItems.flat();
+  });
 
   const handleInput = (e) => {
     setInput(e.target.value);
-    setShowResults(dynamicSearch(e.target.value));
+    setShowResults(searchResults(e.target.value));
     if (e.target.value === "") {
       setShowResults([]);
     }
@@ -26,6 +32,16 @@ const SearchBar = () => {
     return restaurantArray?.filter((restaurant) =>
       restaurant?.name?.toLowerCase().includes(value?.toLowerCase())
     );
+  };
+
+  const dynamicItemSearch = (value) => {
+    return itemsArray?.filter((item) =>
+      item?.name?.toLowerCase().includes(value?.toLowerCase())
+    );
+  };
+
+  const searchResults = (query) => {
+    return [...dynamicItemSearch(query), ...dynamicSearch(query)];
   };
 
   useEffect(() => {

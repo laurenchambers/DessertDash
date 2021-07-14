@@ -45,7 +45,7 @@ const AddressSearch = () => {
     document.addEventListener("mouseEnter", closeAddress);
 
     return () => document.removeEventListener("mouseEnter", closeAddress);
-  }, [showAddress, closeAddress]);
+  }, [showAddress]);
 
   if (user) {
     return (

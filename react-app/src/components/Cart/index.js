@@ -9,7 +9,7 @@ import "./TheCart.css";
 function TheCart() {
   const [showModal, setShowModal] = useState(null);
   const dispatch = useDispatch();
-  const user = useSelector((state) => state?.session?.user);
+  // const user = useSelector((state) => state?.session?.user);
   const cartsArray = useSelector((state) => state?.carts?.cart);
   const totalPrice = cartsArray?.map((cart) =>
     (cart.item_price * cart.quantity).toFixed(2)

@@ -47,7 +47,7 @@ const EditItemForm = ({ cart, item, setShowModal }) => {
     // setCart(cart);
     // dispatch(getAllCarts());
     setTextLength(500 - newPreferences.length);
-  }, [dispatch, cart, quantity, newPreferences, textLength]);
+  }, [dispatch, newQuantity, cart, quantity, newPreferences, textLength]);
 
   const price = parseFloat(cart.item_price) * parseFloat(newQuantity);
 
